@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="./robodoc.css" type="text/css" />
+<title>./Plot3Dv4/CommonDefs.inc</title>
+<!-- Source: ./Plot3Dv4/CommonDefs.inc -->
+<!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
+</head>
+<body>
+<div id="logo">
+<a name="robo_top_of_doc">ScPovPlot3D Templates, written by Janusz Opiła</a>
+</div> <!-- logo -->
+<div id="navigation">
+<a class="menuitem" href="./toc_index.html#top">Table of Contents</a>
+<a class="menuitem" href="./sources.html#top">Source files</a>
+<a class="menuitem" href="./masterindex.html#top">Index Page</a>
+<a class="menuitem" href="./robo_POV_scene.html#top">Scene files</a>
+<a class="menuitem" href="./robo_projects.html#top">Project</a>
+<a class="menuitem" href="./robo_macros.html#top">Main macros</a>
+<a class="menuitem" href="./robo_constants.html#top">Constants</a>
+<a class="menuitem" href="./robo_helper.html#top">Helper macros</a>
+<a class="menuitem" href="./robo_modules.html#top">Modules</a>
+<a class="menuitem" href="./robo_type.html#top">Types used</a>
+<a class="menuitem" href="./robo_variables.html#top">Variables</a>
+</div> <!-- navigation -->
+<div id="content">
+<h3>TABLE OF CONTENTS</h3>
+<ul>
+<li>1. <a href="#robo7">ScPovPlot3D/CommonDefs.inc</a></li>
+<ul>
+<li>1.1. <a href="#robo123">CommonDefs.inc/Factorial</a></li>
+<li>1.2. <a href="#robo124">CommonDefs.inc/ImageType</a></li>
+<li>1.3. <a href="#robo125">CommonDefs.inc/SetImageFilter</a></li>
+<li>1.4. <a href="#robo126">CommonDefs.inc/SetImageGamma</a></li>
+<li>1.5. <a href="#robo127">CommonDefs.inc/SetImagePower</a></li>
+<li>1.6. <a href="#robo128">CommonDefs.inc/SetImgFilter</a>, <a href="#robo128">UnSetImgFilter</a>, <a href="#robo128">SetImgTransmit</a>, <a href="#robo128">UnSetImgTransmit</a></li>
+<li>1.7. <a href="#robo129">CommonDefs.inc/SetImgFinish</a></li>
+<li>1.8. <a href="#robo130">CommonDefs.inc/SetImgTransmit</a>, <a href="#robo130">UnSetImgTransmit</a>, <a href="#robo130">SetImgFilter</a>, <a href="#robo130">UnSetImgFilter</a></li>
+<li>1.9. <a href="#robo131">CommonDefs.inc/SetMatt</a>, <a href="#robo131">UnSetMatt</a>, <a href="#robo131">UnSetImgTransmit</a>, <a href="#robo131">SetImgFilter</a>, <a href="#robo131">UnSetImgFilter</a></li>
+<li>1.10. <a href="#robo132">CommonDefs.inc/Sfere</a></li>
+<li>1.11. <a href="#robo133">CommonDefs.inc/UnSetImgFilter</a></li>
+<li>1.12. <a href="#robo134">CommonDefs.inc/UnSetImgTransmit</a>, <a href="#robo134">SetImgTransmit</a>, <a href="#robo134">SetImgFilter</a>, <a href="#robo134">UnSetImgFilter</a></li>
+<li>1.13. <a href="#robo135">CommonDefs.inc/UnSetMatt</a>, <a href="#robo135">SetMatt</a>, <a href="#robo135">UnSetImgTransmit</a>, <a href="#robo135">SetImgTransmit</a>, <a href="#robo135">SetImgFilter</a>, <a href="#robo135">UnSetImgFilter</a></li>
+</ul>
+</ul>
+<hr />
+<a name="ScPovPlot3D2fCommonDefs2einc"></a>
+<a name="robo7"></a><h2>ScPovPlot3D/CommonDefs.inc [ Modules ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Common definitions of the whole system, sorry a little bit messy
+   TODO: cleanup and refactorization, esp. move coord system to dedicated file
+<hr width=50% align="left">
+</p>
+<pre>     *********************************************************
+     **   Tested on PovRay 3.7                              **
+     **   License: GNU GPL                                  **
+     **   Homepage:    <a href="http://scpovplot3d.sourceforge.net">http://scpovplot3d.sourceforge.net</a>   **
+     *********************************************************
+     **   version: 3.1.0.4 (&amp; have a nice time ;)           **
+     *********************************************************
+</pre>
+<p></p>
+<p class="item_name">AUTHOR</p>
+<p>  Janusz Opiła Ph.D.
+</p>
+<pre>   jmo@agh.edu.pl, janusz.opila@gmail.com
+   Dept. of Applied Informatics
+   AGH University of Science &amp; Technology, Cracow, Poland
+   Maintained by Janusz Opiła Ph.D.
+</pre>
+<p></p>
+<p class="item_name">COPYRIGHT</p>
+<pre>  GNU GPL v.3 License
+  (c) 2012-now by Janusz Opiła Ph.D.
+  AGH University of Science and Technology
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fFactorial"></a>
+<a name="robo123"></a><h2>CommonDefs.inc/Factorial [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  computes <strong>Factorial</strong> of the number 'C'
+  <strong>Factorial</strong>(c)=c!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>Factorial</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>_c<span class="sign">)</span> <span class="sign">{</span> prod<span class="sign">(</span>i<span class="sign">,</span> 1<span class="sign">,</span> _c<span class="sign">,</span> i<span class="sign">)</span> <span class="sign">}</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> or <a href="./TypesUsed_txt.html#robo214">integer</a> - <strong>Factorial</strong> parameter,
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> - <strong>Factorial</strong> of _c if _c is whole number, maybe <strong>Factorial</strong> if <a href="./TypesUsed_txt.html#robo211">float</a>
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  None
+</p>
+
+<hr />
+<a name="CommonDefs2einc2fImageType"></a>
+<a name="robo124"></a><h2>CommonDefs.inc/ImageType [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Deactivates texture for image background matt
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>ImageType</strong> <span class="sign">(</span>_Imgx<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo220">string_fn</a> _Img - image file name with extension
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetImageFilter"></a>
+<a name="robo125"></a><h2>CommonDefs.inc/SetImageFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets filter XOR transmit value for image. Obsolete, use <a href="#robo128">SetImgFilter</a> instead
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImageFilter</strong> <span class="sign">(</span>_Val<span class="sign">)</span>        <span class="comment">// 1 or 2</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo218">pinteger</a> _Val - filtering type: "transmit" (2) XOR "filter" (1) for image given
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetImageGamma"></a>
+<a name="robo126"></a><h2>CommonDefs.inc/SetImageGamma [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets gamma value for background image
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImageGamma</strong> <span class="sign">(</span>_Val<span class="sign">)</span>         <span class="comment">// '0' means 'srgb';</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> _Val - gamma value for image given
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetImagePower"></a>
+<a name="robo127"></a><h2>CommonDefs.inc/SetImagePower [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets VALUE of "filter" XOR "transmit". Obsolete, use <a href="#robo128">SetImgFilter</a> OR/AND <a href="#robo130">SetImgTransmit</a> instead
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImagePower</strong> <span class="sign">(</span>_Val<span class="sign">)</span>         <span class="comment">// <a href="./TypesUsed_txt.html#robo211">float</a></span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> _Val - amount of "transmit" (2) XOR "filter" (1) for image given
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetImgFilter"></a>
+<a name="robo128"></a><h2>CommonDefs.inc/SetImgFilter, UnSetImgFilter, SetImgTransmit, UnSetImgTransmit [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets amount of light filtered/changed
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImgFilter</strong> <span class="sign">(</span>_V<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> _V - amount of filtered light/filter power, if _V &lt;0 restores previous, else sets new value
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetImgFinish"></a>
+<a name="robo129"></a><h2>CommonDefs.inc/SetImgFinish [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets "finish" section
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImgFinish</strong> <span class="sign">(</span>_Fin<span class="sign">)</span>           <span class="comment">// finish identifier</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo210">finishdef</a> _Fin - contains finish {} section for background images
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>   <a href="#robo126">SetImageGamma</a>()
+   <a href="#robo125">SetImageFilter</a>()
+</p>
+
+<hr />
+<a name="CommonDefs2einc2fSetImgTransmit"></a>
+<a name="robo130"></a><h2>CommonDefs.inc/SetImgTransmit, UnSetImgTransmit, SetImgFilter, UnSetImgFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets amount of light transmitted as unchanged
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetImgTransmit</strong> <span class="sign">(</span>_V<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> pwr - amount of transmitted light/transmit power, if _V &lt;0 restores previous, else sets new value
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSetMatt"></a>
+<a name="robo131"></a><h2>CommonDefs.inc/SetMatt, UnSetMatt, UnSetImgTransmit, SetImgFilter, UnSetImgFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets texture for image background matt
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetMatt</strong> <span class="sign">(</span>_Tx<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo221">texturedef</a> Tx -texture for background image matt
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fSfere"></a>
+<a name="robo132"></a><h2>CommonDefs.inc/Sfere [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  computes square of right triangle "b" side knowing "c" and "a"
+  b^2=c^2-a^2
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>Sfere</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>x<span class="sign">,</span>y<span class="sign">,</span>z<span class="sign">,</span>_a<span class="sign">)</span> <span class="sign">{</span>pow<span class="sign">(</span>x<span class="sign">,</span>2<span class="sign">)</span> <span class="sign">+</span> pow<span class="sign">(</span>y<span class="sign">,</span>2<span class="sign">)</span> <span class="sign">+</span> pow<span class="sign">(</span>z<span class="sign">,</span>2<span class="sign">)</span> <span class="sign">-</span> pow<span class="sign">(</span>_a<span class="sign">,</span>2<span class="sign">)</span><span class="sign">}</span><span class="sign">;</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  x,y,z - <a href="./TypesUsed_txt.html#robo211">float</a>: just three floats, may be some point coordinates
+  _a    - <a href="./TypesUsed_txt.html#robo211">float</a>: just <a href="./TypesUsed_txt.html#robo211">float</a> or one of right triangle sides
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> - square of third right triangle side
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  None
+</p>
+
+<hr />
+<a name="CommonDefs2einc2fUnSetImgFilter"></a>
+<a name="robo133"></a><h2>CommonDefs.inc/UnSetImgFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Deactivates filtering stack
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>UnSetImgFilter</strong><span class="sign">(</span>_V<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> pwr - amount of filtered light/filter power
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fUnSetImgTransmit"></a>
+<a name="robo134"></a><h2>CommonDefs.inc/UnSetImgTransmit, SetImgTransmit, SetImgFilter, UnSetImgFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Deactivates transmit stack
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>UnSetImgTransmit</strong><span class="sign">(</span><span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   no inputs
+</pre>
+
+<hr />
+<a name="CommonDefs2einc2fUnSetMatt"></a>
+<a name="robo135"></a><h2>CommonDefs.inc/UnSetMatt, SetMatt, UnSetImgTransmit, SetImgTransmit, SetImgFilter, UnSetImgFilter [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">CommonDefs.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Deactivates texture for image background matt
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>UnSetMatt</strong><span class="sign">(</span><span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   no inputs
+</pre>
+
+</div> <!-- content -->
+<div id="footer">
+<p>Generated from ./Plot3Dv4/CommonDefs.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+</p>
+</div> <!-- footer -->
+</body>
+</html>

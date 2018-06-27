@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="./robodoc.css" type="text/css" />
+<title>./Plot3Dv4/Cameras.inc</title>
+<!-- Source: ./Plot3Dv4/Cameras.inc -->
+<!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
+</head>
+<body>
+<div id="logo">
+<a name="robo_top_of_doc">ScPovPlot3D Templates, written by Janusz Opiła</a>
+</div> <!-- logo -->
+<div id="navigation">
+<a class="menuitem" href="./toc_index.html#top">Table of Contents</a>
+<a class="menuitem" href="./sources.html#top">Source files</a>
+<a class="menuitem" href="./masterindex.html#top">Index Page</a>
+<a class="menuitem" href="./robo_POV_scene.html#top">Scene files</a>
+<a class="menuitem" href="./robo_projects.html#top">Project</a>
+<a class="menuitem" href="./robo_macros.html#top">Main macros</a>
+<a class="menuitem" href="./robo_constants.html#top">Constants</a>
+<a class="menuitem" href="./robo_helper.html#top">Helper macros</a>
+<a class="menuitem" href="./robo_modules.html#top">Modules</a>
+<a class="menuitem" href="./robo_type.html#top">Types used</a>
+<a class="menuitem" href="./robo_variables.html#top">Variables</a>
+</div> <!-- navigation -->
+<div id="content">
+<h3>TABLE OF CONTENTS</h3>
+<ul>
+<li>1. <a href="#robo5">ScPovPlot3D/Cameras.inc</a></li>
+<ul>
+<li>1.1. <a href="#robo42">Cameras.inc/BirdsEye</a></li>
+<li>1.2. <a href="#robo43">Cameras.inc/CameraLights</a></li>
+<li>1.3. <a href="#robo44">Cameras.inc/CameraOn</a></li>
+<li>1.4. <a href="#robo45">Cameras.inc/CameraSpher</a></li>
+<li>1.5. <a href="#robo46">Cameras.inc/CameraSpher0</a></li>
+<li>1.6. <a href="#robo47">Cameras.inc/CameraSpher1</a></li>
+<li>1.7. <a href="#robo48">Cameras.inc/CameraSpher2</a></li>
+<li>1.8. <a href="#robo49">Cameras.inc/InsertBarKeyFrItem</a></li>
+<li>1.9. <a href="#robo50">Cameras.inc/InsertBarKeyFrItemBelow</a></li>
+<li>1.10. <a href="#robo51">Cameras.inc/InsertBarKeyItem</a></li>
+<li>1.11. <a href="#robo52">Cameras.inc/InsertCylKeyItem</a></li>
+<li>1.12. <a href="#robo53">Cameras.inc/IntelligentEye</a></li>
+<li>1.13. <a href="#robo54">Cameras.inc/IntelligentEyeT</a></li>
+<li>1.14. <a href="#robo55">Cameras.inc/PrepareCamera</a></li>
+<li>1.15. <a href="#robo117">Cameras.inc/SetCameraAngle</a></li>
+<li>1.16. <a href="#robo118">Cameras.inc/SetCameraShift</a></li>
+<li>1.17. <a href="#robo119">Cameras.inc/SetCameraTarget</a></li>
+<li>1.18. <a href="#robo120">Cameras.inc/SetLabelWidth</a></li>
+<li>1.19. <a href="#robo121">Cameras.inc/SetOrthographic</a></li>
+<li>1.20. <a href="#robo122">Cameras.inc/SetPerspective</a></li>
+<li>1.21. <a href="#robo232">Cameras.inc/SceneMinX</a>, <a href="#robo232">SceneMaxX</a>, <a href="#robo232">SceneMinY</a>, <a href="#robo232">SceneMaxY</a>, <a href="#robo232">SceneMinZ</a>, <a href="#robo232">SceneMaxZ</a>, <a href="#robo232">CameraTarget</a>, <a href="#robo232">CameraShift</a>, <a href="#robo232">CameraAngle</a></li>
+</ul>
+</ul>
+<hr />
+<a name="ScPovPlot3D2fCameras2einc"></a>
+<a name="robo5"></a><h2>ScPovPlot3D/Cameras.inc [ Modules ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Very important toolkit defining some handy cameras
+   TODO: still a lot!
+<hr width=50% align="left">
+</p>
+<p class="item_name">VERSION</p>
+<p>  3.2.0.6, tested on PovRay 3.7.
+</p>
+<p class="item_name">AUTHOR</p>
+<p>  Janusz Opiła Ph.D.
+</p>
+<pre>   jmo{at}agh.edu.pl, janusz.opila{at}gmail.com
+   Dept. of Applied Informatics, 
+   <a href="https://www.facebook.com/KatedraInformatykiStosowanejWZAGH/">https://www.facebook.com/KatedraInformatykiStosowanejWZAGH/</a>
+   <a href="http://kis.zarz.agh.edu.pl/">http://kis.zarz.agh.edu.pl/</a>
+   AGH University of Science &amp; Technology, Cracow, Poland <a href="http://www.zarz.agh.edu.pl/English/index.asp">http://www.zarz.agh.edu.pl/English/index.asp</a>
+   Maintained by Janusz Opiła Ph.D.
+   Homepage: <a href="http://scpovplot3d.sourceforge.net">http://scpovplot3d.sourceforge.net</a>   
+</pre>
+<p></p>
+<p class="item_name">HISTORY</p>
+<p>  2016-10-12, v3.2.0.7, <a href="#robo54">IntelligentEyeT</a> - Target was not applied
+  2016-03-02, v3.2.0.6
+</p>
+<pre>    - light_source added in <a href="#robo49">InsertBarKeyFrItem</a>, <a href="#robo50">InsertBarKeyFrItemBelow</a> definition
+</pre>
+<p>  2016-02-12, v3.2.0.5 
+</p>
+<pre>    - InsertKeyItem macro evolved into two: <a href="#robo51">InsertBarKeyItem</a>, <a href="#robo52">InsertCylKeyItem</a>. Minor improvements.
+    - <a href="#robo232">CameraTarget</a> may be now re-setted.                     
+</pre>
+<p>  2016-02-02, v3.2.0.3 - added InsertKeyItem macro
+</p>
+<p class="item_name">COPYRIGHT</p>
+<pre>  GNU GPL v.3 License
+  (c) 2012-now by Janusz Opiła Ph.D.         
+  AGH University of Science and Technology
+</pre>
+
+<hr />
+<a name="Cameras2einc2fBirdsEye"></a>
+<a name="robo42"></a><h2>Cameras.inc/BirdsEye [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Bird eye camera.
+  Gets position based on given spline <a href="./TypesUsed_txt.html#robo212">Function</a> _Spl and vector parameter _s 
+  Bird looks down his trajectory. (NOW)
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>BirdsEye</strong> <span class="sign">(</span> _dst<span class="sign">,</span> _s <span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _Spl - spline <a href="./TypesUsed_txt.html#robo212">Function</a> - indirect
+  _dst - distance parameter       
+  _s   - camera position on the path 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo122">SetPerspective</a> ()
+  <a href="#robo121">SetOrthographic</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraLights"></a>
+<a name="robo43"></a><h2>Cameras.inc/CameraLights [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Addon lights (left&amp;right) connected with camera placed next to it oriented on point defined in <a href="#robo119">SetCameraTarget</a> macro.
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>CameraLights</strong> <span class="sign">(</span>_Dist<span class="sign">,</span> _sep<span class="sign">,</span> _col<span class="sign">,</span> _fan<span class="sign">,</span> _rd<span class="sign">)</span> 
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _Dist- target-light distance (may be different from camera-target)
+  _sep - separation between lights
+  _col - light color
+  _fan - falloff angle 
+  _rd  - halftone radius 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraOn"></a>
+<a name="robo44"></a><h2>Cameras.inc/CameraOn [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Element of main camera subsystem.
+  It tries to guess best position and viewing angle from the scene data and
+  tries to guess best target point and adjust it by <a href="#robo232">CameraShift</a>, see <a href="#robo118">SetCameraShift</a> ()
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><strong>CameraOn</strong> <span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> Dist<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  Dist - <a href="./TypesUsed_txt.html#robo211">float</a>: distance from Target if using perspective camera(SetPerpective () set)
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo122">SetPerspective</a> ()
+  <a href="#robo121">SetOrthographic</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraSpher"></a>
+<a name="robo45"></a><h2>Cameras.inc/CameraSpher [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  This Camera looks at point set by SetTarget macro
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>CameraSpher</strong> <span class="sign">(</span>lam<span class="sign">,</span> phi<span class="sign">,</span> r<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraSpher0"></a>
+<a name="robo46"></a><h2>Cameras.inc/CameraSpher0 [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  This Camera is placed in spherical ccordinates and looks at point set by <a href="#robo119">SetCameraTarget</a> macro. 
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>CameraSpher0</strong> <span class="sign">(</span>lam<span class="sign">,</span> phi<span class="sign">,</span> r<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraSpher1"></a>
+<a name="robo47"></a><h2>Cameras.inc/CameraSpher1 [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  This Camera is placed relative to point set by <a href="#robo119">SetCameraTarget</a> macro, and looks at it. 
+ SYNOPSIS */
+</p>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fCameraSpher2"></a>
+<a name="robo48"></a><h2>Cameras.inc/CameraSpher2 [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  This Camera is placed relative to point set by <a href="#robo119">SetCameraTarget</a> macro, and looks at it. 
+ SYNOPSIS */
+</p>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro, keeps moving toward object if "r" is negative, 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fInsertBarKeyFrItem"></a>
+<a name="robo49"></a><h2>Cameras.inc/InsertBarKeyFrItem [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Inserts legend key with right hand extended <a href="./TextExt_inc.html#robo81">Text</a> description. Uses perpendicular prism as legend key. 
+  MUST be inserted just after using SetRGBMap () macro, 
+  as it purposely utilizes internal variable _RGBMap to keep scene consistent!
+  As it uses Camera location data it must be used AFTER <a href="#robo55">PrepareCamera</a> () macro!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>InsertBarKeyFrItem</strong> <span class="sign">(</span> _Ts<span class="sign">,</span> _Ttext<span class="sign">,</span> _scf<span class="sign">,</span> _Krad<span class="sign">,</span> _vf<span class="sign">,</span> _frd <span class="sign">)</span> <span class="comment">// description, descr. texture, scal.factor, band wsdth, band. texture, position</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TextExt_inc.html#robo81">Text</a> - description, 
+  texture - description texture, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - <a href="./TextExt_inc.html#robo81">Text</a> scaling factor, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - legend key width, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - position counted from bottom (not percent of image height by NOW)
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  Legend key as POVRay object                                           
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  SetRGBMap<span class="sign">(</span>RGB5<span class="sign">)</span>
+<span class="sign">*</span>  <a href="#robo51">InsertBarKeyItem</a> <span class="sign">(</span> <span class="quote">"V(r)"</span><span class="sign">,</span> txMica<span class="sign">,</span> <span class="sign">.</span>09<span class="sign">,</span> <span class="sign">.</span>04<span class="sign">,</span> <span class="sign">.</span>054<span class="sign">)</span> 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo52">InsertCylKeyItem</a> 
+</p>
+
+<hr />
+<a name="Cameras2einc2fInsertBarKeyFrItemBelow"></a>
+<a name="robo50"></a><h2>Cameras.inc/InsertBarKeyFrItemBelow [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Inserts legend key with extended <a href="./TextExt_inc.html#robo81">Text</a> description BELOW, centered. Uses perpendicular prism as legend key. 
+  MUST be inserted just after using SetRGBMap () macro, 
+  as it purposely utilizes internal variable _RGBMap to keep scene consistent!
+  As it uses Camera location data it must be used AFTER <a href="#robo55">PrepareCamera</a> () macro!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>InsertBarKeyFrItemBelow</strong> <span class="sign">(</span> _Ts<span class="sign">,</span> _Ttext<span class="sign">,</span> _scf<span class="sign">,</span> _Krad<span class="sign">,</span> _vf<span class="sign">,</span> _frTxt<span class="sign">,</span> _frd <span class="sign">)</span> <span class="comment">// description, descr. texture, scal.factor, band wsdth, band. texture, position</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TextExt_inc.html#robo81">Text</a> - description, 
+  texture - description texture, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - <a href="./TextExt_inc.html#robo81">Text</a> scaling factor, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - legend key width, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - position counted from bottom (not percent of image height by NOW)
+  texture - "frame" texture
+  <a href="./TypesUsed_txt.html#robo211">float</a> - width of "frame" 
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  Legend key as POVRay object                                           
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  SetRGBMap<span class="sign">(</span>RGB5<span class="sign">)</span>
+<span class="sign">*</span>  <strong>InsertBarKeyFrItemBelow</strong> <span class="sign">(</span> <span class="quote">"V(r)"</span><span class="sign">,</span> txYellow<span class="sign">,</span> <span class="sign">.</span>09<span class="sign">,</span> <span class="sign">.</span>04<span class="sign">,</span> <span class="sign">.</span>054<span class="sign">,</span> txMica<span class="sign">,</span> <span class="sign">.</span>02<span class="sign">)</span> 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo52">InsertCylKeyItem</a> 
+</p>
+
+<hr />
+<a name="Cameras2einc2fInsertBarKeyItem"></a>
+<a name="robo51"></a><h2>Cameras.inc/InsertBarKeyItem [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Inserts legend key with right hand extended <a href="./TextExt_inc.html#robo81">Text</a> description. Uses perpendicular prism as legend key. 
+  MUST be inserted just after using SetRGBMap () macro, 
+  as it purposely utilizes internal variable _RGBMap to keep scene consistent!
+  As it uses Camera location data it must be used AFTER <a href="#robo55">PrepareCamera</a> () macro!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>InsertBarKeyItem</strong> <span class="sign">(</span> _Ts<span class="sign">,</span> _Ttext<span class="sign">,</span> _scf<span class="sign">,</span> _Krad<span class="sign">,</span> _vf <span class="sign">)</span> <span class="comment">// description, descr. texture, scal.factor, band wsdth, band. texture, position</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TextExt_inc.html#robo81">Text</a> - description, 
+  texture - description texture, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - <a href="./TextExt_inc.html#robo81">Text</a> scaling factor, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - legend key width, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - position counted from bottom (not percent of image height by NOW)
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  Legend key as POVRay object                                           
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  SetRGBMap<span class="sign">(</span>RGB5<span class="sign">)</span>
+<span class="sign">*</span>  <strong>InsertBarKeyItem</strong> <span class="sign">(</span> <span class="quote">"V(r)"</span><span class="sign">,</span> txMica<span class="sign">,</span> <span class="sign">.</span>09<span class="sign">,</span> <span class="sign">.</span>04<span class="sign">,</span> <span class="sign">.</span>054<span class="sign">)</span> 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo52">InsertCylKeyItem</a> 
+</p>
+
+<hr />
+<a name="Cameras2einc2fInsertCylKeyItem"></a>
+<a name="robo52"></a><h2>Cameras.inc/InsertCylKeyItem [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Inserts legend key with right hand extended <a href="./TextExt_inc.html#robo81">Text</a> description. Uses cylinder as legend key.
+  MUST be inserted just after using SetRGBMap () macro, 
+  as it purposely utilizes internal variable _RGBMap to keep scene consistent!
+  As it uses Camera location data it must be used AFTER <a href="#robo55">PrepareCamera</a> () macro!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>InsertCylKeyItem</strong> <span class="sign">(</span> _Ts<span class="sign">,</span> _Ttext<span class="sign">,</span> _scf<span class="sign">,</span> _Krad<span class="sign">,</span> _vf <span class="sign">)</span> <span class="comment">// description, descr. texture, scal.factor, band wsdth, band. texture, position</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TextExt_inc.html#robo81">Text</a> - description, 
+  texture - description texture, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - <a href="./TextExt_inc.html#robo81">Text</a> scaling factor, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - legend key width, 
+  <a href="./TypesUsed_txt.html#robo211">float</a> - position counted from bottom (not percent of image height by NOW)
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  Legend key as POVRay object                                           
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  SetRGBMap<span class="sign">(</span>RGB5<span class="sign">)</span>
+<span class="sign">*</span>  <strong>InsertCylKeyItem</strong> <span class="sign">(</span> <span class="quote">"V(r)"</span><span class="sign">,</span> txMica<span class="sign">,</span> <span class="sign">.</span>09<span class="sign">,</span> <span class="sign">.</span>04<span class="sign">,</span> <span class="sign">.</span>054<span class="sign">)</span> 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo51">InsertBarKeyItem</a> 
+</p>
+
+<hr />
+<a name="Cameras2einc2fIntelligentEye"></a>
+<a name="robo53"></a><h2>Cameras.inc/IntelligentEye [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  tries to guess best target point, NO adjustment to camera position
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><strong>IntelligentEye</strong> <span class="sign">(</span>lam<span class="sign">,</span> phi<span class="sign">,</span> r<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+  <a href="#robo54">IntelligentEyeT</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fIntelligentEyeT"></a>
+<a name="robo54"></a><h2>Cameras.inc/IntelligentEyeT [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  tries to guess best target point AND adjust camera position by <a href="#robo232">CameraShift</a> in REAL coords set by <a href="#robo118">SetCameraShift</a> () macro
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><strong>IntelligentEyeT</strong> <span class="sign">(</span>lam<span class="sign">,</span> phi<span class="sign">,</span> r<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  lam, phi, r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo53">IntelligentEye</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fPrepareCamera"></a>
+<a name="robo55"></a><h2>Cameras.inc/PrepareCamera [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Element of main camera subsystem. 
+  Ought to be placed before scene description as macros could be informed about camera position: 
+  this is for future smart and sophisticated extensions ;) Must be followed by call to <a href="#robo44">CameraOn</a> () macro
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>PrepareCamera</strong> <span class="sign">(</span>_lam<span class="sign">,</span> _phi<span class="sign">,</span> _r<span class="sign">)</span>
+  <span class="comment">// lam : longitude: angle from '-z' axis(PovRay) ie. 'x' axis in real world</span>
+  <span class="comment">// phi : angle above POvRay '-z*x' plane -&gt; X*Y plane in real world: latitude</span>
+  <span class="comment">// r   : distance from XYZ origin</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _lam, _phi, _r -  floats: longitude[deg], latitude[deg], distance from actual watch point [scene units] 
+                 possibly set/reset by <a href="#robo119">SetCameraTarget</a> () macro. If _r&lt;&gt;1 then SET <a href="#robo44">CameraOn</a> (r) with r=1!
+                 or unexpected behaviour may be observed.   
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo44">CameraOn</a> ()
+  <a href="#robo122">SetPerspective</a> ()
+  <a href="#robo121">SetOrthographic</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetCameraAngle"></a>
+<a name="robo117"></a><h2>Cameras.inc/SetCameraAngle [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  tries to guess best target point and adjust it by <a href="#robo232">CameraShift</a>, see <a href="#robo118">SetCameraShift</a>(ShftVec)
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetCameraAngle</strong> <span class="sign">(</span>_ang<span class="sign">)</span>   <span class="comment">// sets camera horizonta viewing angle</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  Angle - valid <a href="./TypesUsed_txt.html#robo211">float</a> expression in degrees
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetCameraShift"></a>
+<a name="robo118"></a><h2>Cameras.inc/SetCameraShift [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  shifts vector and adjust default LookAt point: <a href="#robo232">CameraTarget</a>=<a href="#robo232">CameraTarget</a>+<a href="#robo232">CameraShift</a> 
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetCameraShift</strong> <span class="sign">(</span>ShftVec<span class="sign">)</span> <span class="comment">// Shift vector adjust default LookAt point: <a href="#robo232">CameraTarget</a>=<a href="#robo232">CameraTarget</a>+<a href="#robo232">CameraShift</a></span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  ShftVec - valid 3D vector expression in REAL coordinates
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo119">SetCameraTarget</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetCameraTarget"></a>
+<a name="robo119"></a><h2>Cameras.inc/SetCameraTarget [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  defines point in space to watch on
+  WARNING: POVRay coordinates!
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetCameraTarget</strong> <span class="sign">(</span>XX<span class="sign">,</span> YY<span class="sign">,</span> ZZ<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  XX, YY, ZZ - POVRay coordinates of the target point
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo117">SetCameraAngle</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetLabelWidth"></a>
+<a name="robo120"></a><h2>Cameras.inc/SetLabelWidth [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  defines intended Label Width
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetLabelWidth</strong> <span class="sign">(</span>_LW<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  positive <a href="./TypesUsed_txt.html#robo211">float</a>
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  none
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetOrthographic"></a>
+<a name="robo121"></a><h2>Cameras.inc/SetOrthographic [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  defines orthografic camera
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><strong>SetOrthographic</strong> <span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> OSc<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  OSc - <a href="./TypesUsed_txt.html#robo211">float</a>: scaling factor
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo122">SetPerspective</a>  ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSetPerspective"></a>
+<a name="robo122"></a><h2>Cameras.inc/SetPerspective [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  defines perspective camera
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetPerspective</strong>  <span class="sign">(</span><span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  no inputs
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo121">SetOrthographic</a>  ()
+</p>
+
+<hr />
+<a name="Cameras2einc2fSceneMinX"></a>
+<a name="robo232"></a><h2>Cameras.inc/SceneMinX, SceneMaxX, SceneMinY, SceneMaxY, SceneMinZ, SceneMaxZ, CameraTarget, CameraShift, CameraAngle [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">Cameras.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Internal variables set by relevant macros or automatically by scene itself
+</p>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo119">SetCameraTarget</a> ()
+  <a href="#robo118">SetCameraShift</a> ()
+  <a href="#robo117">SetCameraAngle</a> ()
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>SceneMinX</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>        <span class="comment">// these variables defines bounding box for the whole scene</span>
+<span class="keyword">#declare</span> <strong>SceneMaxX</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>        <span class="comment">// they are utilized by some macros to determine camera parameters</span>
+<span class="keyword">#declare</span> <strong>SceneMinY</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>
+<span class="keyword">#declare</span> <strong>SceneMaxY</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>
+<span class="keyword">#declare</span> <strong>SceneMinZ</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>
+<span class="keyword">#declare</span> <strong>SceneMaxZ</strong>    <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span> 
+<span class="keyword">#declare</span> <strong>CameraAngle</strong>  <span class="sign">=</span>  35 <span class="sign">;</span>        <span class="comment">// camera viewing angle</span>
+<span class="keyword">#declare</span> CameraAngleSet <span class="sign">=</span> false<span class="sign">;</span>     <span class="comment">// default setting is "no explicit setting"</span>
+<span class="keyword">#declare</span> <strong>CameraTarget</strong> <span class="sign">=</span> <span class="sign">&lt;</span>0<span class="sign">,</span> 0<span class="sign">,</span> 0<span class="sign">&gt;</span><span class="sign">;</span>   <span class="comment">// virtual point Camera looks at</span>
+<span class="keyword">#declare</span> <strong>CameraShift</strong>  <span class="sign">=</span> <span class="sign">&lt;</span>0<span class="sign">,</span> 0<span class="sign">,</span> 0<span class="sign">&gt;</span><span class="sign">;</span>   <span class="comment">// additional shift in camera position</span>
+</pre>
+
+</div> <!-- content -->
+<div id="footer">
+<p>Generated from ./Plot3Dv4/Cameras.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+</p>
+</div> <!-- footer -->
+</body>
+</html>

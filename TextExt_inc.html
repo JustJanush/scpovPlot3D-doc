@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="./robodoc.css" type="text/css" />
+<title>./Plot3Dv4/TextExt.inc</title>
+<!-- Source: ./Plot3Dv4/TextExt.inc -->
+<!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
+</head>
+<body>
+<div id="logo">
+<a name="robo_top_of_doc">ScPovPlot3D Templates, written by Janusz Opiła</a>
+</div> <!-- logo -->
+<div id="navigation">
+<a class="menuitem" href="./toc_index.html#top">Table of Contents</a>
+<a class="menuitem" href="./sources.html#top">Source files</a>
+<a class="menuitem" href="./masterindex.html#top">Index Page</a>
+<a class="menuitem" href="./robo_POV_scene.html#top">Scene files</a>
+<a class="menuitem" href="./robo_projects.html#top">Project</a>
+<a class="menuitem" href="./robo_macros.html#top">Main macros</a>
+<a class="menuitem" href="./robo_constants.html#top">Constants</a>
+<a class="menuitem" href="./robo_helper.html#top">Helper macros</a>
+<a class="menuitem" href="./robo_modules.html#top">Modules</a>
+<a class="menuitem" href="./robo_type.html#top">Types used</a>
+<a class="menuitem" href="./robo_variables.html#top">Variables</a>
+</div> <!-- navigation -->
+<div id="content">
+<h3>TABLE OF CONTENTS</h3>
+<ul>
+<li>1. <a href="#robo20">ScPovPlot3D/TextExt.inc</a></li>
+<ul>
+<li>1.1. <a href="#robo81">TextExt.inc/Text</a></li>
+<li>1.2. <a href="#robo82">TextExt.inc/TextExt</a></li>
+<li>1.3. <a href="#robo83">TextExt.inc/UnicodifyPL</a></li>
+<li>1.4. <a href="#robo175">TextExt.inc/GetTextExtent</a></li>
+<li>1.5. <a href="#robo176">TextExt.inc/InsrtChr</a></li>
+<li>1.6. <a href="#robo177">TextExt.inc/Set_TFont</a>, <a href="#robo177">_FF</a></li>
+<li>1.7. <a href="#robo178">TextExt.inc/SetLDpth</a></li>
+<li>1.8. <a href="#robo179">TextExt.inc/SetSpcStub</a></li>
+<li>1.9. <a href="#robo180">TextExt.inc/TrimStr</a></li>
+<li>1.10. <a href="#robo181">TextExt.inc/TrimStrC</a></li>
+<li>1.11. <a href="#robo224">TextExt.inc/FormattingConstants</a></li>
+<li>1.12. <a href="#robo236">TextExt.inc/_ArNap</a></li>
+<li>1.13. <a href="#robo237">TextExt.inc/Fonts</a>, <a href="#robo237">_FLibera</a>, <a href="#robo237">_FCourierI</a>, <a href="#robo237">_FTimes</a>, <a href="#robo237">_FSegoa</a>, <a href="#robo237">_FArialUni</a>, <a href="#robo237">_FArialRond</a>, <a href="#robo237">_FCooper</a>, <a href="#robo237">_FCorsiva</a></li>
+<li>1.14. <a href="#robo238">TextExt.inc/SubSupScale</a>, <a href="#robo238">SubShift</a>, <a href="#robo238">SupShift</a>, <a href="#robo238">UpPos</a>, <a href="#robo238">DnPos</a>, <a href="#robo238">SpcStub</a>, <a href="#robo238">_DotScalingFactor</a>, <a href="#robo238">_Dp</a>, <a href="#robo238">_HCur</a>, <a href="#robo238">_VCur</a>, <a href="#robo238">_TLen</a>, <a href="#robo238">_RFac</a>, <a href="#robo238">__Cnt</a></li>
+<li>1.15. <a href="#robo239">TextExt.inc/UTFCodes</a></li>
+</ul>
+</ul>
+<hr />
+<a name="ScPovPlot3D2fTextExt2einc"></a>
+<a name="robo20"></a><h2>ScPovPlot3D/TextExt.inc [ Modules ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   <a href="#robo81">Text</a> object extensions,
+</p>
+<pre>     <img src="./imgs/StringsUTF.jpg">
+</pre>
+<p>
+   Fig.[<a href="#robo82">TextExt</a>] Example of implementation of this module. At top <a href="#robo81">Text</a> containing
+   polish national characters is displayed. Do not even try to pronounciate it ;)
+<hr width=50% align="left">
+</p>
+<p class="item_name">VERSION</p>
+<p>  3.2.0.4, tested on PovRay 3.7.
+</p>
+<p class="item_name">AUTHOR</p>
+<p>  Janusz Opiła Ph.D.
+</p>
+<pre>   jmo{at}agh.edu.pl, janusz.opila{at}gmail.com
+   Dept. of Applied Informatics,
+   <a href="https://www.facebook.com/KatedraInformatykiStosowanejWZAGH/">https://www.facebook.com/KatedraInformatykiStosowanejWZAGH/</a>
+   <a href="http://kis.zarz.agh.edu.pl/">http://kis.zarz.agh.edu.pl/</a>
+   AGH University of Science &amp; Technology, Cracow, Poland <a href="http://www.zarz.agh.edu.pl/English/index.asp">http://www.zarz.agh.edu.pl/English/index.asp</a>
+   Maintained by Janusz Opiła Ph.D.
+   Homepage: <a href="http://scpovplot3d.sourceforge.net">http://scpovplot3d.sourceforge.net</a>
+</pre>
+<p></p>
+<p class="item_name">HISTORY</p>
+<p>  2018-02-03, 'tau' added
+  2017-09-25, some german "umlauts" added 
+  2017-04-12, 'Ż' letter corrected, minor changes
+  2017-02-03, macro added <a href="#robo175">GetTextExtent</a>() - returns appr. horizontal <a href="#robo81">Text</a> size
+  2016-02-17, 3.2.0.3 - nabla unicode character correction
+  2016-01-29, 3.2.0.2 - macros <a href="#robo180">TrimStr</a>(), <a href="#robo181">TrimStrC</a>() added.
+  2016-01-28, 3.2.0.1 - minor corrections, added some symbols
+</p>
+<p class="item_name">COPYRIGHT</p>
+<pre>  GNU GPL v.3 License
+  (c) 2012-now by Janusz Opiła Ph.D.
+  AGH University of Science and Technology
+</pre>
+
+<hr />
+<a name="TextExt2einc2fText"></a>
+<a name="robo81"></a><h2>TextExt.inc/Text [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Recursively parses <a href="./TypesUsed_txt.html#robo219">string</a>  _Nap passed to makro and returns part of it but with super-scripts inserted as solitary characters
+</p>
+<pre>   front-end to parsing macro
+   REMARK: This should work as expected with ANY font
+   Usage: Formats <a href="./TypesUsed_txt.html#robo219">string</a> due to special sequences
+   Ex: prepend subscript with underscore "_", longer subscripts enclose in curly paranthesis _{j,i_2} and so on
+</pre>
+<p></p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>Text</strong><span class="sign">(</span> _Nap <span class="sign">)</span> <span class="comment">// front-end to <a href="#robo82">TextExt</a>() macro</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _Nap - <a href="./TypesUsed_txt.html#robo219">string</a> to parse, returns remainder of non parsed input.
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo83">UnicodifyPL</a> ()
+</p>
+
+<hr />
+<a name="TextExt2einc2fTextExt"></a>
+<a name="robo82"></a><h2>TextExt.inc/TextExt [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Recursively parses <a href="./TypesUsed_txt.html#robo219">string</a>  _Nap passed to makro and returns part of it but with super-scripts inserted as solitary characters
+</p>
+<pre>   Usually one don't need to use this macro directly. It is designed to be called indirectly by <a href="#robo81">Text</a> () front macro.
+   REMARK: This should work as expected with ANY font.
+   Usage: Formats <a href="./TypesUsed_txt.html#robo219">string</a> due to escape sequences
+   Prepend subscript with underscore "_", longer subscripts enclose in curly paranthesis _{j,i_2} and so on
+   works recursively
+</pre>
+<p></p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>TextExt</strong><span class="sign">(</span> _ps<span class="sign">,</span> _hc<span class="sign">,</span> _vc<span class="sign">,</span> _sc<span class="sign">)</span>
+<span class="comment">// <a href="./TypesUsed_txt.html#robo219">string</a> to parse is stored in a global array, see INPUTS section</span>
+<span class="comment">// character - any UTF character</span>
+<span class="comment">// <a href="#robo81">Text</a> = [["" | "{" | "#" | character ] | ... ]</span>
+<span class="comment">//  # command prefix</span>
+<span class="comment">// ## - '#' itself</span>
+<span class="comment">// #v - make FOLLOWING character or characters enclosed in curly brackets {} a vector ex. #vF - Force vector</span>
+<span class="comment">// `  - /left apostrophe/ - accented letter (polish 'š' for example)</span>
+<span class="comment">// {}</span>
+<span class="comment">// ^</span>
+<span class="comment">// _</span>
+<span class="comment">// |   - short space</span>
+<span class="comment">// " " - regular space</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _ps  - <a href="./TypesUsed_txt.html#robo219">string</a> to parse is stored in global array _ArrNap[], returns (by ref) position of next <a href="./TypesUsed_txt.html#robo206">char</a>, to  parse
+  _hc  - horizontal position of cursor
+  _vc  - vertical position of cursor
+  _sc  - local size modifier. Final size of <a href="#robo81">Text</a> should be set in scene file (presumedly by scale&lt;&gt; statement ).
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo83">UnicodifyPL</a> ()
+  <a href="#robo81">Text</a> ()
+</p>
+
+<hr />
+<a name="TextExt2einc2fUnicodifyPL"></a>
+<a name="robo83"></a><h2>TextExt.inc/UnicodifyPL [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Parses <a href="./TypesUsed_txt.html#robo219">string</a>  _In passed to makro and returns copy of it as _Out with subscripts inserted
+</p>
+<pre>   WARNING: not every font defines polish "Ogonki".
+   WARNING2: this is rather obsolete
+   Usage: prepend each polish national character changed to latin
+   base with " ` " (left apostrophe). Ex. "Ż" =&gt;    "`Z"
+   To insert left apostrophe just put it in twice: "``" =&gt; "`"
+</pre>
+<p></p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>UnicodifyPL</strong><span class="sign">(</span>_In<span class="sign">)</span> <span class="comment">// ~a =&gt; š and so on.</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _In - <a href="./TypesUsed_txt.html#robo219">string</a> to parse, returns result of parsing as well
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo81">Text</a> ()
+</p>
+
+<hr />
+<a name="TextExt2einc2fGetTextExtent"></a>
+<a name="robo175"></a><h2>TextExt.inc/GetTextExtent [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Returns horizontal (x-axis) <a href="#robo81">Text</a> block extent in POV units
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>GetTextExtent</strong><span class="sign">(</span><span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  None
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  None
+</p>
+
+<hr />
+<a name="TextExt2einc2fInsrtChr"></a>
+<a name="robo176"></a><h2>TextExt.inc/InsrtChr [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Inserts single <a href="./TypesUsed_txt.html#robo206">char</a> into scene "as is" without processing
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>InsrtChr</strong><span class="sign">(</span>_Cc<span class="sign">,</span> _hc<span class="sign">,</span> _vc<span class="sign">,</span> _sc<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _Cc - single character <a href="./TypesUsed_txt.html#robo219">string</a> to put, returns result of parsing as well
+  _hc - horizonatl cursor
+  _vc - vertical cursor
+  _sc - scaling factor
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  ParseText ()
+</p>
+
+<hr />
+<a name="TextExt2einc2fSet5fTFont"></a>
+<a name="robo177"></a><h2>TextExt.inc/Set_TFont, _FF [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Defines font for textual elements of the scene
+</p>
+<pre>    WARNING: Font must exist in the host operating system
+    default setting "arial.ttf" should be safe on Windows, as well as on some GNU/Linux distros
+    You may also use Helvetica on GNU\Linux systems, as it should exist by default
+</pre>
+<p></p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>_FF</strong>  <span class="sign">=</span> _FArial<span class="sign">;</span> <span class="comment">// Default font for texts object handled by this tool macros set</span>
+<span class="keyword">#macro</span> <strong>Set_TFont</strong><span class="sign">(</span>_TxtFnt<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <strong>_FF</strong> - <a href="./TypesUsed_txt.html#robo219">string</a> containing name of the font, ex. "Arial.ttf"
+
+  WARNING: One have to use it BEFORE parsing call to <a href="#robo81">Text</a>() macros!
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./Histogram_inc.html#robo139">Set_TextFont</a> ()
+</p>
+
+<hr />
+<a name="TextExt2einc2fSetLDpth"></a>
+<a name="robo178"></a><h2>TextExt.inc/SetLDpth [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Sets "depth" of the <a href="#robo81">Text</a> object
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetLDpth</strong><span class="sign">(</span>_d <span class="sign">)</span> <span class="comment">// <a href="./TypesUsed_txt.html#robo219">string</a> _spc declares depth of character(s)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _d - positive <a href="./TypesUsed_txt.html#robo211">float</a>
+</pre>
+
+<hr />
+<a name="TextExt2einc2fSetSpcStub"></a>
+<a name="robo179"></a><h2>TextExt.inc/SetSpcStub [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Sets character imitiating 'space'
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetSpcStub</strong><span class="sign">(</span>_spc <span class="sign">)</span> <span class="comment">// <a href="./TypesUsed_txt.html#robo219">string</a> _spc declares space width character(s)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo219">string</a> _spc - may be "-" or "."  or even "asd"
+</pre>
+
+<hr />
+<a name="TextExt2einc2fTrimStr"></a>
+<a name="robo180"></a><h2>TextExt.inc/TrimStr [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Removes trailing spaces from the <a href="./TypesUsed_txt.html#robo219">string</a> passed.
+  Spaces are expected before and after the core <a href="#robo81">Text</a>.
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>TrimStr</strong> <span class="sign">(</span> _s <span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo219">string</a> - <a href="#robo81">Text</a> to deal with.
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo219">string</a> - stripped <a href="#robo81">Text</a>.
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  <span class="keyword">#declare</span> SomeStr <span class="sign">=</span> <span class="quote">"    ABC DE  "</span><span class="sign">;</span>
+<span class="sign">*</span>  <span class="keyword">#declare</span> SomeStr <span class="sign">=</span> <strong>TrimStr</strong><span class="sign">(</span>SomeStr<span class="sign">)</span><span class="sign">;</span>
+<span class="sign">*</span>  Now <a href="./TypesUsed_txt.html#robo219">string</a> SomeStr equals<span class="sign">:</span> <span class="quote">"ABC DE"</span><span class="sign">.</span> Intern spaces are preserved<span class="sign">.</span>
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo181">TrimStrC</a>
+</p>
+
+<hr />
+<a name="TextExt2einc2fTrimStrC"></a>
+<a name="robo181"></a><h2>TextExt.inc/TrimStrC [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Removes trailing spaces from the <a href="./TypesUsed_txt.html#robo219">string</a> passed.
+  Spaces are expected before and after the core <a href="#robo81">Text</a>.
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>TrimStrC</strong> <span class="sign">(</span> _s<span class="sign">,</span> _c <span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo219">string</a> - <a href="#robo81">Text</a> to deal with.
+  <a href="./TypesUsed_txt.html#robo206">char</a>   - charcter to skip over
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo219">string</a> - stripped <a href="#robo81">Text</a>.
+</pre>
+<p class="item_name">EXAMPLE</p>
+<pre class="source"><span class="sign">*</span>  <span class="keyword">#declare</span> SomeStr <span class="sign">=</span> <span class="quote">"    ABC DE  "</span><span class="sign">;</span>
+<span class="sign">*</span>  <span class="keyword">#declare</span> SomeStr <span class="sign">=</span> <a href="#robo180">TrimStr</a><span class="sign">(</span>SomeStr<span class="sign">)</span><span class="sign">;</span>
+<span class="sign">*</span>  Now <a href="./TypesUsed_txt.html#robo219">string</a> SomeStr equals<span class="sign">:</span> <span class="quote">"ABC DE"</span><span class="sign">.</span> Intern spaces are preserved<span class="sign">.</span>
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo180">TrimStr</a>
+</p>
+
+<hr />
+<a name="TextExt2einc2fFormattingConstants"></a>
+<a name="robo224"></a><h2>TextExt.inc/FormattingConstants [ Constants ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_constants.html#robo_top_of_doc">Constants</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Escape sequences for parsing subsystem. Introductory stage, no debugging messages!
+</p>
+
+<p>   WARNING: may change in next releases (but i hope don't)!
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">// `a  - (LEFT apostrophe) 'ogonkified' letter - here polish accented as of now</span>
+<span class="comment">//  _  - sub-script next character</span>
+<span class="comment">//  ^  - super-script next character</span>
+<span class="comment">// { } - block of super/sub-script (direct brackets on regular line)</span>
+<span class="comment">// .   - inserts dot. Surprised? Utilizes superellipsoid object on regular line, raw dot in indexes.</span>
+<span class="comment">// " " - regular space (just hit 'Space')</span>
+<span class="comment">//  `| - vertical bar in indexes, but..</span>
+<span class="comment">//  |  - short space on regular line</span>
+<span class="comment">// double `` means single `  (not in super/sub-script)</span>
+<span class="comment">// double ^^ means single ^  (not in super/sub-script)</span>
+<span class="comment">// double \\ means single \</span>
+<span class="comment">//   you can also insert magic codes defined above as _pi_</span>
+<span class="comment">//   but you need to use concat() <a href="./TypesUsed_txt.html#robo212">Function</a> to succeed</span>
+</pre>
+
+<hr />
+<a name="TextExt2einc2f5fArNap"></a>
+<a name="robo236"></a><h2>TextExt.inc/_ArNap [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Helper variable stores <a href="./TypesUsed_txt.html#robo219">string</a> parsed
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>_ArNap</strong> <span class="sign">=</span> array<span class="sign">[</span>1<span class="sign">]</span><span class="sign">;</span>
+</pre>
+
+<hr />
+<a name="TextExt2einc2fFonts"></a>
+<a name="robo237"></a><h2>TextExt.inc/Fonts, _FLibera, _FCourierI, _FTimes, _FSegoa, _FArialUni, _FArialRond, _FCooper, _FCorsiva [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Helper variables
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>_FLibera</strong>    <span class="sign">=</span> <span class="quote">"LiberationMono-Regular.ttf"</span><span class="sign">;</span>   <span class="comment">// Liberation Mono, Regular</span>
+<span class="keyword">#declare</span> <strong>_FCourierI</strong>  <span class="sign">=</span> <span class="quote">"couri.ttf"</span><span class="sign">;</span>                   <span class="comment">// italic Courier</span>
+<span class="keyword">#declare</span> <strong>_FTimes</strong>     <span class="sign">=</span> <span class="quote">"times.ttf"</span><span class="sign">;</span>                   <span class="comment">// Times New Roman</span>
+<span class="keyword">#declare</span> <strong>_FSegoa</strong>     <span class="sign">=</span> <span class="quote">"segoesc.ttf"</span><span class="sign">;</span>                 <span class="comment">// Segoa</span>
+<span class="keyword">#declare</span> <strong>_FArialUni</strong>  <span class="sign">=</span> <span class="quote">"arialuni.ttf"</span><span class="sign">;</span>                <span class="comment">// Arial - Unicode</span>
+<span class="keyword">#declare</span> _FArial     <span class="sign">=</span> <span class="quote">"arial.ttf"</span><span class="sign">;</span>                   <span class="comment">// Arial - regular - no PL signs ;c</span>
+<span class="keyword">#declare</span> <strong>_FArialRond</strong> <span class="sign">=</span> <span class="quote">"ARLRDBD.TTF"</span>                  <span class="comment">// Arial Rounded MT Bold - no PL signs ;c</span>
+<span class="keyword">#declare</span> <strong>_FCooper</strong>    <span class="sign">=</span> <span class="quote">"COOPBL.TTF"</span><span class="sign">;</span>                  <span class="comment">// Cooper Black - no PL signs ;c</span>
+<span class="keyword">#declare</span> <strong>_FCorsiva</strong>   <span class="sign">=</span> <span class="quote">"MTCORSVA.TTF"</span><span class="sign">;</span>                <span class="comment">// MonoType Corsiva</span>
+<span class="comment">//----- shall be continued....</span>
+</pre>
+
+<hr />
+<a name="TextExt2einc2fSubSupScale"></a>
+<a name="robo238"></a><h2>TextExt.inc/SubSupScale, SubShift, SupShift, UpPos, DnPos, SpcStub, _DotScalingFactor, _Dp, _HCur, _VCur, _TLen, _RFac, __Cnt [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Helper variables
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>SubSupScale</strong> <span class="sign">=</span> 0<span class="sign">.</span>7<span class="sign">;</span>  <span class="comment">// lower and upper indexes are scaled by this factor from base font.</span>
+<span class="keyword">#declare</span> <strong>SubShift</strong>    <span class="sign">=</span> 0<span class="sign">.</span>3<span class="sign">;</span>  <span class="comment">// relative down shift of subscripts</span>
+<span class="keyword">#declare</span> <strong>SupShift</strong>    <span class="sign">=</span> 0<span class="sign">.</span>8<span class="sign">;</span>  <span class="comment">// relative up shift of superscripts</span>
+<span class="keyword">#declare</span> <strong>UpPos</strong>       <span class="sign">=</span>  <strong>SupShift</strong><span class="sign">;</span>  <span class="comment">// vertical position of cursor - superscripts</span>
+<span class="keyword">#declare</span> <strong>DnPos</strong>       <span class="sign">=</span> <span class="sign">-</span><strong>SubShift</strong><span class="sign">;</span>  <span class="comment">// vertical position of cursor - subscripts</span>
+<span class="keyword">#declare</span> <strong>_Dp</strong>         <span class="sign">=</span> 0<span class="sign">.</span>1<span class="sign">;</span>        <span class="comment">// Depth of characters</span>
+<span class="keyword">#declare</span> <strong>SpcStub</strong>     <span class="sign">=</span> <span class="quote">"-"</span><span class="sign">;</span>         <span class="comment">// default fake space character</span>
+<span class="keyword">#declare</span> <strong>_DotScalingFactor</strong> <span class="sign">=</span> 0<span class="sign">.</span>75<span class="sign">;</span> <span class="comment">// "dot" size. You don't need to change this - usually.</span>
+<span class="keyword">#declare</span> <strong>_HCur</strong> <span class="sign">=</span> 0<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// current horizontal position of cursor</span>
+<span class="keyword">#declare</span> <strong>_VCur</strong> <span class="sign">=</span> 0<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// current vertical position of cursor</span>
+<span class="keyword">#declare</span> _TLn  <span class="sign">=</span> 0<span class="sign">;</span>    <span class="comment">// length of <a href="./TypesUsed_txt.html#robo219">string</a> parsed constant during parsing</span>
+<span class="keyword">#declare</span> <strong>_RFac</strong> <span class="sign">=</span> 0<span class="sign">.</span>69<span class="sign">;</span> <span class="comment">// reduction factor for indexes</span>
+<span class="keyword">#declare</span> <strong>__Cnt</strong> <span class="sign">=</span> 0<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// accounts calls to ParseNext() macro as POVRay doesn't implements "static" variables</span>
+<span class="keyword">#declare</span> __BCnt<span class="sign">=</span> 0<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// {} block level counter</span>
+<span class="keyword">#declare</span> _tbox <span class="sign">=</span> 0<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// size of parsed <a href="#robo81">Text</a> block</span>
+</pre>
+
+<hr />
+<a name="TextExt2einc2fUTFCodes"></a>
+<a name="robo239"></a><h2>TextExt.inc/UTFCodes [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">TextExt.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Constants with UTF codes of some common characters including polish national characters. Depends on existence of definition of given glyph.
+</p>
+
+<p>   Description in comments.
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">//==========[ PL_pl 'ogonki' ]==========</span>
+<span class="keyword">#declare</span> _a_   <span class="sign">=</span> <span class="quote">"\u0105"</span><span class="sign">;</span>  <span class="comment">// š</span>
+<span class="keyword">#declare</span> _A_   <span class="sign">=</span> <span class="quote">"\u0104"</span><span class="sign">;</span>  <span class="comment">// Ľ</span>
+<span class="keyword">#declare</span> _c_   <span class="sign">=</span> <span class="quote">"\u0107"</span><span class="sign">;</span>  <span class="comment">// ć</span>
+<span class="keyword">#declare</span> _C_   <span class="sign">=</span> <span class="quote">"\u0106"</span><span class="sign">;</span>  <span class="comment">// Ć</span>
+<span class="keyword">#declare</span> _e_   <span class="sign">=</span> <span class="quote">"\u0119"</span><span class="sign">;</span>  <span class="comment">// ę</span>
+<span class="keyword">#declare</span> _E_   <span class="sign">=</span> <span class="quote">"\u0118"</span><span class="sign">;</span>  <span class="comment">// Ę</span>
+<span class="keyword">#declare</span> _l_   <span class="sign">=</span> <span class="quote">"\u0142"</span><span class="sign">;</span>  <span class="comment">// ł</span>
+<span class="keyword">#declare</span> _L_   <span class="sign">=</span> <span class="quote">"\u0141"</span><span class="sign">;</span>  <span class="comment">// Ł</span>
+<span class="keyword">#declare</span> _n_   <span class="sign">=</span> <span class="quote">"\u0144"</span><span class="sign">;</span>  <span class="comment">// ń</span>
+<span class="keyword">#declare</span> _N_   <span class="sign">=</span> <span class="quote">"\u0143"</span><span class="sign">;</span>  <span class="comment">// Ń</span>
+<span class="keyword">#declare</span> _o_   <span class="sign">=</span> <span class="quote">"\u00F3"</span><span class="sign">;</span>  <span class="comment">// ó</span>
+<span class="keyword">#declare</span> _O_   <span class="sign">=</span> <span class="quote">"\u00D3"</span><span class="sign">;</span>  <span class="comment">// Ó</span>
+<span class="keyword">#declare</span> _s_   <span class="sign">=</span> <span class="quote">"\u015B"</span><span class="sign">;</span>  <span class="comment">// </span>
+<span class="keyword">#declare</span> _S_   <span class="sign">=</span> <span class="quote">"\u015A"</span><span class="sign">;</span>  <span class="comment">// </span>
+<span class="keyword">#declare</span> _X_   <span class="sign">=</span> <span class="quote">"\u0179"</span><span class="sign">;</span>  <span class="comment">// </span>
+<span class="keyword">#declare</span> _x_   <span class="sign">=</span> <span class="quote">"\u017A"</span><span class="sign">;</span>  <span class="comment">// </span>
+<span class="keyword">#declare</span> _Z_   <span class="sign">=</span> <span class="quote">"\u017B"</span><span class="sign">;</span>  <span class="comment">// Ż</span>
+<span class="keyword">#declare</span> _z_   <span class="sign">=</span> <span class="quote">"\u017C"</span><span class="sign">;</span>  <span class="comment">// ż</span>
+<span class="comment">// selected DE</span>
+<span class="keyword">#declare</span> _u_   <span class="sign">=</span> <span class="quote">"\u00FC"</span><span class="sign">;</span>  <span class="comment">// ü</span>
+<span class="keyword">#declare</span> _U_   <span class="sign">=</span> <span class="quote">"\u00DC"</span><span class="sign">;</span>  <span class="comment">// Ü</span>
+<span class="keyword">#declare</span> _oe_  <span class="sign">=</span> <span class="quote">"\u00F6"</span><span class="sign">;</span>  <span class="comment">// ö</span>
+<span class="keyword">#declare</span> _OE_  <span class="sign">=</span> <span class="quote">"\u00D6"</span><span class="sign">;</span>  <span class="comment">// Ö</span>
+
+
+<span class="comment">//</span>
+<span class="keyword">#declare</span> _at_     <span class="sign">=</span> <span class="quote">"\u0040"</span><span class="sign">;</span>  <span class="comment">// @</span>
+<span class="keyword">#declare</span> _spc_    <span class="sign">=</span> <span class="quote">"\u0020"</span><span class="sign">;</span>  <span class="comment">// just Space</span>
+<span class="keyword">#declare</span> _Ao_     <span class="sign">=</span> <span class="quote">"\u00C5"</span><span class="sign">;</span>  <span class="comment">// Angstrem</span>
+<span class="keyword">#declare</span> _mu_     <span class="sign">=</span> <span class="quote">"\u00B5"</span><span class="sign">;</span>  <span class="comment">// greek mu</span>
+<span class="keyword">#declare</span> _cdot_   <span class="sign">=</span> <span class="quote">"\u00B7"</span><span class="sign">;</span>  <span class="comment">// multiplication sign</span>
+<span class="keyword">#declare</span> _pi_     <span class="sign">=</span> <span class="quote">"\u03C0"</span><span class="sign">;</span>  <span class="comment">// pi sign</span>
+<span class="keyword">#declare</span> _ro_     <span class="sign">=</span> <span class="quote">"\u03C1"</span><span class="sign">;</span>  <span class="comment">// rho</span>
+<span class="keyword">#declare</span> _tau_    <span class="sign">=</span> <span class="quote">"\u03C4"</span><span class="sign">;</span>  <span class="comment">// tau</span>
+<span class="keyword">#declare</span> _deg_    <span class="sign">=</span> <span class="quote">"\u00B0"</span><span class="sign">;</span>  <span class="comment">// degree sign</span>
+<span class="keyword">#declare</span> _par_    <span class="sign">=</span> <span class="quote">"\u00A7"</span><span class="sign">;</span>  <span class="comment">// paragraph §</span>
+<span class="keyword">#declare</span> _promil_ <span class="sign">=</span> <span class="quote">"\u2030"</span><span class="sign">;</span>  <span class="comment">// promile </span>
+
+<span class="comment">// these symbols may depend on font applied</span>
+<span class="keyword">#declare</span> _inSet_  <span class="sign">=</span> <span class="quote">"\u2208"</span><span class="sign">;</span>  <span class="comment">// belongs to the set</span>
+<span class="keyword">#declare</span> _diff_   <span class="sign">=</span> <span class="quote">"\u00B9"</span><span class="sign">;</span>  <span class="comment">// difference (as in "2 different from 3")</span>
+<span class="keyword">#declare</span> _BgDt_   <span class="sign">=</span> <span class="quote">"\u00B7"</span><span class="sign">;</span>  <span class="comment">// the big DOT</span>
+<span class="keyword">#declare</span> _idnt_   <span class="sign">=</span> <span class="quote">"\u00BA"</span><span class="sign">;</span>  <span class="comment">// identity</span>
+<span class="keyword">#declare</span> _LePa_   <span class="sign">=</span> <span class="quote">"\uFD3E"</span><span class="sign">;</span>  <span class="comment">// big Ornate left parenthesis</span>
+<span class="keyword">#declare</span> _RiPa_   <span class="sign">=</span> <span class="quote">"\uFD3F"</span><span class="sign">;</span>  <span class="comment">// big Ornate right parenthesis</span>
+<span class="keyword">#declare</span> _inf_    <span class="sign">=</span> <span class="quote">"\u221E"</span><span class="sign">;</span>  <span class="comment">// infinity symbol</span>
+<span class="keyword">#declare</span> _plumin_ <span class="sign">=</span> <span class="quote">"\u00B1"</span><span class="sign">;</span>  <span class="comment">// plus/minus ą</span>
+<span class="keyword">#declare</span> _fromTo_ <span class="sign">=</span> <span class="quote">"\u00F7"</span><span class="sign">;</span>  <span class="comment">// from-to math symbol, AKA division operator</span>
+<span class="keyword">#declare</span> _nabla_  <span class="sign">=</span> <span class="quote">"\u2207"</span><span class="sign">;</span>  <span class="comment">// nabla operator (gradient, divergence)</span>
+<span class="keyword">#declare</span> _pdiff_  <span class="sign">=</span> <span class="quote">"\u2202"</span><span class="sign">;</span>  <span class="comment">// partial difference</span>
+<span class="keyword">#declare</span> _nabl2_  <span class="sign">=</span> <span class="quote">"\u2206"</span><span class="sign">;</span>  <span class="comment">// Laplace operator (nabla^2)</span>
+
+<span class="comment">// currencies (dollar is simply '$')</span>
+<span class="keyword">#declare</span> _pnd_ <span class="sign">=</span> <span class="quote">"\u00A3"</span><span class="sign">;</span> <span class="comment">// Pound sign</span>
+<span class="keyword">#declare</span> _yen_ <span class="sign">=</span> <span class="quote">"\u00A5"</span><span class="sign">;</span> <span class="comment">// Yen sign</span>
+<span class="keyword">#declare</span> _eur_ <span class="sign">=</span> <span class="quote">"\u20AC"</span><span class="sign">;</span> <span class="comment">// EURo sign</span>
+
+<span class="comment">// selected superscripts</span>
+<span class="keyword">#declare</span> _0p_  <span class="sign">=</span> <span class="quote">"\u2070"</span><span class="sign">;</span> <span class="comment">// upper index '0' (power '0')</span>
+<span class="keyword">#declare</span> _1p_  <span class="sign">=</span> <span class="quote">"\u00B9"</span><span class="sign">;</span> <span class="comment">// upper index '1' (ex. as in valence value in chemistry)</span>
+<span class="keyword">#declare</span> _2p_  <span class="sign">=</span> <span class="quote">"\u00B2"</span><span class="sign">;</span> <span class="comment">// power '2'</span>
+<span class="keyword">#declare</span> _3p_  <span class="sign">=</span> <span class="quote">"\u00B3"</span><span class="sign">;</span> <span class="comment">// power '3'</span>
+<span class="keyword">#declare</span> _4p_  <span class="sign">=</span> <span class="quote">"\u2074"</span><span class="sign">;</span> <span class="comment">// power '4'</span>
+<span class="keyword">#declare</span> _5p_  <span class="sign">=</span> <span class="quote">"\u2075"</span><span class="sign">;</span> <span class="comment">// power '5'</span>
+<span class="keyword">#declare</span> _6p_  <span class="sign">=</span> <span class="quote">"\u2076"</span><span class="sign">;</span> <span class="comment">// power '6'</span>
+<span class="keyword">#declare</span> _7p_  <span class="sign">=</span> <span class="quote">"\u2077"</span><span class="sign">;</span> <span class="comment">// power '7'</span>
+<span class="keyword">#declare</span> _8p_  <span class="sign">=</span> <span class="quote">"\u2078"</span><span class="sign">;</span> <span class="comment">// power '8'</span>
+<span class="keyword">#declare</span> _9p_  <span class="sign">=</span> <span class="quote">"\u2079"</span><span class="sign">;</span> <span class="comment">// power '9' // in fact rarely met</span>
+<span class="keyword">#declare</span> _ip_  <span class="sign">=</span> <span class="quote">"\u2071"</span><span class="sign">;</span> <span class="comment">// power 'i'</span>
+<span class="keyword">#declare</span> _np_  <span class="sign">=</span> <span class="quote">"\u207F"</span><span class="sign">;</span> <span class="comment">// power 'n'</span>
+
+<span class="comment">// quotients</span>
+<span class="keyword">#declare</span> _14_  <span class="sign">=</span> <span class="quote">"\u00BC"</span><span class="sign">;</span> <span class="comment">//  1/4 one quarter</span>
+<span class="keyword">#declare</span> _12_  <span class="sign">=</span> <span class="quote">"\u00BD"</span><span class="sign">;</span> <span class="comment">//  1/2 one half</span>
+<span class="keyword">#declare</span> _34_  <span class="sign">=</span> <span class="quote">"\u00BE"</span><span class="sign">;</span> <span class="comment">//  3/4 three quarter</span>
+
+<span class="comment">// digits and selected subscripts (tiny letters )</span>
+<span class="keyword">#declare</span> _0s_ <span class="sign">=</span> <span class="quote">"\u2080"</span><span class="sign">;</span> <span class="comment">// index '0'</span>
+<span class="keyword">#declare</span> _1s_ <span class="sign">=</span> <span class="quote">"\u2081"</span><span class="sign">;</span> <span class="comment">// index '1'</span>
+<span class="keyword">#declare</span> _2s_ <span class="sign">=</span> <span class="quote">"\u2082"</span><span class="sign">;</span> <span class="comment">// index '2'</span>
+<span class="keyword">#declare</span> _3s_ <span class="sign">=</span> <span class="quote">"\u2083"</span><span class="sign">;</span> <span class="comment">// index '3'</span>
+<span class="keyword">#declare</span> _4s_ <span class="sign">=</span> <span class="quote">"\u2084"</span><span class="sign">;</span> <span class="comment">// index '4'</span>
+<span class="keyword">#declare</span> _5s_ <span class="sign">=</span> <span class="quote">"\u2085"</span><span class="sign">;</span> <span class="comment">// index '5'</span>
+<span class="keyword">#declare</span> _6s_ <span class="sign">=</span> <span class="quote">"\u2086"</span><span class="sign">;</span> <span class="comment">// index '6'</span>
+<span class="keyword">#declare</span> _7s_ <span class="sign">=</span> <span class="quote">"\u2087"</span><span class="sign">;</span> <span class="comment">// index '7'</span>
+<span class="keyword">#declare</span> _8s_ <span class="sign">=</span> <span class="quote">"\u2088"</span><span class="sign">;</span> <span class="comment">// index '8'</span>
+<span class="keyword">#declare</span> _9s_ <span class="sign">=</span> <span class="quote">"\u2089"</span><span class="sign">;</span> <span class="comment">// index '9'</span>
+<span class="keyword">#declare</span> _is_ <span class="sign">=</span> <span class="quote">"\u1D62"</span><span class="sign">;</span> <span class="comment">// index 'i'</span>
+<span class="keyword">#declare</span> _rs_ <span class="sign">=</span> <span class="quote">"\u1D63"</span><span class="sign">;</span> <span class="comment">// index 'r'</span>
+<span class="keyword">#declare</span> _ks_ <span class="sign">=</span> <span class="quote">"\u2096"</span><span class="sign">;</span> <span class="comment">// index 'k'</span>
+<span class="keyword">#declare</span> _ls_ <span class="sign">=</span> <span class="quote">"\u2097"</span><span class="sign">;</span> <span class="comment">// index 'l'</span>
+<span class="keyword">#declare</span> _ms_ <span class="sign">=</span> <span class="quote">"\u2098"</span><span class="sign">;</span> <span class="comment">// index 'm'</span>
+<span class="keyword">#declare</span> _ns_ <span class="sign">=</span> <span class="quote">"\u2099"</span><span class="sign">;</span> <span class="comment">// index 'n'</span>
+<span class="keyword">#declare</span> _os_ <span class="sign">=</span> <span class="quote">"\u2092"</span><span class="sign">;</span> <span class="comment">// index 'o'</span>
+<span class="keyword">#declare</span> _ps_ <span class="sign">=</span> <span class="quote">"\u209A"</span><span class="sign">;</span> <span class="comment">// index 'p'</span>
+<span class="keyword">#declare</span> _ss_ <span class="sign">=</span> <span class="quote">"\u209B"</span><span class="sign">;</span> <span class="comment">// index 's'</span>
+<span class="keyword">#declare</span> _ts_ <span class="sign">=</span> <span class="quote">"\u209C"</span><span class="sign">;</span> <span class="comment">// index 't'</span>
+<span class="keyword">#declare</span> _xs_ <span class="sign">=</span> <span class="quote">"\u2093"</span><span class="sign">;</span> <span class="comment">// index 'x'</span>
+</pre>
+
+</div> <!-- content -->
+<div id="footer">
+<p>Generated from ./Plot3Dv4/TextExt.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+</p>
+</div> <!-- footer -->
+</body>
+</html>

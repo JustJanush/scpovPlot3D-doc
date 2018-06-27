@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="./robodoc.css" type="text/css" />
+<title>./Plot3Dv4/WireSurf.inc</title>
+<!-- Source: ./Plot3Dv4/WireSurf.inc -->
+<!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
+</head>
+<body>
+<div id="logo">
+<a name="robo_top_of_doc">ScPovPlot3D Templates, written by Janusz Opiła</a>
+</div> <!-- logo -->
+<div id="navigation">
+<a class="menuitem" href="./toc_index.html#top">Table of Contents</a>
+<a class="menuitem" href="./sources.html#top">Source files</a>
+<a class="menuitem" href="./masterindex.html#top">Index Page</a>
+<a class="menuitem" href="./robo_POV_scene.html#top">Scene files</a>
+<a class="menuitem" href="./robo_projects.html#top">Project</a>
+<a class="menuitem" href="./robo_macros.html#top">Main macros</a>
+<a class="menuitem" href="./robo_constants.html#top">Constants</a>
+<a class="menuitem" href="./robo_helper.html#top">Helper macros</a>
+<a class="menuitem" href="./robo_modules.html#top">Modules</a>
+<a class="menuitem" href="./robo_type.html#top">Types used</a>
+<a class="menuitem" href="./robo_variables.html#top">Variables</a>
+</div> <!-- navigation -->
+<div id="content">
+<h3>TABLE OF CONTENTS</h3>
+<ul>
+<li>1. <a href="#robo23">ScPovPlot3D/WireSurf.inc</a></li>
+<ul>
+<li>1.1. <a href="#robo90">WireSurf.inc/DrawBSplineWires()</a></li>
+<li>1.2. <a href="#robo91">WireSurf.inc/DrawCubicWires()</a></li>
+<li>1.3. <a href="#robo92">WireSurf.inc/DrawLinearWires()</a></li>
+<li>1.4. <a href="#robo93">WireSurf.inc/DrawNodePoints()</a></li>
+<li>1.5. <a href="#robo94">WireSurf.inc/DrawWireFrameRC()</a>, <a href="#robo94">DrawWireFrame()</a></li>
+<li>1.6. <a href="#robo95">WireSurf.inc/DrawWireFrameXY()</a></li>
+<li>1.7. <a href="#robo96">WireSurf.inc/ImportDataRC()</a></li>
+<li>1.8. <a href="#robo97">WireSurf.inc/ImportDataXY()</a></li>
+<li>1.9. <a href="#robo183">WireSurf.inc/AddColDescr()</a></li>
+<li>1.10. <a href="#robo184">WireSurf.inc/AddRowDescr()</a></li>
+<li>1.11. <a href="#robo185">WireSurf.inc/DrawColDscr()</a></li>
+<li>1.12. <a href="#robo186">WireSurf.inc/DrawRowDscr()</a></li>
+<li>1.13. <a href="#robo187">WireSurf.inc/DrawVrtDescr()</a></li>
+<li>1.14. <a href="#robo188">WireSurf.inc/InitDscrColAxe()</a></li>
+<li>1.15. <a href="#robo189">WireSurf.inc/InitDscrRowAxe()</a></li>
+<li>1.16. <a href="#robo190">WireSurf.inc/SetBgPicture()</a></li>
+<li>1.17. <a href="#robo191">WireSurf.inc/SetColor()</a></li>
+<li>1.18. <a href="#robo192">WireSurf.inc/SetDscrAngle()</a></li>
+<li>1.19. <a href="#robo193">WireSurf.inc/SetInterior()</a></li>
+<li>1.20. <a href="#robo194">WireSurf.inc/SetLettrBase()</a></li>
+<li>1.21. <a href="#robo195">WireSurf.inc/SetLettrDepth()</a></li>
+<li>1.22. <a href="#robo196">WireSurf.inc/SetLettrSize()</a></li>
+<li>1.23. <a href="#robo197">WireSurf.inc/SetMaterial()</a></li>
+<li>1.24. <a href="#robo198">WireSurf.inc/SetNodeRadiiCoeff(Coeff)</a></li>
+<li>1.25. <a href="#robo199">WireSurf.inc/SetTexture()</a></li>
+<li>1.26. <a href="#robo200">WireSurf.inc/SetWireRadiiCoeff(Coeff)</a></li>
+<li>1.27. <a href="#robo201">WireSurf.inc/TurnPhotonsDown()</a>, <a href="#robo201">TurnPhotonsUp()</a></li>
+<li>1.28. <a href="#robo241">WireSurf.inc/DeclareLevel</a></li>
+</ul>
+</ul>
+<hr />
+<a name="ScPovPlot3D2fWireSurf2einc"></a>
+<a name="robo23"></a><h2>ScPovPlot3D/WireSurf.inc [ Modules ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Macros for representation of 3D surfaces as wireframes
+</p>
+<p class="item_name">DESCRIPTION</p>
+<pre>    <img src="./imgs/WireFramesS.png">
+
+   Fig.[WireFrame] Linear (twice), Cubic and BSpline interpolation
+</pre>
+<hr width=50% align="left">
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span>   Tested on PovRay 3<span class="sign">.</span>7                              <span class="sign">*</span><span class="sign">*</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span>   License<span class="sign">:</span> GNU GPL                                  <span class="sign">*</span><span class="sign">*</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span>   Homepage<span class="sign">:</span>    http<span class="sign">:</span><span class="comment">//scpovplot3d.sourceforge.net   **</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span>   version<span class="sign">:</span> 3<span class="sign">.</span>0<span class="sign">.</span>6 <span class="sign">(</span><span class="sign">&amp;</span> have a nice time <span class="sign">;</span><span class="sign">)</span>             <span class="sign">*</span><span class="sign">*</span>
+<span class="sign">*</span> <span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span><span class="sign">*</span>
+</pre>
+<p class="item_name">AUTHOR</p>
+<p>  Janusz Opiła Ph.D.
+</p>
+<pre>   jmo@agh.edu.pl, janusz.opila@gmail.com
+   Dept. of Applied Informatics
+   AGH University of Science &amp; Technology, Cracow, Poland
+   Maintained by Janusz Opiła Ph.D.
+</pre>
+<p></p>
+<p class="item_name">COPYRIGHT</p>
+<pre>  GNU GPL v.3 License
+  (c) 2012-now by Janusz Opiła Ph.D.         
+  AGH University of Science and Technology
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawBSplineWires2829"></a>
+<a name="robo90"></a><h2>WireSurf.inc/DrawBSplineWires() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawBSplineWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _wireR - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
+  _Sphrs - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./LinearPlots_inc.html#robo62">ImportDataRC()</a>
+  <a href="./LinearPlots_inc.html#robo63">ImportDataXY()</a>
+  <a href="#robo93">DrawNodePoints()</a>
+  <a href="./LinearPlots_inc.html#robo58">DrawLinearWires()</a>
+  <a href="#robo91">DrawCubicWires()</a>
+</p>
+
+<hr />
+<a name="WireSurf2einc2fDrawCubicWires2829"></a>
+<a name="robo91"></a><h2>WireSurf.inc/DrawCubicWires() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawCubicWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _wireR - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
+  _Sphrs - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./LinearPlots_inc.html#robo62">ImportDataRC()</a>
+  <a href="./LinearPlots_inc.html#robo63">ImportDataXY()</a>
+  <a href="#robo93">DrawNodePoints()</a>
+  <a href="./LinearPlots_inc.html#robo58">DrawLinearWires()</a>
+  <a href="#robo90">DrawBSplineWires()</a>
+</p>
+
+<hr />
+<a name="WireSurf2einc2fDrawLinearWires2829"></a>
+<a name="robo92"></a><h2>WireSurf.inc/DrawLinearWires() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawLinearWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _wireR  - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
+  _Sphrs  - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./LinearPlots_inc.html#robo62">ImportDataRC()</a>
+  <a href="./LinearPlots_inc.html#robo63">ImportDataXY()</a>
+  <a href="#robo93">DrawNodePoints()</a>
+  <a href="#robo91">DrawCubicWires()</a>,
+  <a href="#robo90">DrawBSplineWires()</a>
+</p>
+
+<hr />
+<a name="WireSurf2einc2fDrawNodePoints2829"></a>
+<a name="robo93"></a><h2>WireSurf.inc/DrawNodePoints() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws grid data points as ellipsoids ie. spheres scaled along vertical axis
+  by _scl factor. If _scl equals 1 one obtains pure sphere, however it can be lower or bigger than 1
+  This macro is designed to visualize uncertainty at given grid point
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawNodePoints<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _scl<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _scl - scaling factor along vertical axis, not perpendicularly to the surface!
+  this is intended for representation of uncertainty of the data (SD? SEM?)
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawWireFrameRC2829"></a>
+<a name="robo94"></a><h2>WireSurf.inc/DrawWireFrameRC(), DrawWireFrame() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Draws representation od data from input file as wireframed 3D surface.
+   Input data is organized as a matrix of floats separated by commas.
+   This macro is intendend for visualisation of matrices thus "RC" suffix (Row/Column).
+   macro DrawWireFrame(DataFileName) is just backward compatibility wrapper
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawWireFrameRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   DataFileName - valid name of file with data - see example file for details
+   of its structure. Generally speaking first is Column axis title, Row Yaxis title,
+   number of columns, then min and max value assigned to the first and last item in row,
+   number of rows, then min and max value assigned to the first and last item in column,
+   eventually numeric data in form of matrix, ie. data measured, observed or
+   calculated over the grid
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>   DrawWireFrameYX()
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">/// #macro DrawWireFrameRC(DataFileName) is intendend for visualisation of matrices</span>
+<span class="comment">/// interpretation of structure of input file (r=Row, c=Column):</span>
+<span class="comment">///  * -----&gt; Column ----&gt;</span>
+<span class="comment">///  |  r1c1 r1c2 r1c3 r1c3</span>
+<span class="comment">///  |  r2c1</span>
+<span class="comment">///  |  r3c1...</span>
+<span class="comment">///  V  r4c1..</span>
+<span class="comment">/// Rows</span>
+<span class="comment">///  ie. rows are treated as rows of the matrix so they are drawn</span>
+<span class="comment">///  along PovRAY X  axis (which is Y in REAL coords).</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawWireFrameXY2829"></a>
+<a name="robo95"></a><h2>WireSurf.inc/DrawWireFrameXY() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Draws representation od data from input file as wireframed 3D surface.
+   Input data is organized as a matrix of floats separated by commas.
+   This macro is intendend for visualisation of gridded data thus "YX" suffix.
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawWireFrameXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   DataFileName - valid name of file with data - see example file for details
+   of its structure. Generally speaking first is Xaxis title, Yaxis title,
+   number of columns, then min and max value assigned to the items in first and last X column respectively (along POVRay X axis),
+   number of rows, then min and max value assigned to the items in first and last row respectively (along POVRay -Z axis),
+   eventually numeric data in form of matrix, ie. data measured, observed or
+   calculated over the real XY grid
+</pre>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">/// interpretation of structure of input file:</span>
+<span class="comment">///  * -----&gt; X ----&gt;</span>
+<span class="comment">///  |  x1y1 x1y2 x1y3 x1y3</span>
+<span class="comment">///  |  x2y1</span>
+<span class="comment">/// Y|  x3y1...</span>
+<span class="comment">///  V  X4y1..</span>
+<span class="comment">///  ie. rows are treated as x-data so they are drawn</span>
+<span class="comment">///  along REAL X  axis (which is -Z in PovRAY coords) ,</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fImportDataRC2829"></a>
+<a name="robo96"></a><h2>WireSurf.inc/ImportDataRC() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Imports only data from input file.
+   Input data is organized as a matrix of floats separated by commas.
+   This macro is part of visualisation suite of matrices thus "RC" suffix (Row/Column).
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">ImportDataRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   DataFileName - valid name of file with data - see example file for details
+   of its structure. Generally speaking first is Column axis title, Row Yaxis title,
+   number of columns, then min and max value assigned to the first and last item in row,
+   number of rows, then min and max value assigned to the first and last item in column,
+   eventually numeric data in form of matrix, ie. data measured, observed or
+   calculated over the grid
+</pre>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">/// structure  of the grid is interpreted as follows:</span>
+<span class="comment">///  * -----&gt; Col ----&gt;</span>
+<span class="comment">/// R|  r1c1 r1c2 r1c3 r1c4</span>
+<span class="comment">/// o|  r2c1</span>
+<span class="comment">/// w|  r3c1...</span>
+<span class="comment">///  V  r4c1..</span>
+<span class="comment">///  ie. rows are treated as x-data so they are drawn along REAL X axis (PovRAY '-Z')</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fImportDataXY2829"></a>
+<a name="robo97"></a><h2>WireSurf.inc/ImportDataXY() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Imports representation od data from input file.
+   Input data is organized as a matrix of floats separated by commas.
+   This macro is intendend for visualisation of gridded data thus "YX" suffix.
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">ImportDataXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   DataFileName - valid name of file with data - see example file for details
+   of its structure. Generally speaking first is Xaxis title, Yaxis title,
+   number of columns, then min and max value assigned to the items in first and last X column respectively (along POVRay X axis),
+   number of rows, then min and max value assigned to the items in first and last row respectively (along POVRay -Z axis),
+   eventually numeric data in form of matrix, ie. data measured, observed or
+   calculated over the real XY grid
+</pre>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="comment">/// structure  of the grid is interpreted as follows:</span>
+<span class="comment">///  * -----&gt; X real axis ----&gt;</span>
+<span class="comment">///  |  x1y1 x2y1 x3y1 x4y1</span>
+<span class="comment">///  |  x1y2</span>
+<span class="comment">/// Y|  x1y3...</span>
+<span class="comment">///  V  X1y4..</span>
+<span class="comment">///  ie. rows are treated as x-data so they are drawn</span>
+<span class="comment">///  along REAL X  axis /-Z in PovRAY coords/ ,</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fAddColDescr2829"></a>
+<a name="robo183"></a><h2>WireSurf.inc/AddColDescr() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Inserts into horizontal axis data block new major label
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">AddColDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> Dscr<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   Dscr - label ("1", "A" or so on..)
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fAddRowDescr2829"></a>
+<a name="robo184"></a><h2>WireSurf.inc/AddRowDescr() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Inserts into 2nd horizontal axis data block new major label
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">AddRowDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> Dscr<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   Dscr - label ("1", "A" or so on..)
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawColDscr2829"></a>
+<a name="robo185"></a><h2>WireSurf.inc/DrawColDscr() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Inserts into rendering stack description of horizontal axis
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawColDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo221">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrDepth<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   _Txtr       - texture definition
+   _LettrBase  - adjustment to the position of description
+   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawRowDscr2829"></a>
+<a name="robo186"></a><h2>WireSurf.inc/DrawRowDscr() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Inserts into rendering stack description of 2nd horizontal axis
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawRowDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo221">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrDepth<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   _Txtr       - texture definition
+   _LettrBase  - adjustment to the position of description
+   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDrawVrtDescr2829"></a>
+<a name="robo187"></a><h2>WireSurf.inc/DrawVrtDescr() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Draws automatically vertical axis description,
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">DrawVrtDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> _NVrt<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo221">texturedef</a> _Texture<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   _NVrt - number of major tics
+   _Texture - texture identifier
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fInitDscrColAxe2829"></a>
+<a name="robo188"></a><h2>WireSurf.inc/InitDscrColAxe() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Initializes description data block along horizontal axis (columns)
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">InitDscrColAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> N<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   N - number of categories
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fInitDscrRowAxe2829"></a>
+<a name="robo189"></a><h2>WireSurf.inc/InitDscrRowAxe() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Initializes description data block along horizontal axis (rows)
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">InitDscrRowAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> N<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>   N - number of categories
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetBgPicture2829"></a>
+<a name="robo190"></a><h2>WireSurf.inc/SetBgPicture() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets picture for the background of coords system
+   Will be moved to <a href="./CoordsSys_inc.html#robo_top_of_doc">CoordsSys.inc</a>
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetBgPicture<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename Pct<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetColor2829"></a>
+<a name="robo191"></a><h2>WireSurf.inc/SetColor() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets default color for different items:
+</p>
+<ul><li>   SetColor( color vector FullColour )
+</li>
+<li>   SetRGBColor( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B) - for RGB definition style
+</li>
+<li>   <a href="./BPatchSurf_inc.html#robo113">SetRGBFTColor</a>( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) for RGBFT definition
+</li>
+<li>   SetRGBFTColor_1( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) and
+</li>
+<li>   SetRGBFTColor_2( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T)  two-color RGBFT items
+</li>
+</ul>
+<p></p>
+
+<hr />
+<a name="WireSurf2einc2fSetDscrAngle2829"></a>
+<a name="robo192"></a><h2>WireSurf.inc/SetDscrAngle() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets base angle of description of axes (category labels)
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetDscrAngle<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a><span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetInterior2829"></a>
+<a name="robo193"></a><h2>WireSurf.inc/SetInterior() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   declares texure for the item
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetInterior<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo215">interiordef</a> tInt <span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetLettrBase2829"></a>
+<a name="robo194"></a><h2>WireSurf.inc/SetLettrBase() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets base position of letters in description of axes
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetLettrBase<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetLettrDepth2829"></a>
+<a name="robo195"></a><h2>WireSurf.inc/SetLettrDepth() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets size of letters in description of axes
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetLettrDepth<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetLettrSize2829"></a>
+<a name="robo196"></a><h2>WireSurf.inc/SetLettrSize() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets size of letters in description of axes
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetLettrSize<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetMaterial2829"></a>
+<a name="robo197"></a><h2>WireSurf.inc/SetMaterial() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   declares material for the item
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetMaterial<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo216">materialdef</a> FullMaterial <span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetNodeRadiiCoeff28Coeff29"></a>
+<a name="robo198"></a><h2>WireSurf.inc/SetNodeRadiiCoeff(Coeff) [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   declares radius coefficient for the wire and nodes
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetNodeRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> Coeff<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetTexture2829"></a>
+<a name="robo199"></a><h2>WireSurf.inc/SetTexture() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   declares texure for the item
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><a href="./BPatchSurf_inc.html#robo114">SetTexture</a><span class="sign">(</span> <a href="./TypesUsed_txt.html#robo221">texturedef</a> FullTexture <span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fSetWireRadiiCoeff28Coeff29"></a>
+<a name="robo200"></a><h2>WireSurf.inc/SetWireRadiiCoeff(Coeff) [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   declares radius coefficient for the wire only
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">SetWireRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> Coeff<span class="sign">)</span>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fTurnPhotonsDown2829"></a>
+<a name="robo201"></a><h2>WireSurf.inc/TurnPhotonsDown(), TurnPhotonsUp() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Sets internal variable Photons to 'no' or 'yes'
+   ie turns photon mechanism 'off' or 'on'
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><strong>TurnPhotonsUp()</strong>
+<strong>TurnPhotonsDown()</strong>
+</pre>
+
+<hr />
+<a name="WireSurf2einc2fDeclareLevel"></a>
+<a name="robo241"></a><h2>WireSurf.inc/DeclareLevel [ Variables ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo23">WireSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   <strong>DeclareLevel</strong> determines what is defined:
+</p>
+<ul><li>   0 = just colour,
+</li>
+<li>   2 = full texture item,
+</li>
+<li>   4 = complete material definition.
+</li>
+</ul>
+<p>   this value is valid until next "Set...()" declaration is met
+</p>
+<p class="item_name">SOURCE</p>
+<pre class="source"><span class="keyword">#declare</span> <strong>DeclareLevel</strong> <span class="sign">=</span> 0<span class="sign">;</span>
+<span class="keyword">#declare</span> NodeRadiiCoeff<span class="sign">=</span>0<span class="sign">.</span>20<span class="sign">;</span>
+<span class="keyword">#declare</span> WireRadiiCoeff<span class="sign">=</span>NodeRadiiCoeff<span class="sign">/</span>2<span class="sign">;</span>
+
+<span class="keyword">#declare</span> <a href="./Mesh2Surf_inc.html#robo163">shiftXY</a>    <span class="sign">=</span> <span class="sign">-</span>1<span class="sign">.</span>4<span class="sign">;</span>
+<span class="keyword">#declare</span> LettrSize  <span class="sign">=</span>  0<span class="sign">.</span>8<span class="sign">;</span>
+<span class="keyword">#declare</span> LettrDepth <span class="sign">=</span>  0<span class="sign">.</span>2<span class="sign">;</span>
+<span class="keyword">#declare</span> LettrBase  <span class="sign">=</span> <span class="sign">-</span>0<span class="sign">.</span>7<span class="sign">;</span>
+<span class="keyword">#declare</span> DscrAngle  <span class="sign">=</span>  0<span class="sign">.</span>0<span class="sign">;</span>
+<span class="keyword">#declare</span> NumDscrLgh <span class="sign">=</span>  5<span class="sign">;</span>
+<span class="keyword">#declare</span> NumDscrDig <span class="sign">=</span>  3<span class="sign">;</span>
+
+<span class="keyword">#declare</span> NRow <span class="sign">=</span> 1<span class="sign">;</span>
+<span class="keyword">#declare</span> NCol <span class="sign">=</span> 1<span class="sign">;</span>
+</pre>
+
+</div> <!-- content -->
+<div id="footer">
+<p>Generated from ./Plot3Dv4/WireSurf.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+</p>
+</div> <!-- footer -->
+</body>
+</html>

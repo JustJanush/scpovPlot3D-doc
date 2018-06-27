@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="iso-8859-2"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="./robodoc.css" type="text/css" />
+<title>./Plot3Dv4/BoxWhisk.inc</title>
+<!-- Source: ./Plot3Dv4/BoxWhisk.inc -->
+<!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
+</head>
+<body>
+<div id="logo">
+<a name="robo_top_of_doc">ScPovPlot3D Templates, written by Janusz Opiła</a>
+</div> <!-- logo -->
+<div id="navigation">
+<a class="menuitem" href="./toc_index.html#top">Table of Contents</a>
+<a class="menuitem" href="./sources.html#top">Source files</a>
+<a class="menuitem" href="./masterindex.html#top">Index Page</a>
+<a class="menuitem" href="./robo_POV_scene.html#top">Scene files</a>
+<a class="menuitem" href="./robo_projects.html#top">Project</a>
+<a class="menuitem" href="./robo_macros.html#top">Main macros</a>
+<a class="menuitem" href="./robo_constants.html#top">Constants</a>
+<a class="menuitem" href="./robo_helper.html#top">Helper macros</a>
+<a class="menuitem" href="./robo_modules.html#top">Modules</a>
+<a class="menuitem" href="./robo_type.html#top">Types used</a>
+<a class="menuitem" href="./robo_variables.html#top">Variables</a>
+</div> <!-- navigation -->
+<div id="content">
+<h3>TABLE OF CONTENTS</h3>
+<ul>
+<li>1. <a href="#robo3">ScPovPlot3D/BoxWhisk.inc</a></li>
+<ul>
+<li>1.1. <a href="#robo26">BoxWhisk.inc/AddBoxWhisker()</a></li>
+<li>1.2. <a href="#robo104">BoxWhisk.inc/AddBasePlates()</a></li>
+<li>1.3. <a href="#robo105">BoxWhisk.inc/AddPlates()</a></li>
+<li>1.4. <a href="#robo106">BoxWhisk.inc/BoxAndWhisk()</a></li>
+<li>1.5. <a href="#robo107">BoxWhisk.inc/Buble()</a></li>
+</ul>
+</ul>
+<hr />
+<a name="ScPovPlot3D2fBoxWhisk2einc"></a>
+<a name="robo3"></a><h2>ScPovPlot3D/BoxWhisk.inc [ Modules ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>   Old. well known macro for drawing 3D Box &amp; Whiskers plot
+</p>
+<pre>     <img src="./imgs/BoxWhiskS.jpg">
+</pre>
+<p><hr width=50% align="left">
+</pre>
+</p>
+<pre>
+<p>   Fig.[BoxWhisk] Box &amp; whiskers plots
+   There is a lot TODO: some automation and so on
+<hr width=50% align="left">
+</p>
+<pre>     *********************************************************
+     **   Tested on PovRay 3.7                              **
+     **   License: GNU GPL                                  **
+     **   Homepage:    <a href="http://scpovplot3d.sourceforge.net">http://scpovplot3d.sourceforge.net</a>   **
+     *********************************************************
+     **   version: 3.0.6 (&amp; have a nice time ;)             **
+     *********************************************************
+</pre>
+<p></p>
+<p class="item_name">AUTHOR</p>
+<p>  Janusz Opiła Ph.D.
+</p>
+<pre>   jmo@agh.edu.pl, janusz.opila@gmail.com
+   Dept. of Applied Informatics
+   AGH University of Science &amp; Technology, Cracow, Poland
+   Maintained by Janusz Opiła Ph.D.
+</pre>
+<p></p>
+<p class="item_name">COPYRIGHT</p>
+<pre>  GNU GPL v.3 License
+  (c) 2012-now by Janusz Opiła Ph.D.         
+  AGH University of Science and Technology
+</pre>
+
+<hr />
+<a name="BoxWhisk2einc2fAddBoxWhisker2829"></a>
+<a name="robo26"></a><h2>BoxWhisk.inc/AddBoxWhisker() [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">BoxWhisk.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Adds final barrel to the chart and sets several parameters
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">AddBoxWhisker<span class="sign">(</span>Y0<span class="sign">,</span> Y1<span class="sign">,</span> Mid<span class="sign">,</span> Rad<span class="sign">,</span> Tex<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  Barrel is created centered on z=0 then moved vertically to 'Mid' value
+  Y0  - barrel vertical size  (ex. median, )
+  Y1  - plates position (ex. confidence range) 
+  Mid - value for the center (ex. mean) 
+  Rad - radius of the barrel          
+  Tex - identifier of valid texture
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo107">Buble()</a>
+  BoxWhisk()
+</p>
+
+<hr />
+<a name="BoxWhisk2einc2fAddBasePlates2829"></a>
+<a name="robo104"></a><h2>BoxWhisk.inc/AddBasePlates() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">BoxWhisk.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Adds coord system stub
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">AddBasePlates<span class="sign">(</span>D<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  D - width of coord system plates
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./CoordsSys_inc.html#robo8">CoordSys.inc</a>
+</p>
+
+<hr />
+<a name="BoxWhisk2einc2fAddPlates2829"></a>
+<a name="robo105"></a><h2>BoxWhisk.inc/AddPlates() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">BoxWhisk.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Adds coord system stub
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">AddBasePlates<span class="sign">(</span>_D<span class="sign">,</span> _T<span class="sign">,</span> _I<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _D - width of coord system plates
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="./CoordsSys_inc.html#robo8">CoordSys.inc</a>
+</p>
+
+<hr />
+<a name="BoxWhisk2einc2fBoxAndWhisk2829"></a>
+<a name="robo106"></a><h2>BoxWhisk.inc/BoxAndWhisk() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">BoxWhisk.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws single barrel with plates
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">BoxAndWhisk<span class="sign">(</span>Y0<span class="sign">,</span> Y1<span class="sign">,</span> Rad<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  Barrel is created centered on z=0
+  Y0 - barrel vertical size  (ex. median, )
+  Y1 - plates position (ex. confidence range) 
+  Rad - radius of the barrel
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo107">Buble()</a>
+  <a href="#robo26">AddBoxWhisker()</a>
+</p>
+
+<hr />
+<a name="BoxWhisk2einc2fBuble2829"></a>
+<a name="robo107"></a><h2>BoxWhisk.inc/Buble() [ Helper macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">BoxWhisk.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Draws sphere as a hole in center of the barrel
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source">Buble<span class="sign">(</span>X0<span class="sign">,</span> Y0<span class="sign">,</span> Z0<span class="sign">,</span> R<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  X0, Y0, Z0 - center of the sphere
+  R - radius
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo106">BoxAndWhisk()</a>
+</p>
+
+</div> <!-- content -->
+<div id="footer">
+<p>Generated from ./Plot3Dv4/BoxWhisk.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+</p>
+</div> <!-- footer -->
+</body>
+</html>
