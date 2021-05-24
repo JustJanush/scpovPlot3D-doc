@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/Balloons.inc</title>
-<!-- Source: ./Plot3Dv4/Balloons.inc -->
+<title>./Plot3Dv4/Plot3Dv4/Balloons.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/Balloons.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,24 +30,24 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo2">ScPovPlot3D/Balloons.inc</a></li>
+<li>1. <a href="#robo4">ScPovPlot3D/Balloons.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo24">Balloons.inc/ScatterBalloonData()</a></li>
-<li>1.2. <a href="#robo25">Balloons.inc/SphereOnColumn()</a></li>
-<li>1.3. <a href="#robo98">Balloons.inc/ScalingFunction()</a></li>
-<li>1.4. <a href="#robo99">Balloons.inc/SetColor()</a></li>
-<li>1.5. <a href="#robo100">Balloons.inc/SetDZero()</a></li>
-<li>1.6. <a href="#robo101">Balloons.inc/SetInterior()</a></li>
-<li>1.7. <a href="#robo102">Balloons.inc/SetTexture()</a></li>
-<li>1.8. <a href="#robo103">Balloons.inc/SetVScale()</a></li>
-<li>1.9. <a href="#robo225">Balloons.inc/DeclareLevel</a></li>
-<li>1.10. <a href="#robo226">Balloons.inc/DZero</a></li>
-<li>1.11. <a href="#robo227">Balloons.inc/VScale</a></li>
+<li>1.1. <a href="#robo26">Balloons.inc/ScatterBalloonData()</a></li>
+<li>1.2. <a href="#robo27">Balloons.inc/SphereOnColumn()</a></li>
+<li>1.3. <a href="#robo106">Balloons.inc/ScalingFunction()</a></li>
+<li>1.4. <a href="#robo107">Balloons.inc/SetColor()</a></li>
+<li>1.5. <a href="#robo108">Balloons.inc/SetDZero()</a></li>
+<li>1.6. <a href="#robo109">Balloons.inc/SetInterior()</a></li>
+<li>1.7. <a href="#robo110">Balloons.inc/SetTexture()</a></li>
+<li>1.8. <a href="#robo111">Balloons.inc/SetVScale()</a></li>
+<li>1.9. <a href="#robo233">Balloons.inc/DeclareLevel</a></li>
+<li>1.10. <a href="#robo234">Balloons.inc/DZero</a></li>
+<li>1.11. <a href="#robo235">Balloons.inc/VScale</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fBalloons2einc"></a>
-<a name="robo2"></a><h2>ScPovPlot3D/Balloons.inc [ Modules ]</h2>
+<a name="robo4"></a><h2>ScPovPlot3D/Balloons.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -86,23 +86,23 @@
 
 <hr />
 <a name="Balloons2einc2fScatterBalloonData2829"></a>
-<a name="robo24"></a><h2>Balloons.inc/ScatterBalloonData() [ Main macros ]</h2>
+<a name="robo26"></a><h2>Balloons.inc/ScatterBalloonData() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  this macro creates chart for data in the form of z=f(x1, x2, x3) where z is marked as the radius of the sphere, uses <a href="#robo25">SphereOnColumn()</a> macro 
+<p>  this macro creates chart for data in the form of z=f(x1, x2, x3) where z is marked as the radius of the sphere, uses <a href="#robo27">SphereOnColumn()</a> macro 
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">ScatterBalloonData<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename InFileName<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> er0<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo217">pfunction</a> sigma<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> columnRad<span class="sign">)</span> 
+<pre class="source">ScatterBalloonData<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename InFileName<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> er0<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo225">pfunction</a> sigma<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> columnRad<span class="sign">)</span> 
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  InFileName - Data file name - for format see example 'Baloons.dat'
   er0        - minimum radius of spheres, base radius
-  sigma      - pointer to inline <a href="./TypesUsed_txt.html#robo212">Function</a> taking one <a href="./TypesUsed_txt.html#robo211">float</a> returning <a href="./TypesUsed_txt.html#robo211">float</a>, its goal is to scale radii to reasonable range
+  sigma      - pointer to inline <a href="./TypesUsed_txt.html#robo220">Function</a> taking one <a href="./TypesUsed_txt.html#robo219">float</a> returning <a href="./TypesUsed_txt.html#robo219">float</a>, its goal is to scale radii to reasonable range
   columnRad  - radius of column
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo25">SphereOnColumn()</a>, <a href="#robo98">ScalingFunction()</a>
+<p>  <a href="#robo27">SphereOnColumn()</a>, <a href="#robo106">ScalingFunction()</a>
 </p>
 <p class="item_name">EXAMPLE</p>
 <pre class="source">ScatterBalloonData<span class="sign">(</span><span class="quote">"Balloons.dat"</span><span class="sign">,</span> <span class="sign">.</span>710<span class="sign">,</span> ScalingFunction<span class="sign">,</span> 0<span class="sign">.</span>05<span class="sign">)</span>       
@@ -110,14 +110,14 @@
 
 <hr />
 <a name="Balloons2einc2fSphereOnColumn2829"></a>
-<a name="robo25"></a><h2>Balloons.inc/SphereOnColumn() [ Main macros ]</h2>
+<a name="robo27"></a><h2>Balloons.inc/SphereOnColumn() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Draws sphere on top o column (or bottom if below zero XY plane )
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SphereOnColumn<span class="sign">(</span><a href="./TypesUsed_txt.html#robo202">3Dvector</a> Center<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> Rs<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> Rc<span class="sign">)</span>
+<pre class="source">SphereOnColumn<span class="sign">(</span><a href="./TypesUsed_txt.html#robo210">3Dvector</a> Center<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> Rs<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> Rc<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   Center - center of the sphere in POVRay coordinates
@@ -130,90 +130,90 @@
 
 <hr />
 <a name="Balloons2einc2fScalingFunction2829"></a>
-<a name="robo98"></a><h2>Balloons.inc/ScalingFunction() [ Helper macros ]</h2>
+<a name="robo106"></a><h2>Balloons.inc/ScalingFunction() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  Inline <a href="./TypesUsed_txt.html#robo212">Function</a> scaling radius of sphere from real value V(x,y,z) to fit it in a reasonable range
+<p>  Inline <a href="./TypesUsed_txt.html#robo220">Function</a> scaling radius of sphere from real value V(x,y,z) to fit it in a reasonable range
 </p>
 <p class="item_name">INPUTS</p>
-<pre>  this <a href="./TypesUsed_txt.html#robo212">Function</a> takes one <a href="./TypesUsed_txt.html#robo211">float</a> argument 
+<pre>  this <a href="./TypesUsed_txt.html#robo220">Function</a> takes one <a href="./TypesUsed_txt.html#robo219">float</a> argument 
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo24">ScatterBalloonData()</a>, "<a href="./TypesUsed_txt.html#robo212">Function</a>()" definition in POVRay manual, <a href="./TypesUsed_txt.html#robo212">Function</a> pointers
+<p>  <a href="#robo26">ScatterBalloonData()</a>, "<a href="./TypesUsed_txt.html#robo220">Function</a>()" definition in POVRay manual, <a href="./TypesUsed_txt.html#robo220">Function</a> pointers
 </p>
 <p class="item_name">EXAMPLE</p>
-<pre class="source"><span class="keyword">#declare</span> ScalingFunction  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>rr<span class="sign">)</span> <span class="sign">{</span> 5<span class="sign">*</span><span class="keyword">ln</span><span class="sign">(</span>abs<span class="sign">(</span>rr<span class="sign">)</span><span class="sign">)</span><span class="sign">+</span>0<span class="sign">.</span>1 <span class="sign">}</span>   <span class="comment">// default <a href="./TypesUsed_txt.html#robo212">Function</a> - one may declare his own</span>
+<pre class="source"><span class="keyword">#declare</span> ScalingFunction  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>rr<span class="sign">)</span> <span class="sign">{</span> 5<span class="sign">*</span><span class="keyword">ln</span><span class="sign">(</span>abs<span class="sign">(</span>rr<span class="sign">)</span><span class="sign">)</span><span class="sign">+</span>0<span class="sign">.</span>1 <span class="sign">}</span>   <span class="comment">// default <a href="./TypesUsed_txt.html#robo220">Function</a> - one may declare his own</span>
 </pre>
 
 <hr />
 <a name="Balloons2einc2fSetColor2829"></a>
-<a name="robo99"></a><h2>Balloons.inc/SetColor() [ Helper macros ]</h2>
+<a name="robo107"></a><h2>Balloons.inc/SetColor() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets default color for different items:
 </p>
 <ul><li>   SetColor( color vector FullColour )
 </li>
-<li>   SetRGBColor( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B) - for RGB definition style
+<li>   SetRGBColor( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B) - for RGB definition style
 </li>
-<li>   <a href="./BPatchSurf_inc.html#robo113">SetRGBFTColor</a>( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) for RGBFT definition
+<li>   <a href="./BPatchSurf_inc.html#robo121">SetRGBFTColor</a>( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T) for RGBFT definition
 </li>
-<li>   SetRGBFTColor_1( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) and
+<li>   SetRGBFTColor_1( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T) and
 </li>
-<li>   SetRGBFTColor_2( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T)  two-color RGBFT items
+<li>   SetRGBFTColor_2( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T)  two-color RGBFT items
 </li>
 </ul>
 <p></p>
 
 <hr />
 <a name="Balloons2einc2fSetDZero2829"></a>
-<a name="robo100"></a><h2>Balloons.inc/SetDZero() [ Helper macros ]</h2>
+<a name="robo108"></a><h2>Balloons.inc/SetDZero() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets value of DZerovariable
 </p>
 
 <hr />
 <a name="Balloons2einc2fSetInterior2829"></a>
-<a name="robo101"></a><h2>Balloons.inc/SetInterior() [ Helper macros ]</h2>
+<a name="robo109"></a><h2>Balloons.inc/SetInterior() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares texure for the item
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetInterior<span class="sign">(</span><a href="./TypesUsed_txt.html#robo215">interiordef</a><span class="sign">)</span>
+<pre class="source">SetInterior<span class="sign">(</span><a href="./TypesUsed_txt.html#robo223">interiordef</a><span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Balloons2einc2fSetTexture2829"></a>
-<a name="robo102"></a><h2>Balloons.inc/SetTexture() [ Helper macros ]</h2>
+<a name="robo110"></a><h2>Balloons.inc/SetTexture() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares texure for the item
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><a href="./BPatchSurf_inc.html#robo114">SetTexture</a><span class="sign">(</span><a href="./TypesUsed_txt.html#robo221">texturedef</a><span class="sign">)</span>
+<pre class="source"><a href="./BPatchSurf_inc.html#robo122">SetTexture</a><span class="sign">(</span><a href="./TypesUsed_txt.html#robo229">texturedef</a><span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Balloons2einc2fSetVScale2829"></a>
-<a name="robo103"></a><h2>Balloons.inc/SetVScale() [ Helper macros ]</h2>
+<a name="robo111"></a><h2>Balloons.inc/SetVScale() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>   Sets value of <a href="./BPatchSurf_inc.html#robo230">VScale</a> variable
+<p>   Sets value of <a href="#robo235">VScale</a> variable
 </p>
 
 <hr />
 <a name="Balloons2einc2fDeclareLevel"></a>
-<a name="robo225"></a><h2>Balloons.inc/DeclareLevel [ Variables ]</h2>
+<a name="robo233"></a><h2>Balloons.inc/DeclareLevel [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   <strong>DeclareLevel</strong> determines what is defined:
 </p>
@@ -232,11 +232,11 @@
 
 <hr />
 <a name="Balloons2einc2fDZero"></a>
-<a name="robo226"></a><h2>Balloons.inc/DZero [ Variables ]</h2>
+<a name="robo234"></a><h2>Balloons.inc/DZero [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  minimal minimal <a href="./TypesUsed_txt.html#robo211">float</a> number assumed not beiing equal zero
+<p>  minimal minimal <a href="./TypesUsed_txt.html#robo219">float</a> number assumed not beiing equal zero
   application of this value depends on algorithm employed
 </p>
 <p class="item_name">SOURCE</p>
@@ -245,12 +245,12 @@
 
 <hr />
 <a name="Balloons2einc2fVScale"></a>
-<a name="robo227"></a><h2>Balloons.inc/VScale [ Variables ]</h2>
+<a name="robo235"></a><h2>Balloons.inc/VScale [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo2">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">Balloons.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  minimal distance between grid &amp; random point, 
-  this value is valid until "<a href="./BPatchSurf_inc.html#robo111">SetDZero</a>()"
+  this value is valid until "<a href="./BPatchSurf_inc.html#robo119">SetDZero</a>()"
 </p>
 <p class="item_name">SOURCE</p>
 <pre class="source"><span class="keyword">#declare</span> <strong>VScale</strong> <span class="sign">=</span> 1<span class="sign">.</span>0<span class="sign">;</span>    <span class="comment">// Enhancement along vertical axis (negative values allowed ;)</span>
@@ -258,7 +258,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/Balloons.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/Balloons.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/Mesh2Surf.inc</title>
-<!-- Source: ./Plot3Dv4/Mesh2Surf.inc -->
+<title>./Plot3Dv4/Plot3Dv4/Mesh2Surf.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/Mesh2Surf.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,23 +30,23 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo12">ScPovPlot3D/Mesh2Surf.inc</a></li>
+<li>1. <a href="#robo14">ScPovPlot3D/Mesh2Surf.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo159">Mesh2Surf.inc/DrawFuzzySurface ()</a></li>
-<li>1.2. <a href="#robo160">Mesh2Surf.inc/DrawSurface ()</a></li>
-<li>1.3. <a href="#robo161">Mesh2Surf.inc/DrawSurfaceOnBlock ()</a></li>
-<li>1.4. <a href="#robo162">Mesh2Surf.inc/Set_InterFinish</a>, <a href="#robo162">shiftXY</a></li>
-<li>1.5. <a href="#robo163">Mesh2Surf.inc/Set_InterTexture</a>, <a href="#robo163">shiftXY</a></li>
-<li>1.6. <a href="#robo164">Mesh2Surf.inc/Set_ShiftXY</a>, <a href="#robo164">shiftXY</a></li>
-<li>1.7. <a href="#robo165">Mesh2Surf.inc/Set_SurfFinish</a>, <a href="#robo165">shiftXY</a></li>
-<li>1.8. <a href="#robo166">Mesh2Surf.inc/Set_SurfTexture</a></li>
-<li>1.9. <a href="#robo167">Mesh2Surf.inc/Set_TextFont</a>, <a href="#robo167">_TextFont</a></li>
-<li>1.10. <a href="#robo234">Mesh2Surf.inc/DeclareLevel</a></li>
+<li>1.1. <a href="#robo167">Mesh2Surf.inc/DrawFuzzySurface ()</a></li>
+<li>1.2. <a href="#robo168">Mesh2Surf.inc/DrawSurface ()</a></li>
+<li>1.3. <a href="#robo169">Mesh2Surf.inc/DrawSurfaceOnBlock ()</a></li>
+<li>1.4. <a href="#robo170">Mesh2Surf.inc/Set_InterFinish</a>, <a href="#robo170">shiftXY</a></li>
+<li>1.5. <a href="#robo171">Mesh2Surf.inc/Set_InterTexture</a>, <a href="#robo171">shiftXY</a></li>
+<li>1.6. <a href="#robo172">Mesh2Surf.inc/Set_ShiftXY</a>, <a href="#robo172">shiftXY</a></li>
+<li>1.7. <a href="#robo173">Mesh2Surf.inc/Set_SurfFinish</a>, <a href="#robo173">shiftXY</a></li>
+<li>1.8. <a href="#robo174">Mesh2Surf.inc/Set_SurfTexture</a></li>
+<li>1.9. <a href="#robo175">Mesh2Surf.inc/Set_TextFont</a>, <a href="#robo175">_TextFont</a></li>
+<li>1.10. <a href="#robo242">Mesh2Surf.inc/DeclareLevel</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fMesh2Surf2einc"></a>
-<a name="robo12"></a><h2>ScPovPlot3D/Mesh2Surf.inc [ Modules ]</h2>
+<a name="robo14"></a><h2>ScPovPlot3D/Mesh2Surf.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -63,7 +63,7 @@
 <hr width=50% align="left">
 </p>
 <p class="item_name">VERSION</p>
-<p>  v. 3.1.0.2, tested on PovRay 3.7
+<p>  v. 4.0.0, tested on PovRay 3.7
 </p>
 <p class="item_name">AUTHOR</p>
 <p>  Janusz Opiła Ph.D.
@@ -83,14 +83,14 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fDrawFuzzySurface202829"></a>
-<a name="robo159"></a><h2>Mesh2Surf.inc/DrawFuzzySurface () [ Helper macros ]</h2>
+<a name="robo167"></a><h2>Mesh2Surf.inc/DrawFuzzySurface () [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -101,21 +101,21 @@
   calculated over the real XY grid
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurfaceOnBlock ()
 </p>
 
 <hr />
 <a name="Mesh2Surf2einc2fDrawSurface202829"></a>
-<a name="robo160"></a><h2>Mesh2Surf.inc/DrawSurface () [ Helper macros ]</h2>
+<a name="robo168"></a><h2>Mesh2Surf.inc/DrawSurface () [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -126,21 +126,21 @@
   calculated over the real XY grid
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurfaceOnBlock ()
 </p>
 
 <hr />
 <a name="Mesh2Surf2einc2fDrawSurfaceOnBlock202829"></a>
-<a name="robo161"></a><h2>Mesh2Surf.inc/DrawSurfaceOnBlock () [ Helper macros ]</h2>
+<a name="robo169"></a><h2>Mesh2Surf.inc/DrawSurfaceOnBlock () [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurfaceOnBlock<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurfaceOnBlock<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -151,16 +151,16 @@
   calculated over the real XY grid
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurface ()
 </p>
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fInterFinish"></a>
-<a name="robo162"></a><h2>Mesh2Surf.inc/Set_InterFinish, shiftXY [ Helper macros ]</h2>
+<a name="robo170"></a><h2>Mesh2Surf.inc/Set_InterFinish, shiftXY [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  moves 
 </p>
@@ -176,9 +176,9 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fInterTexture"></a>
-<a name="robo163"></a><h2>Mesh2Surf.inc/Set_InterTexture, shiftXY [ Helper macros ]</h2>
+<a name="robo171"></a><h2>Mesh2Surf.inc/Set_InterTexture, shiftXY [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  moves 
 </p>
@@ -194,9 +194,9 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fShiftXY"></a>
-<a name="robo164"></a><h2>Mesh2Surf.inc/Set_ShiftXY, shiftXY [ Helper macros ]</h2>
+<a name="robo172"></a><h2>Mesh2Surf.inc/Set_ShiftXY, shiftXY [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  moves vertical description labels by that amount, can change it later on..
 </p>
@@ -204,7 +204,7 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>Set_ShiftXY</strong><span class="sign">(</span>shft<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  shft - <a href="./TypesUsed_txt.html#robo211">float</a> - distance in POVRay units along X_P axis
+<pre>  shft - <a href="./TypesUsed_txt.html#robo219">float</a> - distance in POVRay units along X_P axis
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  empty
@@ -212,9 +212,9 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fSurfFinish"></a>
-<a name="robo165"></a><h2>Mesh2Surf.inc/Set_SurfFinish, shiftXY [ Helper macros ]</h2>
+<a name="robo173"></a><h2>Mesh2Surf.inc/Set_SurfFinish, shiftXY [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  moves 
 </p>
@@ -230,9 +230,9 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fSurfTexture"></a>
-<a name="robo166"></a><h2>Mesh2Surf.inc/Set_SurfTexture [ Helper macros ]</h2>
+<a name="robo174"></a><h2>Mesh2Surf.inc/Set_SurfTexture [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  moves 
 </p>
@@ -248,9 +248,9 @@
 
 <hr />
 <a name="Mesh2Surf2einc2fSet5fTextFont"></a>
-<a name="robo167"></a><h2>Mesh2Surf.inc/Set_TextFont, _TextFont [ Helper macros ]</h2>
+<a name="robo175"></a><h2>Mesh2Surf.inc/Set_TextFont, _TextFont [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Defines font for textual elements of the chart
 </p>
@@ -263,17 +263,17 @@
 <span class="keyword">#macro</span> <strong>Set_TextFont</strong> <span class="sign">(</span>_TxtFnt<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _TxtFnt - <a href="./TypesUsed_txt.html#robo219">string</a> containing name of the file containing given font, ex. "Arial.ttf". Sets internal local variable <strong>_TextFont</strong>
+<pre>  _TxtFnt - <a href="./TypesUsed_txt.html#robo227">string</a> containing name of the file containing given font, ex. "Arial.ttf". Sets internal local variable <strong>_TextFont</strong>
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./TextExt_inc.html#robo177">Set_TFont</a> ()
+<p>  <a href="./TextExt_inc.html#robo185">Set_TFont</a> ()
 </p>
 
 <hr />
 <a name="Mesh2Surf2einc2fDeclareLevel"></a>
-<a name="robo234"></a><h2>Mesh2Surf.inc/DeclareLevel [ Variables ]</h2>
+<a name="robo242"></a><h2>Mesh2Surf.inc/DeclareLevel [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo12">Mesh2Surf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo14">Mesh2Surf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   <strong>DeclareLevel</strong> determines what is defined:
 </p>
@@ -292,7 +292,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/Mesh2Surf.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/Mesh2Surf.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

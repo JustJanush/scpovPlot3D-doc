@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/STL-2.inc</title>
-<!-- Source: ./Plot3Dv4/STL-2.inc -->
+<title>./Plot3Dv4/Plot3Dv4/STL-2.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/STL-2.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,17 +30,17 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo18">ScPovPlot3D/STL-2.inc</a></li>
+<li>1. <a href="#robo20">ScPovPlot3D/STL-2.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo171">STL-2.inc/DrawSTLSurface ()</a></li>
-<li>1.2. <a href="#robo172">STL-2.inc/DrawSTLSurfaceArr ()</a></li>
-<li>1.3. <a href="#robo173">STL-2.inc/ScanSTLSurface()</a></li>
-<li>1.4. <a href="#robo235">STL-2.inc/DeclareLevel</a></li>
+<li>1.1. <a href="#robo179">STL-2.inc/DrawSTLSurface ()</a></li>
+<li>1.2. <a href="#robo180">STL-2.inc/DrawSTLSurfaceArr ()</a></li>
+<li>1.3. <a href="#robo181">STL-2.inc/ScanSTLSurface()</a></li>
+<li>1.4. <a href="#robo243">STL-2.inc/DeclareLevel</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fSTL2d22einc"></a>
-<a name="robo18"></a><h2>ScPovPlot3D/STL-2.inc [ Modules ]</h2>
+<a name="robo20"></a><h2>ScPovPlot3D/STL-2.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -56,12 +56,18 @@
 </pre>
 <p>   Fig.[STL] 3D surface and 3D fuzzy texel modelled by mesh2 object
 </p>
+<p class="item_name">VERSION</p>
+<p>  4.0.1, 2021-05-19 - tested on PovRay 3.7.0
+</p>
 <p class="item_name">AUTHOR</p>
 <p>   Janusz Opiła Ph.D.
    jmo@agh.edu.pl, janusz.opila@gmail.com
    Dept. of Applied Informatics
    AGH Univ. of Science &amp; Technology. Cracow, Poland
    Maintained by Janusz Opiła Ph.D.
+</p>
+<p class="item_name">HISTORY</p>
+<p>  2021-05-20, v4.0.1, comment added
 </p>
 <p class="item_name">COPYRIGHT</p>
 <pre>   GNU GPL v.3 License
@@ -70,14 +76,14 @@
 
 <hr />
 <a name="STL2d22einc2fDrawSTLSurface202829"></a>
-<a name="robo171"></a><h2>STL-2.inc/DrawSTLSurface () [ Helper macros ]</h2>
+<a name="robo179"></a><h2>STL-2.inc/DrawSTLSurface () [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -100,21 +106,21 @@
  "endsolid"
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurfaceOnBlock ()
 </p>
 
 <hr />
 <a name="STL2d22einc2fDrawSTLSurfaceArr202829"></a>
-<a name="robo172"></a><h2>STL-2.inc/DrawSTLSurfaceArr () [ Helper macros ]</h2>
+<a name="robo180"></a><h2>STL-2.inc/DrawSTLSurfaceArr () [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles, employes huge array _STLDat[][]
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -137,21 +143,21 @@
  "endsolid"
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurfaceOnBlock ()
 </p>
 
 <hr />
 <a name="STL2d22einc2fScanSTLSurface2829"></a>
-<a name="robo173"></a><h2>STL-2.inc/ScanSTLSurface() [ Helper macros ]</h2>
+<a name="robo181"></a><h2>STL-2.inc/ScanSTLSurface() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">STL-2.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of smooth mesh of triangles
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  DataFileName - valid name of file with data - see example file for details
@@ -172,21 +178,21 @@
   |
   "endfacet",
  "endsolid"
-  Start  - <a href="./TypesUsed_txt.html#robo214">integer</a> - begin scanning strip at this position
-  Window - <a href="./TypesUsed_txt.html#robo214">integer</a> - width of scanning window (for example 1000)
+  Start  - <a href="./TypesUsed_txt.html#robo222">integer</a> - begin scanning strip at this position
+  Window - <a href="./TypesUsed_txt.html#robo222">integer</a> - width of scanning window (for example 1000)
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="./WireSurf_inc.html#robo_top_of_doc">WireSurf.inc</a>
-  <a href="./BPatchSurf_inc.html#robo4">BPatchSurf.inc</a>
+<p>  <a href="./WireSurf_inc.html#robo25">WireSurf.inc</a>
+  <a href="./BPatchSurf_inc.html#robo_top_of_doc">BPatchSurf.inc</a>
   DrawSurfaceOnBlock ()
   DrawSTLSurface ()
 </p>
 
 <hr />
 <a name="STL2d22einc2fDeclareLevel"></a>
-<a name="robo235"></a><h2>STL-2.inc/DeclareLevel [ Variables ]</h2>
+<a name="robo243"></a><h2>STL-2.inc/DeclareLevel [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">STL-2.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo20">STL-2.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   <strong>DeclareLevel</strong> determines what is defined:
 </p>
@@ -203,7 +209,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/STL-2.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/STL-2.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

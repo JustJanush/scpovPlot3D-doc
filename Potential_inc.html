@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/Potential.inc</title>
-<!-- Source: ./Plot3Dv4/Potential.inc -->
+<title>./Plot3Dv4/Plot3Dv4/Potential.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/Potential.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,28 +30,31 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo16">ScPovPlot3D/Potential.inc</a></li>
+<li>1. <a href="#robo18">ScPovPlot3D/Potential.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo64">Potential.inc/CreateVFC</a></li>
-<li>1.2. <a href="#robo65">Potential.inc/CreateVFC2</a></li>
-<li>1.3. <a href="./VectorField_inc.html#robo66">Potential.inc/DeclareStructure</a></li>
-<li>1.4. <a href="#robo67">Potential.inc/Draw01CubicInterpolSrf</a></li>
-<li>1.5. <a href="#robo68">Potential.inc/DrawBones</a></li>
-<li>1.6. <a href="#robo69">Potential.inc/DrawBonesBW</a></li>
-<li>1.7. <a href="#robo70">Potential.inc/DrawCatRomSrf</a></li>
-<li>1.8. <a href="#robo71">Potential.inc/DrawKrigedSurf</a></li>
-<li>1.9. <a href="#robo72">Potential.inc/DrawKrigedSurf2</a></li>
-<li>1.10. <a href="#robo73">Potential.inc/DrawQVBox</a></li>
-<li>1.11. <a href="#robo74">Potential.inc/SetExLimiter</a>, <a href="#robo74">_exx</a></li>
-<li>1.12. <a href="#robo75">Potential.inc/SetTanTau</a>, <a href="#robo75">_TanTau</a></li>
-<li>1.13. <a href="#robo168">Potential.inc/_K3a</a></li>
-<li>1.14. <a href="#robo169">Potential.inc/_K3b</a></li>
-<li>1.15. <a href="#robo170">Potential.inc/_K3den</a></li>
+<li>1.1. <a href="#robo68">Potential.inc/CreateVFC</a></li>
+<li>1.2. <a href="#robo69">Potential.inc/CreateVFC2</a></li>
+<li>1.3. <a href="./VectorField_inc.html#robo70">Potential.inc/DeclareStructure</a></li>
+<li>1.4. <a href="#robo71">Potential.inc/Draw01CubicInterpolSrf</a></li>
+<li>1.5. <a href="#robo72">Potential.inc/DrawBones</a></li>
+<li>1.6. <a href="#robo73">Potential.inc/DrawBonesBW</a></li>
+<li>1.7. <a href="#robo74">Potential.inc/DrawCatRomSrf</a></li>
+<li>1.8. <a href="#robo75">Potential.inc/DrawKrigedSurf</a></li>
+<li>1.9. <a href="#robo76">Potential.inc/DrawKrigedSurf2</a></li>
+<li>1.10. <a href="#robo77">Potential.inc/DrawQVBox</a></li>
+<li>1.11. <a href="#robo78">Potential.inc/SetExLimiter</a>, <a href="#robo78">_exx</a></li>
+<li>1.12. <a href="#robo79">Potential.inc/SetGradMax</a></li>
+<li>1.13. <a href="#robo80">Potential.inc/SetGradMin</a></li>
+<li>1.14. <a href="#robo81">Potential.inc/SetGradMin2</a></li>
+<li>1.15. <a href="#robo82">Potential.inc/SetTanTau</a>, <a href="#robo82">_TanTau</a></li>
+<li>1.16. <a href="#robo176">Potential.inc/_K3a</a></li>
+<li>1.17. <a href="#robo177">Potential.inc/_K3b</a></li>
+<li>1.18. <a href="#robo178">Potential.inc/_K3den</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fPotential2einc"></a>
-<a name="robo16"></a><h2>ScPovPlot3D/Potential.inc [ Modules ]</h2>
+<a name="robo18"></a><h2>ScPovPlot3D/Potential.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -68,7 +71,7 @@
 <hr width=50% align="left">        
 </p>
 <p class="item_name">VERSION</p>
-<p>  3.3.0.0, tested on PovRay 3.7.
+<p>  4.0.0, tested on PovRay 3.7.
 </p>
 <p class="item_name">AUTHOR</p>
 <p>  Janusz Opiła Ph.D.
@@ -94,9 +97,9 @@
 
 <hr />
 <a name="Potential2einc2fCreateVFC"></a>
-<a name="robo64"></a><h2>Potential.inc/CreateVFC [ Main macros ]</h2>
+<a name="robo68"></a><h2>Potential.inc/CreateVFC [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Coulombean potential from network of electric charges.
   Results are computed in [V], for distance given in Angstrems, 
@@ -106,45 +109,45 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>CreateVFC</strong><span class="sign">(</span>_PTs<span class="sign">)</span> <span class="comment">// </span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a> - array defining structure, see <a href="./Structures_inc.html#robo19">Structures.inc</a>
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a> - array defining structure, see <a href="./Structures_inc.html#robo21">Structures.inc</a>
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo212">Function</a> 
+<pre>  <a href="./TypesUsed_txt.html#robo220">Function</a> 
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo65">CreateVFC2</a>, CreateVLJ, CreateVLJ2
+<p>  <a href="#robo69">CreateVFC2</a>, CreateVLJ, CreateVLJ2
 </p>
 
 <hr />
 <a name="Potential2einc2fCreateVFC2"></a>
-<a name="robo65"></a><h2>Potential.inc/CreateVFC2 [ Main macros ]</h2>
+<a name="robo69"></a><h2>Potential.inc/CreateVFC2 [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Coulombean potential from network of electric charges.
   Results are computed in [V], for distance given in Angstrems, 
   and charge given in 'e' units.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#macro</span> <strong>CreateVFC2</strong><span class="sign">(</span>_PTs<span class="sign">,</span> <a href="./TextExt_inc.html#robo177">_FF</a><span class="sign">)</span> <span class="comment">// Coulombean potential from network of electric charges</span>
+<pre class="source"><span class="keyword">#macro</span> <strong>CreateVFC2</strong><span class="sign">(</span>_PTs<span class="sign">,</span> <a href="./TextExt_inc.html#robo185">_FF</a><span class="sign">)</span> <span class="comment">// Coulombean potential from network of electric charges</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a> - array defining structure, see <a href="./Structures_inc.html#robo19">Structures.inc</a>
-  <a href="./TypesUsed_txt.html#robo211">float</a>  - unit divider, ex.: use 1000 for [mV], and 0.001 for [kV]. 
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a> - array defining structure, see <a href="./Structures_inc.html#robo21">Structures.inc</a>
+  <a href="./TypesUsed_txt.html#robo219">float</a>  - unit divider, ex.: use 1000 for [mV], and 0.001 for [kV]. 
            Volatile setting, may be changed in future releases.
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo212">Function</a> 
+<pre>  <a href="./TypesUsed_txt.html#robo220">Function</a> 
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo64">CreateVFC</a>, CreateVLJ, CreateVLJ2
+<p>  <a href="#robo68">CreateVFC</a>, CreateVLJ, CreateVLJ2
 </p>
 
 <hr />
 <a name="Potential2einc2fDraw01CubicInterpolSrf"></a>
-<a name="robo67"></a><h2>Potential.inc/Draw01CubicInterpolSrf [ Main macros ]</h2>
+<a name="robo71"></a><h2>Potential.inc/Draw01CubicInterpolSrf [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes isosurface usin TriCubic interpolation. Setting variable "Debug" to more than zero produces diagnostic output
 </p>
@@ -154,7 +157,7 @@
 <p class="item_name">INPUTS</p>
 <pre>  _trsh - double - threshold value of isosurface
   _dd   - double - edge length of elementary cell
- QVr[]  - <a href="./TypesUsed_txt.html#robo213">garray</a> - implicit attribute, nodes of computation frame
+ QVr[]  - <a href="./TypesUsed_txt.html#robo221">garray</a> - implicit attribute, nodes of computation frame
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  None, 
@@ -168,9 +171,9 @@
 
 <hr />
 <a name="Potential2einc2fDrawBones"></a>
-<a name="robo68"></a><h2>Potential.inc/DrawBones [ Main macros ]</h2>
+<a name="robo72"></a><h2>Potential.inc/DrawBones [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws all 64 nodes used by interpolation procedures. For illustration purposes only.
 </p>
@@ -179,20 +182,20 @@
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  _dd  - double   - distance parameter, _dd &gt; 0.
-  _xyz - <a href="./TypesUsed_txt.html#robo202">3Dvector</a> - additional shift of the whole structure 
+  _xyz - <a href="./TypesUsed_txt.html#robo210">3Dvector</a> - additional shift of the whole structure 
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  none
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo73">DrawQVBox</a> (), DrawAllCells (), <a href="#robo69">DrawBonesBW</a> ()
+<p>  <a href="#robo77">DrawQVBox</a> (), DrawAllCells (), <a href="#robo73">DrawBonesBW</a> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fDrawBonesBW"></a>
-<a name="robo69"></a><h2>Potential.inc/DrawBonesBW [ Main macros ]</h2>
+<a name="robo73"></a><h2>Potential.inc/DrawBonesBW [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws all 64 nodes used by interpolation procedures. For illustration purposes only.
 </p>
@@ -201,20 +204,20 @@
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  _dd  - double   - distance parameter, _dd &gt; 0.
-  _xyz - <a href="./TypesUsed_txt.html#robo202">3Dvector</a> - additional shift of the whole structure 
+  _xyz - <a href="./TypesUsed_txt.html#robo210">3Dvector</a> - additional shift of the whole structure 
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  none
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo73">DrawQVBox</a> (), DrawAllCells (), <strong>DrawBonesBW</strong> ()
+<p>  <a href="#robo77">DrawQVBox</a> (), DrawAllCells (), <strong>DrawBonesBW</strong> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fDrawCatRomSrf"></a>
-<a name="robo70"></a><h2>Potential.inc/DrawCatRomSrf [ Main macros ]</h2>
+<a name="robo74"></a><h2>Potential.inc/DrawCatRomSrf [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes isosurface usin TriCubic interpolation. Setting variable "Debug" to more than zero produces diagnostic output
 </p>
@@ -224,7 +227,7 @@
 <p class="item_name">INPUTS</p>
 <pre>  _trsh - double - threshold value of isosurface
   _dd   - double - edge length of elementary cell
- QVr[]  - <a href="./TypesUsed_txt.html#robo213">garray</a> - implicit attribute, nodes of computation frame
+ QVr[]  - <a href="./TypesUsed_txt.html#robo221">garray</a> - implicit attribute, nodes of computation frame
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  None, 
@@ -233,14 +236,14 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> ()
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fDrawKrigedSurf"></a>
-<a name="robo71"></a><h2>Potential.inc/DrawKrigedSurf [ Main macros ]</h2>
+<a name="robo75"></a><h2>Potential.inc/DrawKrigedSurf [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes isosurface usin DrawKrigeSurf interpolation. Setting variable "Debug" to more than zero produces diagnostic output
 </p>
@@ -251,7 +254,7 @@
 <pre>  _trsh - double - threshold value of isosurface
   _dd   - double - edge length of elementary cell
   _pp   - smoothing constant
- QVr[]  - <a href="./TypesUsed_txt.html#robo213">garray</a> - implicit attribute, nodes of computation frame
+ QVr[]  - <a href="./TypesUsed_txt.html#robo221">garray</a> - implicit attribute, nodes of computation frame
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  None, 
@@ -260,14 +263,14 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> (), <a href="#robo72">DrawKrigedSurf2</a> ()
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> (), <a href="#robo76">DrawKrigedSurf2</a> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fDrawKrigedSurf2"></a>
-<a name="robo72"></a><h2>Potential.inc/DrawKrigedSurf2 [ Main macros ]</h2>
+<a name="robo76"></a><h2>Potential.inc/DrawKrigedSurf2 [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes isosurface using gaussian KDE interpolation. Setting variable "Debug" to more than zero produces diagnostic output
   Features full frame (ie. all 64 neighbours) in reduced coordinates.
@@ -279,7 +282,7 @@
 <pre>  _trsh - double - threshold value of isosurface
   _dd   - double - edge length of elementary cell
   _pp   - smoothing constant
- QVr[]  - <a href="./TypesUsed_txt.html#robo213">garray</a> - implicit attribute, nodes of computation frame
+ QVr[]  - <a href="./TypesUsed_txt.html#robo221">garray</a> - implicit attribute, nodes of computation frame
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  None, 
@@ -288,14 +291,14 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> (), <a href="#robo71">DrawKrigedSurf</a> ()
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> (), <a href="#robo75">DrawKrigedSurf</a> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fDrawQVBox"></a>
-<a name="robo73"></a><h2>Potential.inc/DrawQVBox [ Main macros ]</h2>
+<a name="robo77"></a><h2>Potential.inc/DrawQVBox [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws box containing computed grid of values
 </p>
@@ -303,20 +306,20 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawQVBox</strong><span class="sign">(</span>_QVr<span class="sign">)</span>  <span class="comment">// default look</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _QVr - <a href="./TypesUsed_txt.html#robo213">garray</a>
+<pre>  _QVr - <a href="./TypesUsed_txt.html#robo221">garray</a>
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  none
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo68">DrawBones</a> (), DrawAllCells ()
+<p>  <a href="#robo72">DrawBones</a> (), DrawAllCells ()
 </p>
 
 <hr />
 <a name="Potential2einc2fSetExLimiter"></a>
-<a name="robo74"></a><h2>Potential.inc/SetExLimiter, _exx [ Main macros ]</h2>
+<a name="robo78"></a><h2>Potential.inc/SetExLimiter, _exx [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Parameter for elementary cell selector. Default '0'. The greater the larger tolerance. For Catmul-Rom values &gt;0 impose risk of artifacts. 
 </p>
@@ -333,14 +336,77 @@
 <pre>  sets parameter 
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo70">DrawCatRomSrf</a> (), crSm0 (), crS12 ()
+<p>  <a href="#robo74">DrawCatRomSrf</a> (), crSm0 (), crS12 ()
+</p>
+
+<hr />
+<a name="Potential2einc2fSetGradMax"></a>
+<a name="robo79"></a><h2>Potential.inc/SetGradMax [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Sets parameter _gMin for gradient texture mapping
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetGradMax</strong><span class="sign">(</span>_g<span class="sign">)</span>           
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _g - double - parameter value
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  sets internal parameter _gMin2 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo80">SetGradMin</a> (), <a href="#robo81">SetGradMin2</a> ()
+</p>
+
+<hr />
+<a name="Potential2einc2fSetGradMin"></a>
+<a name="robo80"></a><h2>Potential.inc/SetGradMin [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Sets parameter _gMin for gradient texture mapping
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetGradMin</strong><span class="sign">(</span>_g<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _g - double - parameter value
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  sets internal parameter _gMin 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo81">SetGradMin2</a> (), <a href="#robo79">SetGradMax</a> ()
+</p>
+
+<hr />
+<a name="Potential2einc2fSetGradMin2"></a>
+<a name="robo81"></a><h2>Potential.inc/SetGradMin2 [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Sets parameter _gMin for gradient texture mapping
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>SetGradMin2</strong><span class="sign">(</span>_g<span class="sign">)</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  _g - double - parameter value
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  sets internal parameter _gMin2 
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo80">SetGradMin</a> (), <a href="#robo79">SetGradMax</a> ()
 </p>
 
 <hr />
 <a name="Potential2einc2fSetTanTau"></a>
-<a name="robo75"></a><h2>Potential.inc/SetTanTau, _TanTau [ Main macros ]</h2>
+<a name="robo82"></a><h2>Potential.inc/SetTanTau, _TanTau [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Parameter for tangent calculations in Catmul-Rom formulation
 </p>
@@ -357,24 +423,24 @@
 <pre>  sets parameter 
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo70">DrawCatRomSrf</a> (), crSm0 (), crS12 ()
+<p>  <a href="#robo74">DrawCatRomSrf</a> (), crSm0 (), crS12 ()
 </p>
 
 <hr />
 <a name="Potential2einc2f5fK3a"></a>
-<a name="robo168"></a><h2>Potential.inc/_K3a [ Helper macros ]</h2>
+<a name="robo176"></a><h2>Potential.inc/_K3a [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes KDE approximation using gaussian interpolation. 
-  Whole interpolation is split in three functions, <strong>_K3a</strong>, <a href="#robo169">_K3b</a>, <a href="#robo170">_K3den</a> due to limitation imposed on number of arguments.
-  Total output equals: [(<strong>_K3a</strong>()+<a href="#robo169">_K3b</a>())/<a href="#robo170">_K3den</a>()] - denominator is computed in <a href="#robo170">_K3den</a> () fucnction, 
+  Whole interpolation is split in three functions, <strong>_K3a</strong>, <a href="#robo177">_K3b</a>, <a href="#robo178">_K3den</a> due to limitation imposed on number of arguments.
+  Total output equals: [(<strong>_K3a</strong>()+<a href="#robo177">_K3b</a>())/<a href="#robo178">_K3den</a>()] - denominator is computed in <a href="#robo178">_K3den</a> () fucnction, 
   Model is computed in reduced space, ie. rx,ry,rz is assumed zero.
   Setting variable "Debug" to more than zero produces diagnostic output.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#declare</span> <strong>_K3a</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>             <span class="comment">// Full cube core nodes, internal part 1; __2</span>
-                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz   <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo211">float</a> - internally supplied</span>
+<pre class="source"><span class="keyword">#declare</span> <strong>_K3a</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>             <span class="comment">// Full cube core nodes, internal part 1; __2</span>
+                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz   <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo219">float</a> - internally supplied</span>
                         <span class="sign">,</span>_d<span class="sign">,</span> __d      <span class="comment">// edge length/ double length of elementary cell</span>
                         <span class="sign">,</span>_p           <span class="comment">// smoothing constant</span>
                         <span class="sign">,</span>_Q000<span class="sign">,</span> _Q010<span class="sign">,</span> _Q100<span class="sign">,</span> _Q110  <span class="comment">// lower base</span>
@@ -400,24 +466,24 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> (), <a href="#robo169">_K3b</a>
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> (), <a href="#robo177">_K3b</a>
 </p>
 
 <hr />
 <a name="Potential2einc2f5fK3b"></a>
-<a name="robo169"></a><h2>Potential.inc/_K3b [ Helper macros ]</h2>
+<a name="robo177"></a><h2>Potential.inc/_K3b [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes KDE approximation using gaussian interpolation. 
-  Whole interpolation is split in three functions, <a href="#robo168">_K3a</a>, <strong>_K3b</strong>, <a href="#robo170">_K3den</a> due to limitation imposed on number of arguments.
-  Total output equals: [(<a href="#robo168">_K3a</a>()+<strong>_K3b</strong>())/<a href="#robo170">_K3den</a>()] - denominator is computed in _K3dem () fucnction, 
+  Whole interpolation is split in three functions, <a href="#robo176">_K3a</a>, <strong>_K3b</strong>, <a href="#robo178">_K3den</a> due to limitation imposed on number of arguments.
+  Total output equals: [(<a href="#robo176">_K3a</a>()+<strong>_K3b</strong>())/<a href="#robo178">_K3den</a>()] - denominator is computed in _K3dem () fucnction, 
   Model is computed in reduced space, ie. rx,ry,rz is assumed zero.
   Setting variable "Debug" to more than zero produces diagnostic output.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#declare</span> <strong>_K3b</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>             <span class="comment">// Full cube core nodes, internal part 1; __2</span>
-                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz   <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo211">float</a> - internally supplied</span>
+<pre class="source"><span class="keyword">#declare</span> <strong>_K3b</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>             <span class="comment">// Full cube core nodes, internal part 1; __2</span>
+                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz   <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo219">float</a> - internally supplied</span>
                         <span class="sign">,</span>_d<span class="sign">,</span> __d      <span class="comment">// edge length/ double length of elementary cell</span>
                         <span class="sign">,</span>_p           <span class="comment">// smoothing constant</span>
                         <span class="sign">,</span>_Qmmm<span class="sign">,</span> _Q0mm<span class="sign">,</span> _Q1mm<span class="sign">,</span> _Q2mm  <span class="comment">// lower dozen       __m</span>
@@ -445,24 +511,24 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> (), <strong>_K3b</strong>
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> (), <strong>_K3b</strong>
 </p>
 
 <hr />
 <a name="Potential2einc2f5fK3den"></a>
-<a name="robo170"></a><h2>Potential.inc/_K3den [ Helper macros ]</h2>
+<a name="robo178"></a><h2>Potential.inc/_K3den [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo16">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo18">Potential.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Computes KDE approximation using gaussian interpolation. 
-  Whole interpolation is split in three functions, <a href="#robo168">_K3a</a>, <a href="#robo169">_K3b</a>, <strong>_K3den</strong> due to limitation imposed on number of arguments.
-  Total output equals: [(<a href="#robo168">_K3a</a>()+<a href="#robo169">_K3b</a>())/<strong>_K3den</strong>()] - denominator is computed in <strong>_K3den</strong> () <a href="./TypesUsed_txt.html#robo212">Function</a>, 
+  Whole interpolation is split in three functions, <a href="#robo176">_K3a</a>, <a href="#robo177">_K3b</a>, <strong>_K3den</strong> due to limitation imposed on number of arguments.
+  Total output equals: [(<a href="#robo176">_K3a</a>()+<a href="#robo177">_K3b</a>())/<strong>_K3den</strong>()] - denominator is computed in <strong>_K3den</strong> () <a href="./TypesUsed_txt.html#robo220">Function</a>, 
   Model is computed in reduced space, ie. rx,ry,rz is assumed zero.
   Setting variable "Debug" to more than zero produces diagnostic output.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#declare</span> <strong>_K3den</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>           <span class="comment">// Full cube core nodes, internal part 1; __2</span>
-                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz    <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo211">float</a> - internally supplied</span>
+<pre class="source"><span class="keyword">#declare</span> <strong>_K3den</strong> <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>           <span class="comment">// Full cube core nodes, internal part 1; __2</span>
+                        xx<span class="sign">,</span> yy<span class="sign">,</span> zz    <span class="comment">// xP, yP, zP: <a href="./TypesUsed_txt.html#robo219">float</a> - internally supplied</span>
                         <span class="sign">,</span>_d<span class="sign">,</span> __d      <span class="comment">// edge length/ double length of elementary cell</span>
                         <span class="sign">,</span>_p           <span class="comment">// smoothing constant</span>
                         <span class="sign">)</span>            
@@ -480,12 +546,12 @@
 <p>  None or unknown
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  DrawCubicInterpolSrf (), <a href="#robo67">Draw01CubicInterpolSrf</a> (), <a href="#robo168">_K3a</a> (), <a href="#robo169">_K3b</a> ()
+<p>  DrawCubicInterpolSrf (), <a href="#robo71">Draw01CubicInterpolSrf</a> (), <a href="#robo176">_K3a</a> (), <a href="#robo177">_K3b</a> ()
 </p>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/Potential.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/Potential.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

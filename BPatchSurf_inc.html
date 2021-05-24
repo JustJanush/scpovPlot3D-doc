@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/BPatchSurf.inc</title>
-<!-- Source: ./Plot3Dv4/BPatchSurf.inc -->
+<title>./Plot3Dv4/Plot3Dv4/BPatchSurf.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/BPatchSurf.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,42 +30,42 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo4">ScPovPlot3D/BPatchSurf.inc</a></li>
+<li>1. <a href="#robo6">ScPovPlot3D/BPatchSurf.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo27">BPatchSurf.inc/DrawAllPatches</a></li>
-<li>1.2. <a href="#robo28">BPatchSurf.inc/DrawAllPatches_UV()</a></li>
-<li>1.3. <a href="#robo29">BPatchSurf.inc/DrawAllPatches_UV_multi()</a></li>
-<li>1.4. <a href="#robo30">BPatchSurf.inc/DrawAllPatches_UVpng()</a></li>
-<li>1.5. <a href="#robo31">BPatchSurf.inc/DrawAllPatchesGeo</a></li>
-<li>1.6. <a href="#robo32">BPatchSurf.inc/DrawAllPatchesWithMap</a></li>
-<li>1.7. <a href="#robo33">BPatchSurf.inc/DrawAllPatchesWithTexture</a></li>
-<li>1.8. <a href="#robo34">BPatchSurf.inc/DrawPatch</a></li>
-<li>1.9. <a href="#robo35">BPatchSurf.inc/DrawPatch_UV()</a></li>
-<li>1.10. <a href="#robo36">BPatchSurf.inc/DrawPatch_UV_multi()</a></li>
-<li>1.11. <a href="#robo37">BPatchSurf.inc/DrawPatch_UVpng</a></li>
-<li>1.12. <a href="#robo38">BPatchSurf.inc/FunctionSurface</a>, <a href="#robo38">EvalFuncPatchedSurf</a></li>
-<li>1.13. <a href="#robo39">BPatchSurf.inc/MatrixFileSurface()</a></li>
-<li>1.14. <a href="#robo40">BPatchSurf.inc/RawDataSurfaceExt()</a>, <a href="#robo40">RawDataSurface()</a></li>
-<li>1.15. <a href="#robo41">BPatchSurf.inc/ScatterDataSurfaceExp()</a></li>
-<li>1.16. <a href="#robo108">BPatchSurf.inc/DrawCardPoints</a></li>
-<li>1.17. <a href="#robo109">BPatchSurf.inc/Inline functions</a></li>
-<li>1.18. <a href="#robo110">BPatchSurf.inc/Inline kriging functions()</a></li>
-<li>1.19. <a href="#robo111">BPatchSurf.inc/SetDZero</a></li>
-<li>1.20. <a href="#robo112">BPatchSurf.inc/SetInterior()</a></li>
-<li>1.21. <a href="#robo113">BPatchSurf.inc/SetRGBFTColor</a></li>
-<li>1.22. <a href="#robo114">BPatchSurf.inc/SetTexture</a></li>
-<li>1.23. <a href="#robo115">BPatchSurf.inc/SetVScale</a></li>
-<li>1.24. <a href="#robo116">BPatchSurf.inc/SetVShift()</a></li>
-<li>1.25. <a href="#robo223">BPatchSurf.inc/ImageConstants</a></li>
-<li>1.26. <a href="#robo228">BPatchSurf.inc/DeclareLevel</a>, <a href="#robo228">tmpColour</a>, <a href="#robo228">tmpColour1</a>, <a href="#robo228">tmpColour2</a>, <a href="#robo228">DZero</a></li>
-<li>1.27. <a href="#robo229">BPatchSurf.inc/DZero</a></li>
-<li>1.28. <a href="#robo230">BPatchSurf.inc/VScale</a></li>
-<li>1.29. <a href="#robo231">BPatchSurf.inc/VShift</a></li>
+<li>1.1. <a href="#robo29">BPatchSurf.inc/DrawAllPatches</a></li>
+<li>1.2. <a href="#robo30">BPatchSurf.inc/DrawAllPatches_UV()</a></li>
+<li>1.3. <a href="#robo31">BPatchSurf.inc/DrawAllPatches_UV_multi()</a></li>
+<li>1.4. <a href="#robo32">BPatchSurf.inc/DrawAllPatches_UVpng()</a></li>
+<li>1.5. <a href="#robo33">BPatchSurf.inc/DrawAllPatchesGeo</a></li>
+<li>1.6. <a href="#robo34">BPatchSurf.inc/DrawAllPatchesWithMap</a></li>
+<li>1.7. <a href="#robo35">BPatchSurf.inc/DrawAllPatchesWithTexture</a></li>
+<li>1.8. <a href="#robo36">BPatchSurf.inc/DrawPatch</a></li>
+<li>1.9. <a href="#robo37">BPatchSurf.inc/DrawPatch_UV()</a></li>
+<li>1.10. <a href="#robo38">BPatchSurf.inc/DrawPatch_UV_multi()</a></li>
+<li>1.11. <a href="#robo39">BPatchSurf.inc/DrawPatch_UVpng</a></li>
+<li>1.12. <a href="#robo40">BPatchSurf.inc/FunctionSurface</a>, <a href="#robo40">EvalFuncPatchedSurf</a></li>
+<li>1.13. <a href="#robo41">BPatchSurf.inc/MatrixFileSurface()</a></li>
+<li>1.14. <a href="#robo42">BPatchSurf.inc/RawDataSurfaceExt()</a>, <a href="#robo42">RawDataSurface()</a></li>
+<li>1.15. <a href="#robo43">BPatchSurf.inc/ScatterDataSurfaceExp()</a></li>
+<li>1.16. <a href="#robo116">BPatchSurf.inc/DrawCardPoints</a></li>
+<li>1.17. <a href="#robo117">BPatchSurf.inc/Inline functions</a></li>
+<li>1.18. <a href="#robo118">BPatchSurf.inc/Inline kriging functions()</a></li>
+<li>1.19. <a href="#robo119">BPatchSurf.inc/SetDZero</a></li>
+<li>1.20. <a href="#robo120">BPatchSurf.inc/SetInterior()</a></li>
+<li>1.21. <a href="#robo121">BPatchSurf.inc/SetRGBFTColor</a></li>
+<li>1.22. <a href="#robo122">BPatchSurf.inc/SetTexture</a></li>
+<li>1.23. <a href="#robo123">BPatchSurf.inc/SetVScale</a></li>
+<li>1.24. <a href="#robo124">BPatchSurf.inc/SetVShift()</a></li>
+<li>1.25. <a href="#robo231">BPatchSurf.inc/ImageConstants</a></li>
+<li>1.26. <a href="#robo236">BPatchSurf.inc/DeclareLevel</a>, <a href="#robo236">tmpColour</a>, <a href="#robo236">tmpColour1</a>, <a href="#robo236">tmpColour2</a>, <a href="#robo236">DZero</a></li>
+<li>1.27. <a href="#robo237">BPatchSurf.inc/DZero</a></li>
+<li>1.28. <a href="#robo238">BPatchSurf.inc/VScale</a></li>
+<li>1.29. <a href="#robo239">BPatchSurf.inc/VShift</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fBPatchSurf2einc"></a>
-<a name="robo4"></a><h2>ScPovPlot3D/BPatchSurf.inc [ Modules ]</h2>
+<a name="robo6"></a><h2>ScPovPlot3D/BPatchSurf.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -96,7 +96,7 @@
 </pre>
 <p></p>
 <p class="item_name">HISTORY</p>
-<p>  3.1.0.3 replaced in line 1085: &lt;xx,yy,zz&gt; -&gt; &lt;xx,yy,<a href="#robo230">VScale</a>*zz+<a href="#robo231">VShift</a>&gt;
+<p>  3.1.0.3 replaced in line 1085: &lt;xx,yy,zz&gt; -&gt; &lt;xx,yy,<a href="./Balloons_inc.html#robo235">VScale</a>*zz+<a href="#robo239">VShift</a>&gt;
 </p>
 <p class="item_name">COPYRIGHT</p>
 <pre>  GNU GPL v.3 License
@@ -106,9 +106,9 @@
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatches"></a>
-<a name="robo27"></a><h2>BPatchSurf.inc/DrawAllPatches [ Main macros ]</h2>
+<a name="robo29"></a><h2>BPatchSurf.inc/DrawAllPatches [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this helper macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure.
@@ -123,28 +123,28 @@
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), <a href="#robo31">DrawAllPatchesGeo</a> (), 
-   <a href="#robo33">DrawAllPatchesWithTexture</a> (), <a href="#robo32">DrawAllPatchesWithMap</a> ()
+<pre>   <a href="#robo40">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), <a href="#robo33">DrawAllPatchesGeo</a> (), 
+   <a href="#robo35">DrawAllPatchesWithTexture</a> (), <a href="#robo34">DrawAllPatchesWithMap</a> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatches5fUV2829"></a>
-<a name="robo28"></a><h2>BPatchSurf.inc/DrawAllPatches_UV() [ Main macros ]</h2>
+<a name="robo30"></a><h2>BPatchSurf.inc/DrawAllPatches_UV() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  This macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure :)
   The macro applies UV texture to the whole surface.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawAllPatches_UV<span class="sign">(</span><a href="#robo223">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">string</a> filename _file<span class="sign">)</span>
+<pre class="source">DrawAllPatches_UV<span class="sign">(</span><a href="#robo231">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo227">string</a> filename _file<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="#robo223">ImageConstants</a> _type - indicates format of the bitmap passed to the macro as uv_mapping{}.
+<pre>  <a href="#robo231">ImageConstants</a> _type - indicates format of the bitmap passed to the macro as uv_mapping{}.
   _type = [ _JPG | _BMP | _GIF | _PNG |_TGA | _SYS |_EXR |_HDR |_IFF |_PGM |_PPM |_TIF ]
-  <a href="./TypesUsed_txt.html#robo219">string</a> filename - Name of map for the surface
+  <a href="./TypesUsed_txt.html#robo227">string</a> filename - Name of map for the surface
                   - Consult source file for details.
 </pre>
 <p class="item_name">EXAMPLE</p>
@@ -153,30 +153,30 @@
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo35">DrawPatch_UV()</a>, <a href="#robo36">DrawPatch_UV_multi()</a>,
-   <a href="#robo34">DrawPatch</a>(), <a href="#robo27">DrawAllPatches</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo40">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo37">DrawPatch_UV()</a>, <a href="#robo38">DrawPatch_UV_multi()</a>,
+   <a href="#robo36">DrawPatch</a>(), <a href="#robo29">DrawAllPatches</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatches5fUV5fmulti2829"></a>
-<a name="robo29"></a><h2>BPatchSurf.inc/DrawAllPatches_UV_multi() [ Main macros ]</h2>
+<a name="robo31"></a><h2>BPatchSurf.inc/DrawAllPatches_UV_multi() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro renders all bezier_patch{}'es in this surface and
   applies UV texture to a every single patch by iterative formula
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawAllPatches_UV_multi<span class="sign">(</span><a href="#robo223">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">string</a> _file<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo222">uinteger</a> _max<span class="sign">)</span>
+<pre class="source">DrawAllPatches_UV_multi<span class="sign">(</span><a href="#robo231">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo227">string</a> _file<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo230">uinteger</a> _max<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="#robo223">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
+<pre>  <a href="#robo231">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
   _type = [ _JPG | _BMP | _GIF | _PNG |_TGA | _SYS |_EXR |_HDR |_IFF |_PGM |_PPM |_TIF |_TIF ]
-  <a href="./TypesUsed_txt.html#robo219">string</a>   _file - constant part of image file name
-  <a href="./TypesUsed_txt.html#robo222">uinteger</a> _max     - automatically generated suffix goes from '0' up to '_max-1'. Suffix is then concatenated
+  <a href="./TypesUsed_txt.html#robo227">string</a>   _file - constant part of image file name
+  <a href="./TypesUsed_txt.html#robo230">uinteger</a> _max     - automatically generated suffix goes from '0' up to '_max-1'. Suffix is then concatenated
                     - with _file and extension defined by _type. Thus final image name is defined.
-                    - This image will be used as uv_map for consecutive patches. Calls macro <a href="#robo36">DrawPatch_UV_multi()</a>.
+                    - This image will be used as uv_map for consecutive patches. Calls macro <a href="#robo38">DrawPatch_UV_multi()</a>.
                     - _max = 2..100/ parameter of mod(N, _max) operation. Consult source file for details.
 </pre>
 <p class="item_name">EXAMPLE</p>
@@ -186,40 +186,40 @@
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo35">DrawPatch_UV()</a>, <a href="#robo34">DrawPatch</a>(),
-   <a href="#robo27">DrawAllPatches</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo40">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo37">DrawPatch_UV()</a>, <a href="#robo36">DrawPatch</a>(),
+   <a href="#robo29">DrawAllPatches</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatches5fUVpng2829"></a>
-<a name="robo30"></a><h2>BPatchSurf.inc/DrawAllPatches_UVpng() [ Main macros ]</h2>
+<a name="robo32"></a><h2>BPatchSurf.inc/DrawAllPatches_UVpng() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  This macro renders single bezier_patch{} depicted by given indices.
   Its simplicity results from sophisticated data structure.
   This macro applies UV'ed texture to the surface given in _UV_png (PNG format) file.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><a href="#robo37">DrawPatch_UVpng</a><span class="sign">(</span>ipy<span class="sign">,</span> ipx<span class="sign">,</span> _UV_png<span class="sign">)</span>
+<pre class="source">DrawAllPatches_UVpng<span class="sign">(</span>_png_file <span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  None
+<pre>  <a href="./TypesUsed_txt.html#robo228">string_fn</a> _UV_png - filename of (square) PNG raster bitmap
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo37">DrawPatch_UVpng</a>(),
-   <a href="#robo27">DrawAllPatches</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo40">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo39">DrawPatch_UVpng</a>(),
+   <a href="#robo29">DrawAllPatches</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatchesGeo"></a>
-<a name="robo31"></a><h2>BPatchSurf.inc/DrawAllPatchesGeo [ Main macros ]</h2>
+<a name="robo33"></a><h2>BPatchSurf.inc/DrawAllPatchesGeo [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure.
@@ -234,16 +234,16 @@
 <p class="item_name">SEE ALSO</p>
 <p>  one should also check:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), <a href="#robo27">DrawAllPatches</a> (), 
-   <a href="#robo33">DrawAllPatchesWithTexture</a> (), <a href="#robo37">DrawPatch_UVpng</a>
+<pre>   <a href="#robo40">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), <a href="#robo29">DrawAllPatches</a> (), 
+   <a href="#robo35">DrawAllPatchesWithTexture</a> (), <a href="#robo39">DrawPatch_UVpng</a>
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatchesWithMap"></a>
-<a name="robo32"></a><h2>BPatchSurf.inc/DrawAllPatchesWithMap [ Main macros ]</h2>
+<a name="robo34"></a><h2>BPatchSurf.inc/DrawAllPatchesWithMap [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure.
@@ -253,22 +253,22 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawAllPatchesWithMap</strong><span class="sign">(</span> _ThisMap<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo208">colormapdef</a> _ThisMap - any valid color_map{} definition, uses passed color_map{} object,
-                         one from <a href="./ColorMaps_inc.html#robo_top_of_doc">ColorMaps.inc</a> or another self defined
+<pre>  <a href="./TypesUsed_txt.html#robo216">colormapdef</a> _ThisMap - any valid color_map{} definition, uses passed color_map{} object,
+                         one from <a href="./ColorMaps_inc.html#robo8">ColorMaps.inc</a> or another self defined
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), <a href="#robo27">DrawAllPatches</a> (), 
-   <a href="#robo31">DrawAllPatchesGeo</a> (), <a href="#robo33">DrawAllPatchesWithTexture</a> ()
+<pre>   <a href="#robo40">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), <a href="#robo29">DrawAllPatches</a> (), 
+   <a href="#robo33">DrawAllPatchesGeo</a> (), <a href="#robo35">DrawAllPatchesWithTexture</a> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawAllPatchesWithTexture"></a>
-<a name="robo33"></a><h2>BPatchSurf.inc/DrawAllPatchesWithTexture [ Main macros ]</h2>
+<a name="robo35"></a><h2>BPatchSurf.inc/DrawAllPatchesWithTexture [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this helper macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure.
@@ -278,21 +278,21 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawAllPatchesWithTexture</strong><span class="sign">(</span> _MyTexture<span class="sign">)</span>  <span class="comment">// default pigment gradient</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo221">texturedef</a> _MyTexture - any valid texture definition
+<pre>  <a href="./TypesUsed_txt.html#robo229">texturedef</a> _MyTexture - any valid texture definition
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), <a href="#robo27">DrawAllPatches</a> (), 
-   <a href="#robo31">DrawAllPatchesGeo</a> (), <a href="#robo32">DrawAllPatchesWithMap</a> ()
+<pre>   <a href="#robo40">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), <a href="#robo29">DrawAllPatches</a> (), 
+   <a href="#robo33">DrawAllPatchesGeo</a> (), <a href="#robo34">DrawAllPatchesWithMap</a> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawPatch"></a>
-<a name="robo34"></a><h2>BPatchSurf.inc/DrawPatch [ Main macros ]</h2>
+<a name="robo36"></a><h2>BPatchSurf.inc/DrawPatch [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this helper macro renders single bezier_patch{}
 </p>
@@ -300,51 +300,51 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawPatch</strong><span class="sign">(</span>ipy<span class="sign">,</span> ipx<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipy, <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipx - two unsigned <a href="./TypesUsed_txt.html#robo214">integer</a> numbers, indices to array which contains definition of all patches
+<pre>  <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipy, <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipx - two unsigned <a href="./TypesUsed_txt.html#robo222">integer</a> numbers, indices to array which contains definition of all patches
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), DrawPatch_UV (), EvalPatchedSurface (), <a href="#robo31">DrawAllPatchesGeo</a> (), 
-   <a href="#robo33">DrawAllPatchesWithTexture</a> (), <a href="#robo32">DrawAllPatchesWithMap</a> (), source code of this module
+<pre>   <a href="#robo40">FunctionSurface</a> (), DrawPatch_UV (), EvalPatchedSurface (), <a href="#robo33">DrawAllPatchesGeo</a> (), 
+   <a href="#robo35">DrawAllPatchesWithTexture</a> (), <a href="#robo34">DrawAllPatchesWithMap</a> (), source code of this module
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawPatch5fUV2829"></a>
-<a name="robo35"></a><h2>BPatchSurf.inc/DrawPatch_UV() [ Main macros ]</h2>
+<a name="robo37"></a><h2>BPatchSurf.inc/DrawPatch_UV() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro renders all bezier_patch{}'es in single surface
   its simplicity results from sophisticated data structure.
   This macro applies NO texture to the surface, so one MUST aplly it by hand
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawPatch_UV<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> ipy<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipx<span class="sign">,</span> <a href="#robo223">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">string</a> filename _UV_png<span class="sign">)</span>
+<pre class="source">DrawPatch_UV<span class="sign">(</span><a href="./TypesUsed_txt.html#robo230">uinteger</a> ipy<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipx<span class="sign">,</span> <a href="#robo231">ImageConstants</a> _type<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo227">string</a> filename _UV_png<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipy   - and  ..
-  <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipx   - two unsigned <a href="./TypesUsed_txt.html#robo214">integer</a> numbers, indices to array which contains definition of all patches
-  <a href="#robo223">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
+<pre>  <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipy   - and  ..
+  <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipx   - two unsigned <a href="./TypesUsed_txt.html#robo222">integer</a> numbers, indices to array which contains definition of all patches
+  <a href="#robo231">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
   _type = [ _JPG | _BMP | _GIF | _PNG |_TGA | _SYS |_EXR |_HDR |_IFF |_PGM |_PPM |_TIF |_TIF ]
-  <a href="./TypesUsed_txt.html#robo219">string</a> filename _UV_png - valid filename of bitmap of type declared above
+  <a href="./TypesUsed_txt.html#robo227">string</a> filename _UV_png - valid filename of bitmap of type declared above
   this bitmap should be perpendicular, preferably rectangular, some images are distributed with the package
   as G00.jpg to G10.jpg as well as Gridd*.jpg files in "./img" subfolder
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), <a href="#robo34">DrawPatch</a>(), EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo27">DrawAllPatches</a>(), 
-   <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo40">FunctionSurface</a>(), <a href="#robo36">DrawPatch</a>(), EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo29">DrawAllPatches</a>(), 
+   <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawPatch5fUV5fmulti2829"></a>
-<a name="robo36"></a><h2>BPatchSurf.inc/DrawPatch_UV_multi() [ Main macros ]</h2>
+<a name="robo38"></a><h2>BPatchSurf.inc/DrawPatch_UV_multi() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro renders single bezier_patch{} and applies UV texture to it
 </p>
@@ -352,12 +352,12 @@
 <pre class="source"><span class="keyword">#macro</span> DrawPatch_UV_multi<span class="sign">(</span>ipy<span class="sign">,</span> ipx<span class="sign">,</span> _type<span class="sign">,</span> _UV_core<span class="sign">,</span> _max<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipy   - and  ..
-  <a href="./TypesUsed_txt.html#robo222">uinteger</a> ipx   - two unsigned <a href="./TypesUsed_txt.html#robo214">integer</a> numbers, indices to array which contains definition of all patches
-  <a href="#robo223">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
+<pre>  <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipy   - and  ..
+  <a href="./TypesUsed_txt.html#robo230">uinteger</a> ipx   - two unsigned <a href="./TypesUsed_txt.html#robo222">integer</a> numbers, indices to array which contains definition of all patches
+  <a href="#robo231">ImageConstants</a> _type    - indicates format of the bitmap passed to the macro as uv_map{}
   _type = [ _JPG | _BMP | _GIF | _PNG |_TGA | _SYS |_EXR |_HDR |_IFF |_PGM |_PPM |_TIF |_TIF ]
-  <a href="./TypesUsed_txt.html#robo219">string</a>   _UV_core - constant part of image file
-  <a href="./TypesUsed_txt.html#robo222">uinteger</a> _max     - automatically generated suffix goes from '0' up to '_max-1'. Suffix is then concatenated
+  <a href="./TypesUsed_txt.html#robo227">string</a>   _UV_core - constant part of image file
+  <a href="./TypesUsed_txt.html#robo230">uinteger</a> _max     - automatically generated suffix goes from '0' up to '_max-1'. Suffix is then concatenated
                     - with _UV_core and extension defined by _type. Thus final image name is defined.
                     - This image will be used as uv_map for the given by ipx&amp;ipy indices patch.
                     - Consult source file for details.
@@ -369,16 +369,16 @@
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), <a href="#robo34">DrawPatch</a> (), DrawPatch_UV (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), 
-   <a href="#robo27">DrawAllPatches</a> (), <a href="#robo31">DrawAllPatchesGeo</a> (), <a href="#robo33">DrawAllPatchesWithTexture</a> ()
+<pre>   <a href="#robo40">FunctionSurface</a> (), <a href="#robo36">DrawPatch</a> (), DrawPatch_UV (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), 
+   <a href="#robo29">DrawAllPatches</a> (), <a href="#robo33">DrawAllPatchesGeo</a> (), <a href="#robo35">DrawAllPatchesWithTexture</a> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawPatch5fUVpng"></a>
-<a name="robo37"></a><h2>BPatchSurf.inc/DrawPatch_UVpng [ Main macros ]</h2>
+<a name="robo39"></a><h2>BPatchSurf.inc/DrawPatch_UVpng [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  This macro renders single bezier_patch{} depicted by given indices.
   Its simplicity results from sophisticated data structure.
@@ -388,53 +388,53 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawPatch_UVpng</strong><span class="sign">(</span>ipy<span class="sign">,</span> ipx<span class="sign">,</span> _UV_png<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo214">integer</a> ipy - 
-  <a href="./TypesUsed_txt.html#robo214">integer</a> ipx - indices to given bezier patch item 
-  <a href="./TypesUsed_txt.html#robo220">string_fn</a> _UV_png - filename of PNG raster bitmap
+<pre>  <a href="./TypesUsed_txt.html#robo222">integer</a> ipy - 
+  <a href="./TypesUsed_txt.html#robo222">integer</a> ipx - indices to given bezier patch item 
+  <a href="./TypesUsed_txt.html#robo228">string_fn</a> _UV_png - filename of PNG raster bitmap
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), DrawAllPatches_UVpng (),
-   <a href="#robo27">DrawAllPatches</a> (), <a href="#robo31">DrawAllPatchesGeo</a> (), <a href="#robo33">DrawAllPatchesWithTexture</a> ()
+<pre>   <a href="#robo40">FunctionSurface</a> (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), DrawAllPatches_UVpng (),
+   <a href="#robo29">DrawAllPatches</a> (), <a href="#robo33">DrawAllPatchesGeo</a> (), <a href="#robo35">DrawAllPatchesWithTexture</a> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fFunctionSurface"></a>
-<a name="robo38"></a><h2>BPatchSurf.inc/FunctionSurface, EvalFuncPatchedSurf [ Main macros ]</h2>
+<a name="robo40"></a><h2>BPatchSurf.inc/FunctionSurface, EvalFuncPatchedSurf [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  Draws surface defined by z=Func(x,y) <a href="./TypesUsed_txt.html#robo212">Function</a>, defined in real world parameters
+<p>  Draws surface defined by z=Func(x,y) <a href="./TypesUsed_txt.html#robo220">Function</a>, defined in real world parameters
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><strong>FunctionSurface</strong><span class="sign">(</span><a href="./TypesUsed_txt.html#robo217">pfunction</a> Func<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> x1<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> x2<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo214">integer</a> Nxx<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> y1<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> y2<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo214">integer</a> Nyy <span class="sign">)</span>
+<pre class="source"><strong>FunctionSurface</strong><span class="sign">(</span><a href="./TypesUsed_txt.html#robo225">pfunction</a> Func<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> x1<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> x2<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo222">integer</a> Nxx<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> y1<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> y2<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo222">integer</a> Nyy <span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo217">pfunction</a> Func -&gt; inline f(x,y) =&gt; #declare abc=<a href="./TypesUsed_txt.html#robo212">Function</a>(x,y){x-y} <a href="./TypesUsed_txt.html#robo212">Function</a> declared in real x,y,z coordinates
-  <a href="./TypesUsed_txt.html#robo211">float</a> x1, <a href="./TypesUsed_txt.html#robo211">float</a> x2, <a href="./TypesUsed_txt.html#robo214">integer</a> Nxx =&gt; x-min, x-max, num. of cardinal (exact value) points
-  <a href="./TypesUsed_txt.html#robo211">float</a> y1, <a href="./TypesUsed_txt.html#robo211">float</a> y2, <a href="./TypesUsed_txt.html#robo214">integer</a> Nyy =&gt; the same but for y axis
+<pre>  <a href="./TypesUsed_txt.html#robo225">pfunction</a> Func -&gt; inline f(x,y) =&gt; #declare abc=<a href="./TypesUsed_txt.html#robo220">Function</a>(x,y){x-y} <a href="./TypesUsed_txt.html#robo220">Function</a> declared in real x,y,z coordinates
+  <a href="./TypesUsed_txt.html#robo219">float</a> x1, <a href="./TypesUsed_txt.html#robo219">float</a> x2, <a href="./TypesUsed_txt.html#robo222">integer</a> Nxx =&gt; x-min, x-max, num. of cardinal (exact value) points
+  <a href="./TypesUsed_txt.html#robo219">float</a> y1, <a href="./TypesUsed_txt.html#robo219">float</a> y2, <a href="./TypesUsed_txt.html#robo222">integer</a> Nyy =&gt; the same but for y axis
 </pre>
 <p class="item_name">EXAMPLE</p>
-<pre class="source"><span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
+<pre class="source"><span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
 <strong>FunctionSurface</strong><span class="sign">(</span>SinCos3<span class="sign">,</span> 0<span class="sign">,</span> 4<span class="sign">*</span><span class="keyword">pi</span><span class="sign">,</span> 20<span class="sign">,</span> 0<span class="sign">,</span> 4<span class="sign">*</span><span class="keyword">pi</span><span class="sign">,</span> 20<span class="sign">)</span> <span class="comment">// prepare SinCos3(x,y) surface over rectangle</span>
                                                    <span class="comment">// extending from 0 to 4*Pi on X and Y axis</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   MatrixFileSurface (), EvalPatchedSurface (), <a href="#robo34">DrawPatch</a> (), DrawPatch_UV (), <a href="#robo34">DrawPatch</a> (),
-   <a href="#robo27">DrawAllPatches</a> (), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a> (), <strong>EvalFuncPatchedSurf</strong> ()
+<pre>   MatrixFileSurface (), EvalPatchedSurface (), <a href="#robo36">DrawPatch</a> (), DrawPatch_UV (), <a href="#robo36">DrawPatch</a> (),
+   <a href="#robo29">DrawAllPatches</a> (), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a> (), <strong>EvalFuncPatchedSurf</strong> ()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fMatrixFileSurface2829"></a>
-<a name="robo39"></a><h2>BPatchSurf.inc/MatrixFileSurface() [ Main macros ]</h2>
+<a name="robo41"></a><h2>BPatchSurf.inc/MatrixFileSurface() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Imports data from file InFileName, prepares data structure for EvalPatchedSurf() macro and eventually calls it.
 </p>
@@ -452,56 +452,56 @@
   the coordinate system, having X axis oriented toward right hand, and Y axis beforehand.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">MatrixFileSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo220">string_fn</a> InFileName<span class="sign">)</span>
+<pre class="source">MatrixFileSurface<span class="sign">(</span><a href="./TypesUsed_txt.html#robo228">string_fn</a> InFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo220">string_fn</a> filename InFileName - valid filename eg. "InSurfData.dat". Extension is not required nor fixed.
+<pre>  <a href="./TypesUsed_txt.html#robo228">string_fn</a> filename InFileName - valid filename eg. "InSurfData.dat". Extension is not required nor fixed.
 </pre>
 <p class="item_name">EXAMPLE</p>
 <pre class="source">MatrixFileSurface<span class="sign">(</span><span class="quote">"InSurfData.dat"</span><span class="sign">)</span> <span class="comment">// import data..</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render all patches</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render all patches</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo35">DrawPatch_UV()</a>, <a href="#robo34">DrawPatch</a>(),
-   <a href="#robo27">DrawAllPatches</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo40">FunctionSurface</a>(), EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo37">DrawPatch_UV()</a>, <a href="#robo36">DrawPatch</a>(),
+   <a href="#robo29">DrawAllPatches</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fRawDataSurfaceExt2829"></a>
-<a name="robo40"></a><h2>BPatchSurf.inc/RawDataSurfaceExt(), RawDataSurface() [ Main macros ]</h2>
+<a name="robo42"></a><h2>BPatchSurf.inc/RawDataSurfaceExt(), RawDataSurface() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  <strong>RawDataSurfaceExt()</strong> is just wrapper for <strong>RawDataSurface()</strong> <a href="./TypesUsed_txt.html#robo212">Function</a>
+<p>  <strong>RawDataSurfaceExt()</strong> is just wrapper for <strong>RawDataSurface()</strong> <a href="./TypesUsed_txt.html#robo220">Function</a>
 </p>
 <p class="item_name">SYNOPSIS</p>
 <p class="item_name">INPUTS</p>
 <p class="item_name">EXAMPLE</p>
 <pre class="source">RawDataSurfaceExt<span class="sign">(</span><span class="quote">"SSurfA.dat"</span><span class="sign">,</span> Gauss<span class="sign">,</span> Gauss<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">)</span> <span class="comment">//</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
 
 OR
 
 RawDataSurface<span class="sign">(</span><span class="quote">"SSurfA.dat"</span><span class="sign">,</span> Gauss<span class="sign">,</span> Gauss<span class="sign">,</span> 2<span class="sign">.</span>0<span class="sign">,</span>  0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">)</span> <span class="comment">//</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>                    <span class="comment">// and then render it</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <strong>RawDataSurface()</strong>, <a href="#robo39">MatrixFileSurface()</a>, EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo35">DrawPatch_UV()</a>, <a href="#robo34">DrawPatch</a>(),
-   <a href="#robo41">ScatterDataSurfaceExp()</a>, <a href="#robo27">DrawAllPatches</a>(), 
-   <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <strong>RawDataSurface()</strong>, <a href="#robo41">MatrixFileSurface()</a>, EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo37">DrawPatch_UV()</a>, <a href="#robo36">DrawPatch</a>(),
+   <a href="#robo43">ScatterDataSurfaceExp()</a>, <a href="#robo29">DrawAllPatches</a>(), 
+   <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fScatterDataSurfaceExp2829"></a>
-<a name="robo41"></a><h2>BPatchSurf.inc/ScatterDataSurfaceExp() [ Main macros ]</h2>
+<a name="robo43"></a><h2>BPatchSurf.inc/ScatterDataSurfaceExp() [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  <strong>ScatterDataSurfaceExp()</strong>
 </p>
@@ -509,21 +509,21 @@ RawDataSurface<span class="sign">(</span><span class="quote">"SSurfA.dat"</span>
 <p class="item_name">INPUTS</p>
 <p class="item_name">EXAMPLE</p>
 <pre class="source"><strong>ScatterDataSurfaceExp()</strong>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>            <span class="comment">// and then render it</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>            <span class="comment">// and then render it</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo40">RawDataSurface()</a>, <a href="#robo39">MatrixFileSurface()</a>, EvalPatchedSurface(), <a href="#robo34">DrawPatch</a>(), <a href="#robo35">DrawPatch_UV()</a>, <a href="#robo34">DrawPatch</a>(),
-   <a href="#robo27">DrawAllPatches</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo33">DrawAllPatchesWithTexture</a>()
+<pre>   <a href="#robo42">RawDataSurface()</a>, <a href="#robo41">MatrixFileSurface()</a>, EvalPatchedSurface(), <a href="#robo36">DrawPatch</a>(), <a href="#robo37">DrawPatch_UV()</a>, <a href="#robo36">DrawPatch</a>(),
+   <a href="#robo29">DrawAllPatches</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo35">DrawAllPatchesWithTexture</a>()
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fDrawCardPoints"></a>
-<a name="robo108"></a><h2>BPatchSurf.inc/DrawCardPoints [ Helper macros ]</h2>
+<a name="robo116"></a><h2>BPatchSurf.inc/DrawCardPoints [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this helper macro renders all "cardinal" ie. corner points of bicubic patches in the scene as spheres
   it is possible due to proper data structure. Macro renders pure geomtry, one have to define texture
@@ -533,7 +533,7 @@ RawDataSurface<span class="sign">(</span><span class="quote">"SSurfA.dat"</span>
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawCardPoints</strong><span class="sign">(</span> R<span class="sign">)</span>  <span class="comment">// Plots cardinal points of bicubic patches only</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> R - radius of cardinal point
+<pre>  <a href="./TypesUsed_txt.html#robo219">float</a> R - radius of cardinal point
 </pre>
 <p class="item_name">EXAMPLE</p>
 <pre class="source"><span class="keyword">#declare</span> PPP <span class="sign">=</span> <span class="keyword">object</span><span class="sign">{</span><strong>DrawCardPoints</strong><span class="sign">(</span><span class="sign">.</span>2<span class="sign">)</span><span class="sign">}</span><span class="sign">;</span>
@@ -550,121 +550,121 @@ RawDataSurface<span class="sign">(</span><span class="quote">"SSurfA.dat"</span>
 
 <hr />
 <a name="BPatchSurf2einc2fInline20functions"></a>
-<a name="robo109"></a><h2>BPatchSurf.inc/Inline functions [ Helper macros ]</h2>
+<a name="robo117"></a><h2>BPatchSurf.inc/Inline functions [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  helper functions applicable to macro: <a href="#robo38">FunctionSurface</a>(Func, x1, x2, Nxx, y1, y2, Nyy)
+<p>  helper functions applicable to macro: <a href="#robo40">FunctionSurface</a>(Func, x1, x2, Nxx, y1, y2, Nyy)
   used to draw surface by equation z=Func( x, y)
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#declare</span> fId <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> <span class="sign">.</span><span class="sign">.</span>single nonconditional statement<span class="sign">.</span><span class="sign">.</span> <span class="sign">}</span><span class="sign">;</span> see example
+<pre class="source"><span class="keyword">#declare</span> fId <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> <span class="sign">.</span><span class="sign">.</span>single nonconditional statement<span class="sign">.</span><span class="sign">.</span> <span class="sign">}</span><span class="sign">;</span> see example
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  i, j - two <a href="./TypesUsed_txt.html#robo211">float</a> numbers for x, y argument values respectively, note that 'x' and 'y' symbols are predefined in POVRay as coord's system vectors
+<pre>  i, j - two <a href="./TypesUsed_txt.html#robo219">float</a> numbers for x, y argument values respectively, note that 'x' and 'y' symbols are predefined in POVRay as coord's system vectors
 </pre>
 <p class="item_name">EXAMPLE</p>
-<pre class="source"><span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
-<a href="#robo38">FunctionSurface</a><span class="sign">(</span>SinCos3<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 11<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 11<span class="sign">)</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>
+<pre class="source"><span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
+<a href="#robo40">FunctionSurface</a><span class="sign">(</span>SinCos3<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 11<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 11<span class="sign">)</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), <a href="#robo34">DrawPatch</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo27">DrawAllPatches</a>(), 
-   <a href="#robo33">DrawAllPatchesWithTexture</a>(), <a href="#robo32">DrawAllPatchesWithMap</a>(), POVRay <a href="./TypesUsed_txt.html#robo212">Function</a> pointers
+<pre>   <a href="#robo40">FunctionSurface</a>(), <a href="#robo36">DrawPatch</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo29">DrawAllPatches</a>(), 
+   <a href="#robo35">DrawAllPatchesWithTexture</a>(), <a href="#robo34">DrawAllPatchesWithMap</a>(), POVRay <a href="./TypesUsed_txt.html#robo220">Function</a> pointers
 </pre>
 <p></p>
 <p class="item_name">SOURCE</p>
-<pre class="source"><span class="keyword">#declare</span> Cos2Sin <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>cos<span class="sign">(</span>1<span class="sign">*</span><span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">*</span>cos<span class="sign">(</span>1<span class="sign">*</span><span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">-</span>sin<span class="sign">(</span>2<span class="sign">*</span><span class="sign">(</span>j<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">}</span>
-<span class="keyword">#declare</span> SinCosP2<span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span>j<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">*</span>pow<span class="sign">(</span>  cos<span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">,</span>2<span class="sign">)</span> <span class="sign">}</span>
-<span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
+<pre class="source"><span class="keyword">#declare</span> Cos2Sin <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>cos<span class="sign">(</span>1<span class="sign">*</span><span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">*</span>cos<span class="sign">(</span>1<span class="sign">*</span><span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">-</span>sin<span class="sign">(</span>2<span class="sign">*</span><span class="sign">(</span>j<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">)</span><span class="sign">}</span>
+<span class="keyword">#declare</span> SinCosP2<span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span>j<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">*</span>pow<span class="sign">(</span>  cos<span class="sign">(</span>i<span class="sign">*</span><span class="keyword">pi</span><span class="sign">/</span>18<span class="sign">)</span><span class="sign">,</span>2<span class="sign">)</span> <span class="sign">}</span>
+<span class="keyword">#declare</span> SinCos3 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> 2<span class="sign">*</span>sin<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>2<span class="sign">*</span>i<span class="sign">)</span><span class="sign">+</span>cos<span class="sign">(</span><span class="keyword">pi</span><span class="sign">/</span>3<span class="sign">*</span>j<span class="sign">)</span><span class="sign">+</span>i<span class="sign">*</span>j<span class="sign">/</span>400 <span class="sign">}</span>
 </pre>
 
 <hr />
 <a name="BPatchSurf2einc2fInline20kriging20functions2829"></a>
-<a name="robo110"></a><h2>BPatchSurf.inc/Inline kriging functions() [ Helper macros ]</h2>
+<a name="robo118"></a><h2>BPatchSurf.inc/Inline kriging functions() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  helper functions applicable to macro:
-  smoothing &amp; kriging functions: f=Func(<a href="./TypesUsed_txt.html#robo211">float</a> d)
+  smoothing &amp; kriging functions: f=Func(<a href="./TypesUsed_txt.html#robo219">float</a> d)
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#declare</span> fId <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> <span class="sign">.</span><span class="sign">.</span>single nonconditional statement<span class="sign">.</span><span class="sign">.</span> <span class="sign">}</span><span class="sign">;</span> <span class="comment">// see example below</span>
+<pre class="source"><span class="keyword">#declare</span> fId <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a><span class="sign">(</span>i<span class="sign">,</span> j<span class="sign">)</span><span class="sign">{</span> <span class="sign">.</span><span class="sign">.</span>single nonconditional statement<span class="sign">.</span><span class="sign">.</span> <span class="sign">}</span><span class="sign">;</span> <span class="comment">// see example below</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  i, j - two <a href="./TypesUsed_txt.html#robo211">float</a> numbers for x,y argument values respectively, note that 'x' and 'y' symbols are predefined in POVRay as coord's system vectors
+<pre>  i, j - two <a href="./TypesUsed_txt.html#robo219">float</a> numbers for x,y argument values respectively, note that 'x' and 'y' symbols are predefined in POVRay as coord's system vectors
 </pre>
 <p class="item_name">EXAMPLE</p>
-<pre class="source"><span class="keyword">#declare</span> Newton  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>d      <span class="sign">}</span>      <span class="comment">// named after potential <a href="./TypesUsed_txt.html#robo212">Function</a></span>
-RawDataSurface<span class="sign">(</span><span class="quote">"AnyFiled.dat"</span><span class="sign">,</span> Newton<span class="sign">,</span> Llimiter<span class="sign">,</span> <span class="sign">.</span>5<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">)</span>
-<a href="#robo27">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>
+<pre class="source"><span class="keyword">#declare</span> Newton  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>d      <span class="sign">}</span>      <span class="comment">// named after potential <a href="./TypesUsed_txt.html#robo220">Function</a></span>
+RawDataSurface<span class="sign">(</span><span class="quote">"AnyFile.dat"</span><span class="sign">,</span> Newton<span class="sign">,</span> Llimiter<span class="sign">,</span> <span class="sign">.</span>5<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">,</span> 0<span class="sign">,</span> 10<span class="sign">,</span> 20<span class="sign">)</span>
+<a href="#robo29">DrawAllPatches</a><span class="sign">(</span><span class="sign">)</span>
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo38">FunctionSurface</a>(), <a href="#robo34">DrawPatch</a>(), <a href="#robo31">DrawAllPatchesGeo</a>(), <a href="#robo27">DrawAllPatches</a>(), 
-   <a href="#robo33">DrawAllPatchesWithTexture</a>(), <a href="#robo32">DrawAllPatchesWithMap</a>(), POVRay <a href="./TypesUsed_txt.html#robo212">Function</a> pointers
+<pre>   <a href="#robo40">FunctionSurface</a>(), <a href="#robo36">DrawPatch</a>(), <a href="#robo33">DrawAllPatchesGeo</a>(), <a href="#robo29">DrawAllPatches</a>(), 
+   <a href="#robo35">DrawAllPatchesWithTexture</a>(), <a href="#robo34">DrawAllPatchesWithMap</a>(), POVRay <a href="./TypesUsed_txt.html#robo220">Function</a> pointers
 </pre>
 <p></p>
 <p class="item_name">SOURCE</p>
-<pre class="source"><span class="keyword">#declare</span> Newton   <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>d     <span class="sign">}</span> <span class="comment">// USELESS named after newtonian potential <a href="./TypesUsed_txt.html#robo212">Function</a></span>
-<span class="keyword">#declare</span> Limiter  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><a href="#robo228">DZero</a> <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo212">Function</a> is called when d&lt;<a href="#robo228">DZero</a></span>
+<pre class="source"><span class="keyword">#declare</span> Newton   <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>d     <span class="sign">}</span>         <span class="comment">// USELESS named after newtonian potential <a href="./TypesUsed_txt.html#robo220">Function</a></span>
+<span class="keyword">#declare</span> Limiter  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><a href="#robo236">DZero</a> <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo220">Function</a> is called when d&lt;<a href="#robo236">DZero</a></span>
 
-<span class="keyword">#declare</span> Newton2  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span>      <span class="sign">}</span> <span class="comment">// named after newtonian potential <a href="./TypesUsed_txt.html#robo212">Function</a></span>
-<span class="keyword">#declare</span> Limiter2 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span><a href="#robo228">DZero</a><span class="sign">,</span>4<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo212">Function</a> is called when d&lt;<a href="#robo228">DZero</a></span>
+<span class="keyword">#declare</span> Newton2  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span>      <span class="sign">}</span> <span class="comment">// named after newtonian potential <a href="./TypesUsed_txt.html#robo220">Function</a></span>
+<span class="keyword">#declare</span> Limiter2 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span><a href="#robo236">DZero</a><span class="sign">,</span>4<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo220">Function</a> is called when d&lt;<a href="#robo236">DZero</a></span>
 
-<span class="keyword">#declare</span> Newton4  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span>      <span class="sign">}</span> <span class="comment">// named after newtonian potential <a href="./TypesUsed_txt.html#robo212">Function</a></span>
-<span class="keyword">#declare</span> Limiter4 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span><a href="#robo228">DZero</a><span class="sign">,</span>4<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo212">Function</a> is called when d&lt;<a href="#robo228">DZero</a></span>
-<span class="keyword">#declare</span> Exponent <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> exp<span class="sign">(</span><span class="sign">-</span>d<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">//</span>
-<span class="keyword">#declare</span> Gauss    <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> exp<span class="sign">(</span><span class="sign">-</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span><span class="sign">)</span><span class="sign">}</span>   <span class="comment">// resembles gauss PDF distribution <a href="./TypesUsed_txt.html#robo212">Function</a></span>
+<span class="keyword">#declare</span> Newton4  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span>      <span class="sign">}</span> <span class="comment">// named after newtonian potential <a href="./TypesUsed_txt.html#robo220">Function</a></span>
+<span class="keyword">#declare</span> Limiter4 <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span>pow<span class="sign">(</span><a href="#robo236">DZero</a><span class="sign">,</span>4<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">// this <a href="./TypesUsed_txt.html#robo220">Function</a> is called when d&lt;<a href="#robo236">DZero</a></span>
+<span class="keyword">#declare</span> Exponent <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> exp<span class="sign">(</span><span class="sign">-</span>d<span class="sign">)</span>  <span class="sign">}</span>        <span class="comment">//</span>
+<span class="keyword">#declare</span> Gauss    <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> exp<span class="sign">(</span><span class="sign">-</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span><span class="sign">)</span><span class="sign">}</span>   <span class="comment">// resembles gauss PDF distribution <a href="./TypesUsed_txt.html#robo220">Function</a></span>
 
 <span class="comment">// simple kriging - more general example, which needs  </span>
 <span class="comment">// two input values, interpreted as 'distance' and 'power' respectively</span>
-<span class="keyword">#declare</span> SKrig   <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">,</span> pw<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span> pw<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>  <span class="comment">// SKrig(distance, power)</span>
+<span class="keyword">#declare</span> SKrig   <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">,</span> pw<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span> pw<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>  <span class="comment">// SKrig(distance, power)</span>
 
-<span class="comment">// ======[ specialised <a href="./TypesUsed_txt.html#robo212">Function</a> ]======</span>
-<span class="keyword">#declare</span> SKrig1  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>d<span class="sign">)</span> <span class="sign">}</span>
-<span class="keyword">#declare</span> SKrig2  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>
-<span class="keyword">#declare</span> SKrig4  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo212">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span>4<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>
+<span class="comment">// ======[ specialised <a href="./TypesUsed_txt.html#robo220">Function</a> ]======</span>
+<span class="keyword">#declare</span> SKrig1  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>d<span class="sign">)</span> <span class="sign">}</span>
+<span class="keyword">#declare</span> SKrig2  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span>2<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>
+<span class="keyword">#declare</span> SKrig4  <span class="sign">=</span> <a href="./TypesUsed_txt.html#robo220">Function</a> <span class="sign">(</span>d<span class="sign">)</span> <span class="sign">{</span> 1<span class="sign">/</span><span class="sign">(</span>1<span class="sign">.</span>0<span class="sign">+</span>pow<span class="sign">(</span>d<span class="sign">,</span>4<span class="sign">)</span><span class="sign">)</span> <span class="sign">}</span>
 </pre>
 
 <hr />
 <a name="BPatchSurf2einc2fSetDZero"></a>
-<a name="robo111"></a><h2>BPatchSurf.inc/SetDZero [ Helper macros ]</h2>
+<a name="robo119"></a><h2>BPatchSurf.inc/SetDZero [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  minimal minimal <a href="./TypesUsed_txt.html#robo211">float</a> number assumed not being equal zero
+<p>  minimal minimal <a href="./TypesUsed_txt.html#robo219">float</a> number assumed not being equal zero
   meaning of this variable depends on algorithm employed
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>SetDZero</strong><span class="sign">(</span>_dz<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> _dz - new <a href="#robo228">DZero</a> value
+<pre>  <a href="./TypesUsed_txt.html#robo219">float</a> _dz - new <a href="#robo236">DZero</a> value
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo228">DZero</a>
+<pre>   <a href="#robo236">DZero</a>
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fSetInterior2829"></a>
-<a name="robo112"></a><h2>BPatchSurf.inc/SetInterior() [ Helper macros ]</h2>
+<a name="robo120"></a><h2>BPatchSurf.inc/SetInterior() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>   declares interior section for enabled items and sets <a href="./WireSurf_inc.html#robo241">DeclareLevel</a> on '2'
+<p>   declares interior section for enabled items and sets <a href="./WireSurf_inc.html#robo249">DeclareLevel</a> on '2'
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> SetInterior<span class="sign">(</span> tInt <span class="sign">)</span>       <span class="comment">// valid only together with texture defintions</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>   <a href="./TypesUsed_txt.html#robo215">interiordef</a> tInt - variable declared as fully defined valid texture
+<pre>   <a href="./TypesUsed_txt.html#robo223">interiordef</a> tInt - variable declared as fully defined valid texture
 </pre>
 <p class="item_name">EXAMPLE</p>
 <pre class="source"><span class="keyword">#declare</span> TInterior <span class="sign">=</span> interior <span class="sign">{</span> <span class="comment">// for details of 'interior' definition consult POVRay documentation</span>
@@ -678,37 +678,37 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fSetRGBFTColor"></a>
-<a name="robo113"></a><h2>BPatchSurf.inc/SetRGBFTColor [ Helper macros ]</h2>
+<a name="robo121"></a><h2>BPatchSurf.inc/SetRGBFTColor [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets default color stored in tmpColor internal variable:
-   Sets <a href="./WireSurf_inc.html#robo241">DeclareLevel</a> to '0' (basic level)
+   Sets <a href="./WireSurf_inc.html#robo249">DeclareLevel</a> to '0' (basic level)
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>SetRGBFTColor</strong><span class="sign">(</span> RR<span class="sign">,</span> GG<span class="sign">,</span> BB<span class="sign">,</span> FF<span class="sign">,</span> TT <span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>   <a href="./TypesUsed_txt.html#robo211">float</a> RR - red component
-   <a href="./TypesUsed_txt.html#robo211">float</a> GG - green component
-   <a href="./TypesUsed_txt.html#robo211">float</a> BB - blue component
-   <a href="./TypesUsed_txt.html#robo211">float</a> FF - filter amount
-   <a href="./TypesUsed_txt.html#robo211">float</a> TT - transmit level
+<pre>   <a href="./TypesUsed_txt.html#robo219">float</a> RR - red component
+   <a href="./TypesUsed_txt.html#robo219">float</a> GG - green component
+   <a href="./TypesUsed_txt.html#robo219">float</a> BB - blue component
+   <a href="./TypesUsed_txt.html#robo219">float</a> FF - filter amount
+   <a href="./TypesUsed_txt.html#robo219">float</a> TT - transmit level
 </pre>
 
 <hr />
 <a name="BPatchSurf2einc2fSetTexture"></a>
-<a name="robo114"></a><h2>BPatchSurf.inc/SetTexture [ Helper macros ]</h2>
+<a name="robo122"></a><h2>BPatchSurf.inc/SetTexture [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>   declares texure for the enabled items and sets <a href="./WireSurf_inc.html#robo241">DeclareLevel</a> on '2'
+<p>   declares texure for the enabled items and sets <a href="./WireSurf_inc.html#robo249">DeclareLevel</a> on '2'
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>SetTexture</strong><span class="sign">(</span> FullTexture <span class="sign">)</span> <span class="comment">// follow it by SetInterior("InteriorDefinition")</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>   <a href="./TypesUsed_txt.html#robo221">texturedef</a> FullTexture - variable declared as fully defined valid texture
+<pre>   <a href="./TypesUsed_txt.html#robo229">texturedef</a> FullTexture - variable declared as fully defined valid texture
 </pre>
 <p class="item_name">EXAMPLE</p>
 <pre class="source"><span class="keyword">#declare</span> MyTexture <span class="sign">=</span> texture<span class="sign">{</span>pigment<span class="sign">{</span>color rgb <span class="sign">&lt;</span>0<span class="sign">,</span>0<span class="sign">,</span>1<span class="sign">&gt;</span><span class="sign">}</span><span class="sign">}</span><span class="sign">;</span>
@@ -717,9 +717,9 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fSetVScale"></a>
-<a name="robo115"></a><h2>BPatchSurf.inc/SetVScale [ Helper macros ]</h2>
+<a name="robo123"></a><h2>BPatchSurf.inc/SetVScale [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Sets factor for enhancement along vertical axis (negative values allowed ;)
 </p>
@@ -727,20 +727,20 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 <pre class="source"><span class="keyword">#macro</span> <strong>SetVScale</strong><span class="sign">(</span> _ss<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> _ss - new <a href="#robo230">VScale</a> value
+<pre>  <a href="./TypesUsed_txt.html#robo219">float</a> _ss - new <a href="./Balloons_inc.html#robo235">VScale</a> value
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo230">VScale</a>
+<pre>   <a href="./Balloons_inc.html#robo235">VScale</a>
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fSetVShift2829"></a>
-<a name="robo116"></a><h2>BPatchSurf.inc/SetVShift() [ Helper macros ]</h2>
+<a name="robo124"></a><h2>BPatchSurf.inc/SetVShift() [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  macro and variable, explanation:
   due to limitations of bicubic interpolation algorithm, unexpected micro bulges are sometimes observed.
@@ -752,20 +752,20 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 <pre class="source"><span class="keyword">#macro</span> SetVShift<span class="sign">(</span> _vs<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo211">float</a> _vs - new <a href="#robo231">VShift</a> value
+<pre>  <a href="./TypesUsed_txt.html#robo219">float</a> _vs - new <a href="#robo239">VShift</a> value
 </pre>
 <p class="item_name">SEE ALSO</p>
 <p>  one may also refer to:
 </p>
-<pre>   <a href="#robo231">VShift</a>
+<pre>   <a href="#robo239">VShift</a>
 </pre>
 <p></p>
 
 <hr />
 <a name="BPatchSurf2einc2fImageConstants"></a>
-<a name="robo223"></a><h2>BPatchSurf.inc/ImageConstants [ Constants ]</h2>
+<a name="robo231"></a><h2>BPatchSurf.inc/ImageConstants [ Constants ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_constants.html#robo_top_of_doc">Constants</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_constants.html#robo_top_of_doc">Constants</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   These constants are for DrawPatch_UV###() macro and they define formats of UV_map bitmap file.
    For details of UV mapping consult please POVRay documentation.
@@ -790,9 +790,9 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fDeclareLevel"></a>
-<a name="robo228"></a><h2>BPatchSurf.inc/DeclareLevel, tmpColour, tmpColour1, tmpColour2, DZero [ Variables ]</h2>
+<a name="robo236"></a><h2>BPatchSurf.inc/DeclareLevel, tmpColour, tmpColour1, tmpColour2, DZero [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   <strong>DeclareLevel</strong> determines what is defined:
 </p>
@@ -815,17 +815,17 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fDZero"></a>
-<a name="robo229"></a><h2>BPatchSurf.inc/DZero [ Variables ]</h2>
+<a name="robo237"></a><h2>BPatchSurf.inc/DZero [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  minimal <a href="./TypesUsed_txt.html#robo211">float</a> number assumed not being equal zero
+<p>  minimal <a href="./TypesUsed_txt.html#robo219">float</a> number assumed not being equal zero
   meaning of this variable depends on algorithm employed
 </p>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo111">SetDZero</a> (<a href="./TypesUsed_txt.html#robo211">float</a>)
+<pre>   <a href="#robo119">SetDZero</a> (<a href="./TypesUsed_txt.html#robo219">float</a>)
 </pre>
 <p></p>
 <p class="item_name">SOURCE</p>
@@ -834,17 +834,17 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fVScale"></a>
-<a name="robo230"></a><h2>BPatchSurf.inc/VScale [ Variables ]</h2>
+<a name="robo238"></a><h2>BPatchSurf.inc/VScale [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  <a href="./TypesUsed_txt.html#robo211">float</a> - Surface enhancement along vertical axis (negative values allowed ;)
-  this value is valid until "<a href="#robo115">SetVScale</a>()"
+<p>  <a href="./TypesUsed_txt.html#robo219">float</a> - Surface enhancement along vertical axis (negative values allowed ;)
+  this value is valid until "<a href="#robo123">SetVScale</a>()"
 </p>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
 </p>
-<pre>   <a href="#robo115">SetVScale</a> ()
+<pre>   <a href="#robo123">SetVScale</a> ()
 </pre>
 <p></p>
 <p class="item_name">SOURCE</p>
@@ -853,11 +853,11 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 <hr />
 <a name="BPatchSurf2einc2fVShift"></a>
-<a name="robo231"></a><h2>BPatchSurf.inc/VShift [ Variables ]</h2>
+<a name="robo239"></a><h2>BPatchSurf.inc/VShift [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">BPatchSurf.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  <a href="./TypesUsed_txt.html#robo211">float</a> - see SetVShift macro
+<p>  <a href="./TypesUsed_txt.html#robo219">float</a> - see SetVShift macro
 </p>
 <p class="item_name">SEE ALSO</p>
 <p>  one should also refer to:
@@ -871,7 +871,7 @@ SetInterior<span class="sign">(</span>TInterior<span class="sign">)</span>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/BPatchSurf.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/BPatchSurf.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

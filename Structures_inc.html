@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/Structures.inc</title>
-<!-- Source: ./Plot3Dv4/Structures.inc -->
+<title>./Plot3Dv4/Plot3Dv4/Structures.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/Structures.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,19 +30,20 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo19">ScPovPlot3D/Structures.inc</a></li>
+<li>1. <a href="#robo21">ScPovPlot3D/Structures.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo76">Structures.inc/BndMerge</a></li>
-<li>1.2. <a href="#robo77">Structures.inc/CreateStruct</a></li>
-<li>1.3. <a href="#robo78">Structures.inc/StrMerge</a></li>
-<li>1.4. <a href="#robo79">Structures.inc/StrRotate</a></li>
-<li>1.5. <a href="#robo80">Structures.inc/StrTrans</a></li>
-<li>1.6. <a href="#robo174">Structures.inc/ArMerge</a></li>
+<li>1.1. <a href="#robo83">Structures.inc/BndMerge</a></li>
+<li>1.2. <a href="#robo84">Structures.inc/CreatePStruct</a></li>
+<li>1.3. <a href="#robo85">Structures.inc/CreateStruct</a></li>
+<li>1.4. <a href="#robo86">Structures.inc/StrMerge</a></li>
+<li>1.5. <a href="#robo87">Structures.inc/StrRotate</a></li>
+<li>1.6. <a href="#robo88">Structures.inc/StrTrans</a></li>
+<li>1.7. <a href="#robo182">Structures.inc/ArMerge</a></li>
 </ul>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fStructures2einc"></a>
-<a name="robo19"></a><h2>ScPovPlot3D/Structures.inc [ Modules ]</h2>
+<a name="robo21"></a><h2>ScPovPlot3D/Structures.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -59,7 +60,7 @@
 <p><hr width=50% align="left">
 </p>
 <p class="item_name">VERSION</p>
-<p>  3.2.0.2, tested on PovRay 3.7.
+<p>  4.0.3, tested on PovRay 3.7.
 </p>
 <p class="item_name">AUTHOR</p>
 <p>  Janusz Opiła Ph.D.
@@ -74,7 +75,11 @@
 </pre>
 <p></p>
 <p class="item_name">HISTORY</p>
-<p>  2016-01-29/3.2.0.1 - macro <a href="#robo174">ArMerge</a> () added
+<p>  2016-01-29/3.2.0.1 - macro <a href="#robo182">ArMerge</a> () added
+  2018-07-05/4.0.0 - cleanup for Prometheus deployment
+  2018-02-18/4.0.1 - corections in documentation
+  2019-02-20/4.0.2 - texture handling for atoms and bonds
+  2019-03-19/4.0.3 - minor corrections in doc
 </p>
 <p class="item_name">COPYRIGHT</p>
 <pre>  GNU GPL v.3 License
@@ -84,9 +89,9 @@
 
 <hr />
 <a name="Structures2einc2fBndMerge"></a>
-<a name="robo76"></a><h2>Structures.inc/BndMerge [ Main macros ]</h2>
+<a name="robo83"></a><h2>Structures.inc/BndMerge [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Merges two bonds structures
 </p>
@@ -94,44 +99,68 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>BndMerge</strong><span class="sign">(</span>_A<span class="sign">,</span> _B<span class="sign">,</span> _S<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - base data structure 
-  <a href="./TypesUsed_txt.html#robo213">garray</a>   - data structure appended
-  <a href="./TypesUsed_txt.html#robo222">uinteger</a> - number of ATOMS in base structure, referred by bonds in matrix _A
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - base data structure
+  <a href="./TypesUsed_txt.html#robo221">garray</a>   - data structure appended
+  <a href="./TypesUsed_txt.html#robo230">uinteger</a> - number of ATOMS in base structure, referred by bonds in matrix _A
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - merged structure, ex. use: #declare A = <a href="#robo78">StrMerge</a>(A, B); #declare A = <a href="#robo78">StrMerge</a>(C, B);
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - merged structure, ex. use: #declare A = <a href="#robo86">StrMerge</a>(A, B); #declare A = <a href="#robo86">StrMerge</a>(C, B);
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo79">StrRotate</a>, <a href="#robo80">StrTrans</a>
+<p>  <a href="#robo87">StrRotate</a>, <a href="#robo88">StrTrans</a>
 </p>
 
 <hr />
-<a name="Structures2einc2fCreateStruct"></a>
-<a name="robo77"></a><h2>Structures.inc/CreateStruct [ Main macros ]</h2>
+<a name="Structures2einc2fCreatePStruct"></a>
+<a name="robo84"></a><h2>Structures.inc/CreatePStruct [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  Makes POVRay ready object
+<p>  Makes POVRay ready object, from _PTs atoms array &amp; _BNs bonds array.
+  Assumes data are in REAL space, thus converts them internally to POVRay space in order to keep visual alignment.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#macro</span> <strong>CreateStruct</strong> <span class="sign">(</span>_PTs<span class="sign">,</span> _BNs<span class="sign">,</span> _D<span class="sign">)</span> <span class="comment">// molecules table, bonds table, base diameter of bond, may be modified due to bondage type</span>
+<pre class="source"><span class="keyword">#macro</span> <strong>CreatePStruct</strong> <span class="sign">(</span>_PTs<span class="sign">,</span> _BNs<span class="sign">,</span> _D<span class="sign">)</span> <span class="comment">// molecules table in REAL space, bonds table, base diameter of bond, may be modified due to bondage type</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a> - structure
-  <a href="./TypesUsed_txt.html#robo213">garray</a> - bonds
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a> - structure
+  <a href="./TypesUsed_txt.html#robo221">garray</a> - bonds
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  POVRay object ready to render
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo80">StrTrans</a>, <a href="#robo78">StrMerge</a>, <a href="#robo79">StrRotate</a>, <a href="#robo76">BndMerge</a>, <a href="#robo174">ArMerge</a>
+<p>  <a href="#robo88">StrTrans</a>, <a href="#robo86">StrMerge</a>, <a href="#robo87">StrRotate</a>, <a href="#robo83">BndMerge</a>, <a href="#robo182">ArMerge</a>
+</p>
+
+<hr />
+<a name="Structures2einc2fCreateStruct"></a>
+<a name="robo85"></a><h2>Structures.inc/CreateStruct [ Main macros ]</h2>
+
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p class="item_name">PURPOSE</p>
+<p>  Makes POVRay ready object, from _PTs atoms array &amp; _BNs bonds array.
+  All coordinates are just in POVRay system, thus don't require flipping
+</p>
+<p class="item_name">SYNOPSIS</p>
+<pre class="source"><span class="keyword">#macro</span> <strong>CreateStruct</strong> <span class="sign">(</span>_PTs<span class="sign">,</span> _BNs<span class="sign">,</span> _D<span class="sign">)</span> <span class="comment">// molecules table, bonds table, base diameter of bond, may be modified due to bondage type</span>
+</pre>
+<p class="item_name">INPUTS</p>
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a> - structure
+  <a href="./TypesUsed_txt.html#robo221">garray</a> - bonds
+</pre>
+<p class="item_name">OUTPUTS</p>
+<pre>  POVRay object ready to render
+</pre>
+<p class="item_name">SEE ALSO</p>
+<p>  <a href="#robo88">StrTrans</a>, <a href="#robo86">StrMerge</a>, <a href="#robo87">StrRotate</a>, <a href="#robo83">BndMerge</a>, <a href="#robo182">ArMerge</a>
 </p>
 
 <hr />
 <a name="Structures2einc2fStrMerge"></a>
-<a name="robo78"></a><h2>Structures.inc/StrMerge [ Main macros ]</h2>
+<a name="robo86"></a><h2>Structures.inc/StrMerge [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Merges two molecule or bonds structures
 </p>
@@ -139,21 +168,21 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>StrMerge</strong><span class="sign">(</span>_A<span class="sign">,</span> _B<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - base data structure 
-  <a href="./TypesUsed_txt.html#robo213">garray</a>   - data structure appended
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - base data structure
+  <a href="./TypesUsed_txt.html#robo221">garray</a>   - data structure appended
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - merged structure, ex. use: #declare A = <strong>StrMerge</strong>(A, B); #declare A = <strong>StrMerge</strong>(C, B);
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - merged structure, ex. use: #declare A = <strong>StrMerge</strong>(A, B); #declare A = <strong>StrMerge</strong>(C, B);
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo79">StrRotate</a>, <a href="#robo80">StrTrans</a>
+<p>  <a href="#robo87">StrRotate</a>, <a href="#robo88">StrTrans</a>
 </p>
 
 <hr />
 <a name="Structures2einc2fStrRotate"></a>
-<a name="robo79"></a><h2>Structures.inc/StrRotate [ Main macros ]</h2>
+<a name="robo87"></a><h2>Structures.inc/StrRotate [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Rotates given array _A around given axis _V by amount _deg degrees
 </p>
@@ -161,65 +190,65 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>StrRotate</strong> <span class="sign">(</span> _A<span class="sign">,</span> _V<span class="sign">,</span> _deg <span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - data structure to operate on
-  <a href="./TypesUsed_txt.html#robo202">3Dvector</a> - rotation axis (might be: x, y, z, x+y, &lt;1,2,1.&gt;)
-  <a href="./TypesUsed_txt.html#robo211">float</a>    - rotation amount in degrees
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - data structure to operate on
+  <a href="./TypesUsed_txt.html#robo210">3Dvector</a> - rotation axis (might be: x, y, z, x+y, &lt;1,2,1.&gt;)
+  <a href="./TypesUsed_txt.html#robo219">float</a>    - rotation amount in degrees
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - rotated structure
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - rotated structure
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo78">StrMerge</a>, <a href="#robo80">StrTrans</a>
+<p>  <a href="#robo86">StrMerge</a>, <a href="#robo88">StrTrans</a>
 </p>
 
 <hr />
 <a name="Structures2einc2fStrTrans"></a>
-<a name="robo80"></a><h2>Structures.inc/StrTrans [ Main macros ]</h2>
+<a name="robo88"></a><h2>Structures.inc/StrTrans [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>  Rotates given array 
+<p>  Rotates given array
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>StrTrans</strong><span class="sign">(</span>_A<span class="sign">,</span> _V<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - data structure to operate on
-  <a href="./TypesUsed_txt.html#robo202">3Dvector</a> - rotation axis (might be: x, y, z, x+y, &lt;1,2,1.&gt;)
-  <a href="./TypesUsed_txt.html#robo211">float</a>    - rotation amount in degrees
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - data structure to operate on
+  <a href="./TypesUsed_txt.html#robo210">3Dvector</a> - rotation axis (might be: x, y, z, x+y, &lt;1,2,1.&gt;)
+  <a href="./TypesUsed_txt.html#robo219">float</a>    - rotation amount in degrees
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - rotated structure
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - rotated structure
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo78">StrMerge</a>, <a href="#robo79">StrRotate</a>
+<p>  <a href="#robo86">StrMerge</a>, <a href="#robo87">StrRotate</a>
 </p>
 
 <hr />
 <a name="Structures2einc2fArMerge"></a>
-<a name="robo174"></a><h2>Structures.inc/ArMerge [ Helper macros ]</h2>
+<a name="robo182"></a><h2>Structures.inc/ArMerge [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo19">Structures.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo21">Structures.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  general double index array (KxN and LxN) merger _A[K][N]+_B[L][N]
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><span class="keyword">#macro</span> <strong>ArMerge</strong><span class="sign">(</span>_A<span class="sign">,</span> _B<span class="sign">)</span>  <span class="comment">// </span>
+<pre class="source"><span class="keyword">#macro</span> <strong>ArMerge</strong><span class="sign">(</span>_A<span class="sign">,</span> _B<span class="sign">)</span>  <span class="comment">//</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - base data structure 
-  <a href="./TypesUsed_txt.html#robo213">garray</a>   - data structure appended
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - base data structure
+  <a href="./TypesUsed_txt.html#robo221">garray</a>   - data structure appended
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>   - merged structure, ex. use: #declare A = <a href="#robo78">StrMerge</a>(A, B); #declare A = <a href="#robo78">StrMerge</a>(C, B);
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>   - merged structure, ex. use: #declare A = <a href="#robo86">StrMerge</a>(A, B); #declare A = <a href="#robo86">StrMerge</a>(C, B);
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo78">StrMerge</a>, <a href="#robo76">BndMerge</a>
+<p>  <a href="#robo86">StrMerge</a>, <a href="#robo83">BndMerge</a>
 </p>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/Structures.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/Structures.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

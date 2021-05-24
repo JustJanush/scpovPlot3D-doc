@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/LinearPlots.inc</title>
-<!-- Source: ./Plot3Dv4/LinearPlots.inc -->
+<title>./Plot3Dv4/Plot3Dv4/LinearPlots.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/LinearPlots.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,39 +30,39 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo11">ScPovPlot3D/LinearPlots.inc</a></li>
-<li>2. <a href="#robo56">Linearplots.inc/DrawBSplineWires()</a></li>
-<li>3. <a href="#robo57">Linearplots.inc/DrawCubicWires()</a></li>
-<li>4. <a href="#robo58">Linearplots.inc/DrawLinearWires()</a></li>
-<li>5. <a href="#robo59">Linearplots.inc/DrawNodePoints()</a></li>
-<li>6. <a href="#robo60">Linearplots.inc/DrawWireFrameRC()</a>, <a href="#robo60">DrawWireFrame()</a></li>
-<li>7. <a href="#robo61">Linearplots.inc/DrawWireFrameXY()</a></li>
-<li>8. <a href="#robo62">Linearplots.inc/ImportDataRC()</a></li>
-<li>9. <a href="#robo63">Linearplots.inc/ImportDataXY()</a></li>
-<li>10. <a href="#robo140">Linearplots.inc/AddColDescr()</a></li>
-<li>11. <a href="#robo141">Linearplots.inc/AddRowDescr()</a></li>
-<li>12. <a href="#robo142">Linearplots.inc/DrawColDscr()</a></li>
-<li>13. <a href="#robo143">Linearplots.inc/DrawRowDscr()</a></li>
-<li>14. <a href="#robo144">Linearplots.inc/DrawVrtDescr()</a></li>
-<li>15. <a href="#robo145">Linearplots.inc/InitDscrColAxe()</a></li>
-<li>16. <a href="#robo146">Linearplots.inc/InitDscrRowAxe()</a></li>
-<li>17. <a href="#robo147">Linearplots.inc/SetBgPicture()</a></li>
-<li>18. <a href="#robo148">Linearplots.inc/SetColor()</a></li>
-<li>19. <a href="#robo149">Linearplots.inc/SetDscrAngle()</a></li>
-<li>20. <a href="#robo150">Linearplots.inc/SetInterior()</a></li>
-<li>21. <a href="#robo151">Linearplots.inc/SetLettrBase()</a></li>
-<li>22. <a href="#robo152">Linearplots.inc/SetLettrDepth()</a></li>
-<li>23. <a href="#robo153">Linearplots.inc/SetLettrSize()</a></li>
-<li>24. <a href="#robo154">Linearplots.inc/SetMaterial()</a></li>
-<li>25. <a href="#robo155">Linearplots.inc/SetNodeRadiiCoeff(Coeff)</a></li>
-<li>26. <a href="#robo156">Linearplots.inc/SetTexture()</a></li>
-<li>27. <a href="#robo157">Linearplots.inc/SetWireRadiiCoeff(Coeff)</a></li>
-<li>28. <a href="#robo158">Linearplots.inc/TurnPhotonsDown()</a>, <a href="#robo158">TurnPhotonsUp()</a></li>
-<li>29. <a href="#robo233">Linearplots.inc/DeclareLevel</a></li>
+<li>1. <a href="#robo13">ScPovPlot3D/LinearPlots.inc</a></li>
+<li>2. <a href="#robo60">Linearplots.inc/DrawBSplineWires()</a></li>
+<li>3. <a href="#robo61">Linearplots.inc/DrawCubicWires()</a></li>
+<li>4. <a href="#robo62">Linearplots.inc/DrawLinearWires()</a></li>
+<li>5. <a href="#robo63">Linearplots.inc/DrawNodePoints()</a></li>
+<li>6. <a href="#robo64">Linearplots.inc/DrawWireFrameRC()</a>, <a href="#robo64">DrawWireFrame()</a></li>
+<li>7. <a href="#robo65">Linearplots.inc/DrawWireFrameXY()</a></li>
+<li>8. <a href="#robo66">Linearplots.inc/ImportDataRC()</a></li>
+<li>9. <a href="#robo67">Linearplots.inc/ImportDataXY()</a></li>
+<li>10. <a href="#robo148">Linearplots.inc/AddColDescr()</a></li>
+<li>11. <a href="#robo149">Linearplots.inc/AddRowDescr()</a></li>
+<li>12. <a href="#robo150">Linearplots.inc/DrawColDscr()</a></li>
+<li>13. <a href="#robo151">Linearplots.inc/DrawRowDscr()</a></li>
+<li>14. <a href="#robo152">Linearplots.inc/DrawVrtDescr()</a></li>
+<li>15. <a href="#robo153">Linearplots.inc/InitDscrColAxe()</a></li>
+<li>16. <a href="#robo154">Linearplots.inc/InitDscrRowAxe()</a></li>
+<li>17. <a href="#robo155">Linearplots.inc/SetBgPicture()</a></li>
+<li>18. <a href="#robo156">Linearplots.inc/SetColor()</a></li>
+<li>19. <a href="#robo157">Linearplots.inc/SetDscrAngle()</a></li>
+<li>20. <a href="#robo158">Linearplots.inc/SetInterior()</a></li>
+<li>21. <a href="#robo159">Linearplots.inc/SetLettrBase()</a></li>
+<li>22. <a href="#robo160">Linearplots.inc/SetLettrDepth()</a></li>
+<li>23. <a href="#robo161">Linearplots.inc/SetLettrSize()</a></li>
+<li>24. <a href="#robo162">Linearplots.inc/SetMaterial()</a></li>
+<li>25. <a href="#robo163">Linearplots.inc/SetNodeRadiiCoeff(Coeff)</a></li>
+<li>26. <a href="#robo164">Linearplots.inc/SetTexture()</a></li>
+<li>27. <a href="#robo165">Linearplots.inc/SetWireRadiiCoeff(Coeff)</a></li>
+<li>28. <a href="#robo166">Linearplots.inc/TurnPhotonsDown()</a>, <a href="#robo166">TurnPhotonsUp()</a></li>
+<li>29. <a href="#robo241">Linearplots.inc/DeclareLevel</a></li>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fLinearPlots2einc"></a>
-<a name="robo11"></a><h2>ScPovPlot3D/LinearPlots.inc [ Modules ]</h2>
+<a name="robo13"></a><h2>ScPovPlot3D/LinearPlots.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -101,76 +101,76 @@
 
 <hr />
 <a name="Linearplots2einc2fDrawBSplineWires2829"></a>
-<a name="robo56"></a><h2>Linearplots.inc/DrawBSplineWires() [ Main macros ]</h2>
+<a name="robo60"></a><h2>Linearplots.inc/DrawBSplineWires() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawBSplineWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+<pre class="source">DrawBSplineWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo213">boolean</a> _Sphrs<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _wireR - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
-  _Sphrs - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+<pre>  _wireR - <a href="./TypesUsed_txt.html#robo219">float</a>   = radii of the wire
+  _Sphrs - <a href="./TypesUsed_txt.html#robo213">boolean</a> = draw spheres in place of nodes? yes/no
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo62">ImportDataRC()</a>
-  <a href="#robo63">ImportDataXY()</a>
-  <a href="./WireSurf_inc.html#robo93">DrawNodePoints()</a>
-  <a href="#robo58">DrawLinearWires()</a>
-  <a href="./WireSurf_inc.html#robo91">DrawCubicWires()</a>
+<p>  <a href="./WireSurf_inc.html#robo104">ImportDataRC()</a>
+  <a href="#robo67">ImportDataXY()</a>
+  <a href="./WireSurf_inc.html#robo101">DrawNodePoints()</a>
+  <a href="./WireSurf_inc.html#robo100">DrawLinearWires()</a>
+  <a href="./WireSurf_inc.html#robo99">DrawCubicWires()</a>
 </p>
 
 <hr />
 <a name="Linearplots2einc2fDrawCubicWires2829"></a>
-<a name="robo57"></a><h2>Linearplots.inc/DrawCubicWires() [ Main macros ]</h2>
+<a name="robo61"></a><h2>Linearplots.inc/DrawCubicWires() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawCubicWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+<pre class="source">DrawCubicWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo213">boolean</a> _Sphrs<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _wireR - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
-  _Sphrs - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+<pre>  _wireR - <a href="./TypesUsed_txt.html#robo219">float</a>   = radii of the wire
+  _Sphrs - <a href="./TypesUsed_txt.html#robo213">boolean</a> = draw spheres in place of nodes? yes/no
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo62">ImportDataRC()</a>
-  <a href="#robo63">ImportDataXY()</a>
-  <a href="./WireSurf_inc.html#robo93">DrawNodePoints()</a>
-  <a href="#robo58">DrawLinearWires()</a>
-  <a href="./WireSurf_inc.html#robo90">DrawBSplineWires()</a>
+<p>  <a href="./WireSurf_inc.html#robo104">ImportDataRC()</a>
+  <a href="#robo67">ImportDataXY()</a>
+  <a href="./WireSurf_inc.html#robo101">DrawNodePoints()</a>
+  <a href="./WireSurf_inc.html#robo100">DrawLinearWires()</a>
+  <a href="./WireSurf_inc.html#robo98">DrawBSplineWires()</a>
 </p>
 
 <hr />
 <a name="Linearplots2einc2fDrawLinearWires2829"></a>
-<a name="robo58"></a><h2>Linearplots.inc/DrawLinearWires() [ Main macros ]</h2>
+<a name="robo62"></a><h2>Linearplots.inc/DrawLinearWires() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws surface representation in the form of grid of LINEAR splines, ie. straight cuts of line
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawLinearWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo205">boolean</a> _Sphrs<span class="sign">)</span>
+<pre class="source">DrawLinearWires<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> _wireR<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo213">boolean</a> _Sphrs<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _wireR  - <a href="./TypesUsed_txt.html#robo211">float</a>   = radii of the wire
-  _Sphrs  - <a href="./TypesUsed_txt.html#robo205">boolean</a> = draw spheres in place of nodes? yes/no
+<pre>  _wireR  - <a href="./TypesUsed_txt.html#robo219">float</a>   = radii of the wire
+  _Sphrs  - <a href="./TypesUsed_txt.html#robo213">boolean</a> = draw spheres in place of nodes? yes/no
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo62">ImportDataRC()</a>
-  <a href="#robo63">ImportDataXY()</a>
-  <a href="./WireSurf_inc.html#robo93">DrawNodePoints()</a>
-  <a href="./WireSurf_inc.html#robo91">DrawCubicWires()</a>,
-  <a href="./WireSurf_inc.html#robo90">DrawBSplineWires()</a>
+<p>  <a href="./WireSurf_inc.html#robo104">ImportDataRC()</a>
+  <a href="#robo67">ImportDataXY()</a>
+  <a href="./WireSurf_inc.html#robo101">DrawNodePoints()</a>
+  <a href="./WireSurf_inc.html#robo99">DrawCubicWires()</a>,
+  <a href="./WireSurf_inc.html#robo98">DrawBSplineWires()</a>
 </p>
 
 <hr />
 <a name="Linearplots2einc2fDrawNodePoints2829"></a>
-<a name="robo59"></a><h2>Linearplots.inc/DrawNodePoints() [ Main macros ]</h2>
+<a name="robo63"></a><h2>Linearplots.inc/DrawNodePoints() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -179,7 +179,7 @@
   This macro is designed to visualize uncertainty at given grid point
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawNodePoints<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> _scl<span class="sign">)</span>
+<pre class="source">DrawNodePoints<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> _scl<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>  _scl - scaling factor along vertical axis, not perpendicularly to the surface!
@@ -188,7 +188,7 @@
 
 <hr />
 <a name="Linearplots2einc2fDrawWireFrameRC2829"></a>
-<a name="robo60"></a><h2>Linearplots.inc/DrawWireFrameRC(), DrawWireFrame() [ Main macros ]</h2>
+<a name="robo64"></a><h2>Linearplots.inc/DrawWireFrameRC(), DrawWireFrame() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -198,7 +198,7 @@
    macro DrawWireFrame(DataFileName) is just backward compatibility wrapper
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawWireFrameRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawWireFrameRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   DataFileName - valid name of file with data - see example file for details
@@ -226,7 +226,7 @@
 
 <hr />
 <a name="Linearplots2einc2fDrawWireFrameXY2829"></a>
-<a name="robo61"></a><h2>Linearplots.inc/DrawWireFrameXY() [ Main macros ]</h2>
+<a name="robo65"></a><h2>Linearplots.inc/DrawWireFrameXY() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -235,7 +235,7 @@
    This macro is intendend for visualisation of gridded data thus "YX" suffix.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawWireFrameXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">DrawWireFrameXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   DataFileName - valid name of file with data - see example file for details
@@ -258,7 +258,7 @@
 
 <hr />
 <a name="Linearplots2einc2fImportDataRC2829"></a>
-<a name="robo62"></a><h2>Linearplots.inc/ImportDataRC() [ Main macros ]</h2>
+<a name="robo66"></a><h2>Linearplots.inc/ImportDataRC() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -267,7 +267,7 @@
    This macro is part of visualisation suite of matrices thus "RC" suffix (Row/Column).
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">ImportDataRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">ImportDataRC<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   DataFileName - valid name of file with data - see example file for details
@@ -289,7 +289,7 @@
 
 <hr />
 <a name="Linearplots2einc2fImportDataXY2829"></a>
-<a name="robo63"></a><h2>Linearplots.inc/ImportDataXY() [ Main macros ]</h2>
+<a name="robo67"></a><h2>Linearplots.inc/ImportDataXY() [ Main macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -298,7 +298,7 @@
    This macro is intendend for visualisation of gridded data thus "YX" suffix.
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">ImportDataXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename DataFileName<span class="sign">)</span>
+<pre class="source">ImportDataXY<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename DataFileName<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   DataFileName - valid name of file with data - see example file for details
@@ -321,14 +321,14 @@
 
 <hr />
 <a name="Linearplots2einc2fAddColDescr2829"></a>
-<a name="robo140"></a><h2>Linearplots.inc/AddColDescr() [ Helper macros ]</h2>
+<a name="robo148"></a><h2>Linearplots.inc/AddColDescr() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Inserts into horizontal axis data block new major label
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">AddColDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> Dscr<span class="sign">)</span>
+<pre class="source">AddColDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> Dscr<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   Dscr - label ("1", "A" or so on..)
@@ -336,14 +336,14 @@
 
 <hr />
 <a name="Linearplots2einc2fAddRowDescr2829"></a>
-<a name="robo141"></a><h2>Linearplots.inc/AddRowDescr() [ Helper macros ]</h2>
+<a name="robo149"></a><h2>Linearplots.inc/AddRowDescr() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Inserts into 2nd horizontal axis data block new major label
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">AddRowDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> Dscr<span class="sign">)</span>
+<pre class="source">AddRowDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> Dscr<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   Dscr - label ("1", "A" or so on..)
@@ -351,50 +351,50 @@
 
 <hr />
 <a name="Linearplots2einc2fDrawColDscr2829"></a>
-<a name="robo142"></a><h2>Linearplots.inc/DrawColDscr() [ Helper macros ]</h2>
+<a name="robo150"></a><h2>Linearplots.inc/DrawColDscr() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Inserts into rendering stack description of horizontal axis
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawColDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo221">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrDepth<span class="sign">)</span>
+<pre class="source">DrawColDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo229">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrDepth<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   _Txtr       - texture definition
    _LettrBase  - adjustment to the position of description
-   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
-   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo89">Text</a>
+   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo89">Text</a>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fDrawRowDscr2829"></a>
-<a name="robo143"></a><h2>Linearplots.inc/DrawRowDscr() [ Helper macros ]</h2>
+<a name="robo151"></a><h2>Linearplots.inc/DrawRowDscr() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Inserts into rendering stack description of 2nd horizontal axis
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawRowDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo221">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo211">float</a> _LettrDepth<span class="sign">)</span>
+<pre class="source">DrawRowDscr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo229">texturedef</a> _Txtr<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrBase<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrSize<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo219">float</a> _LettrDepth<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   _Txtr       - texture definition
    _LettrBase  - adjustment to the position of description
-   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
-   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo81">Text</a>
+   _LettrSize  - Size of characters in description <a href="./TextExt_inc.html#robo89">Text</a>
+   _LettrDepth - thickness of characters in description <a href="./TextExt_inc.html#robo89">Text</a>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fDrawVrtDescr2829"></a>
-<a name="robo144"></a><h2>Linearplots.inc/DrawVrtDescr() [ Helper macros ]</h2>
+<a name="robo152"></a><h2>Linearplots.inc/DrawVrtDescr() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Draws automatically vertical axis description,
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">DrawVrtDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> _NVrt<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo221">texturedef</a> _Texture<span class="sign">)</span>
+<pre class="source">DrawVrtDescr<span class="sign">(</span><a href="./TypesUsed_txt.html#robo230">uinteger</a> _NVrt<span class="sign">,</span> <a href="./TypesUsed_txt.html#robo229">texturedef</a> _Texture<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   _NVrt - number of major tics
@@ -403,14 +403,14 @@
 
 <hr />
 <a name="Linearplots2einc2fInitDscrColAxe2829"></a>
-<a name="robo145"></a><h2>Linearplots.inc/InitDscrColAxe() [ Helper macros ]</h2>
+<a name="robo153"></a><h2>Linearplots.inc/InitDscrColAxe() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Initializes description data block along horizontal axis (columns)
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">InitDscrColAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> N<span class="sign">)</span>
+<pre class="source">InitDscrColAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo230">uinteger</a> N<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   N - number of categories
@@ -418,14 +418,14 @@
 
 <hr />
 <a name="Linearplots2einc2fInitDscrRowAxe2829"></a>
-<a name="robo146"></a><h2>Linearplots.inc/InitDscrRowAxe() [ Helper macros ]</h2>
+<a name="robo154"></a><h2>Linearplots.inc/InitDscrRowAxe() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Initializes description data block along horizontal axis (rows)
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">InitDscrRowAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo222">uinteger</a> N<span class="sign">)</span>
+<pre class="source">InitDscrRowAxe<span class="sign">(</span><a href="./TypesUsed_txt.html#robo230">uinteger</a> N<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
 <pre>   N - number of categories
@@ -433,7 +433,7 @@
 
 <hr />
 <a name="Linearplots2einc2fSetBgPicture2829"></a>
-<a name="robo147"></a><h2>Linearplots.inc/SetBgPicture() [ Helper macros ]</h2>
+<a name="robo155"></a><h2>Linearplots.inc/SetBgPicture() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -441,12 +441,12 @@
    Will be moved to <a href="./CoordsSys_inc.html#robo_top_of_doc">CoordsSys.inc</a>
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetBgPicture<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">string</a> filename Pct<span class="sign">)</span>
+<pre class="source">SetBgPicture<span class="sign">(</span><a href="./TypesUsed_txt.html#robo227">string</a> filename Pct<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetColor2829"></a>
-<a name="robo148"></a><h2>Linearplots.inc/SetColor() [ Helper macros ]</h2>
+<a name="robo156"></a><h2>Linearplots.inc/SetColor() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -454,128 +454,128 @@
 </p>
 <ul><li>   SetColor( color vector FullColour )
 </li>
-<li>   SetRGBColor( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B) - for RGB definition style
+<li>   SetRGBColor( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B) - for RGB definition style
 </li>
-<li>   <a href="./BPatchSurf_inc.html#robo113">SetRGBFTColor</a>( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) for RGBFT definition
+<li>   <a href="./BPatchSurf_inc.html#robo121">SetRGBFTColor</a>( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T) for RGBFT definition
 </li>
-<li>   SetRGBFTColor_1( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T) and
+<li>   SetRGBFTColor_1( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T) and
 </li>
-<li>   SetRGBFTColor_2( <a href="./TypesUsed_txt.html#robo211">float</a> R, <a href="./TypesUsed_txt.html#robo211">float</a> G, <a href="./TypesUsed_txt.html#robo211">float</a> B, <a href="./TypesUsed_txt.html#robo211">float</a> F, <a href="./TypesUsed_txt.html#robo211">float</a> T)  two-color RGBFT items
+<li>   SetRGBFTColor_2( <a href="./TypesUsed_txt.html#robo219">float</a> R, <a href="./TypesUsed_txt.html#robo219">float</a> G, <a href="./TypesUsed_txt.html#robo219">float</a> B, <a href="./TypesUsed_txt.html#robo219">float</a> F, <a href="./TypesUsed_txt.html#robo219">float</a> T)  two-color RGBFT items
 </li>
 </ul>
 <p></p>
 
 <hr />
 <a name="Linearplots2einc2fSetDscrAngle2829"></a>
-<a name="robo149"></a><h2>Linearplots.inc/SetDscrAngle() [ Helper macros ]</h2>
+<a name="robo157"></a><h2>Linearplots.inc/SetDscrAngle() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets base angle of description of axes (category labels)
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetDscrAngle<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a><span class="sign">)</span>
+<pre class="source">SetDscrAngle<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a><span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetInterior2829"></a>
-<a name="robo150"></a><h2>Linearplots.inc/SetInterior() [ Helper macros ]</h2>
+<a name="robo158"></a><h2>Linearplots.inc/SetInterior() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares texure for the item
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetInterior<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo215">interiordef</a> tInt <span class="sign">)</span>
+<pre class="source">SetInterior<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo223">interiordef</a> tInt <span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetLettrBase2829"></a>
-<a name="robo151"></a><h2>Linearplots.inc/SetLettrBase() [ Helper macros ]</h2>
+<a name="robo159"></a><h2>Linearplots.inc/SetLettrBase() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets base position of letters in description of axes
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetLettrBase<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+<pre class="source">SetLettrBase<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> ls<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetLettrDepth2829"></a>
-<a name="robo152"></a><h2>Linearplots.inc/SetLettrDepth() [ Helper macros ]</h2>
+<a name="robo160"></a><h2>Linearplots.inc/SetLettrDepth() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets size of letters in description of axes
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetLettrDepth<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+<pre class="source">SetLettrDepth<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> ls<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetLettrSize2829"></a>
-<a name="robo153"></a><h2>Linearplots.inc/SetLettrSize() [ Helper macros ]</h2>
+<a name="robo161"></a><h2>Linearplots.inc/SetLettrSize() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   Sets size of letters in description of axes
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetLettrSize<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> ls<span class="sign">)</span>
+<pre class="source">SetLettrSize<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> ls<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetMaterial2829"></a>
-<a name="robo154"></a><h2>Linearplots.inc/SetMaterial() [ Helper macros ]</h2>
+<a name="robo162"></a><h2>Linearplots.inc/SetMaterial() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares material for the item
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetMaterial<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo216">materialdef</a> FullMaterial <span class="sign">)</span>
+<pre class="source">SetMaterial<span class="sign">(</span> <a href="./TypesUsed_txt.html#robo224">materialdef</a> FullMaterial <span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetNodeRadiiCoeff28Coeff29"></a>
-<a name="robo155"></a><h2>Linearplots.inc/SetNodeRadiiCoeff(Coeff) [ Helper macros ]</h2>
+<a name="robo163"></a><h2>Linearplots.inc/SetNodeRadiiCoeff(Coeff) [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares radius coefficient for the wire and nodes
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetNodeRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> Coeff<span class="sign">)</span>
+<pre class="source">SetNodeRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> Coeff<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetTexture2829"></a>
-<a name="robo156"></a><h2>Linearplots.inc/SetTexture() [ Helper macros ]</h2>
+<a name="robo164"></a><h2>Linearplots.inc/SetTexture() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares texure for the item
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source"><a href="./BPatchSurf_inc.html#robo114">SetTexture</a><span class="sign">(</span> <a href="./TypesUsed_txt.html#robo221">texturedef</a> FullTexture <span class="sign">)</span>
+<pre class="source"><a href="./BPatchSurf_inc.html#robo122">SetTexture</a><span class="sign">(</span> <a href="./TypesUsed_txt.html#robo229">texturedef</a> FullTexture <span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fSetWireRadiiCoeff28Coeff29"></a>
-<a name="robo157"></a><h2>Linearplots.inc/SetWireRadiiCoeff(Coeff) [ Helper macros ]</h2>
+<a name="robo165"></a><h2>Linearplots.inc/SetWireRadiiCoeff(Coeff) [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>   declares radius coefficient for the wire only
 </p>
 <p class="item_name">SYNOPSIS</p>
-<pre class="source">SetWireRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo211">float</a> Coeff<span class="sign">)</span>
+<pre class="source">SetWireRadiiCoeff<span class="sign">(</span><a href="./TypesUsed_txt.html#robo219">float</a> Coeff<span class="sign">)</span>
 </pre>
 
 <hr />
 <a name="Linearplots2einc2fTurnPhotonsDown2829"></a>
-<a name="robo158"></a><h2>Linearplots.inc/TurnPhotonsDown(), TurnPhotonsUp() [ Helper macros ]</h2>
+<a name="robo166"></a><h2>Linearplots.inc/TurnPhotonsDown(), TurnPhotonsUp() [ Helper macros ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -589,7 +589,7 @@
 
 <hr />
 <a name="Linearplots2einc2fDeclareLevel"></a>
-<a name="robo233"></a><h2>Linearplots.inc/DeclareLevel [ Variables ]</h2>
+<a name="robo241"></a><h2>Linearplots.inc/DeclareLevel [ Variables ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -608,7 +608,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/LinearPlots.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/LinearPlots.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>

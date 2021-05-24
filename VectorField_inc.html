@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
 <link rel="stylesheet" href="./robodoc.css" type="text/css" />
-<title>./Plot3Dv4/VectorField.inc</title>
-<!-- Source: ./Plot3Dv4/VectorField.inc -->
+<title>./Plot3Dv4/Plot3Dv4/VectorField.inc</title>
+<!-- Source: ./Plot3Dv4/Plot3Dv4/VectorField.inc -->
 <!-- Generated with ROBODoc Version 4.99.41 (Feb  6 2011) -->
 </head>
 <body>
@@ -30,22 +30,22 @@
 <div id="content">
 <h3>TABLE OF CONTENTS</h3>
 <ul>
-<li>1. <a href="#robo22">ScPovPlot3D/VectorField.inc</a></li>
+<li>1. <a href="#robo24">ScPovPlot3D/VectorField.inc</a></li>
 <ul>
-<li>1.1. <a href="#robo84">VectorField.inc/ComputeStreamline</a></li>
-<li>1.2. <a href="./Migrations_inc.html#robo85">VectorField.inc/DrawPathLines</a></li>
-<li>1.3. <a href="#robo86">VectorField.inc/DrawStreamLines</a></li>
-<li>1.4. <a href="./Migrations_inc.html#robo87">VectorField.inc/MakeSpline</a></li>
-<li>1.5. <a href="./Migrations_inc.html#robo88">VectorField.inc/MakeSplineV</a></li>
-<li>1.6. <a href="#robo89">VectorField.inc/VectorCF</a></li>
-<li>1.7. <a href="#robo182">VectorField.inc/DeclareVectors</a></li>
-<li>1.8. <a href="#robo240">VectorField.inc/_Npmax</a>, <a href="#robo240">_StrmLinRadius</a>, <a href="#robo240">_EndingPointRad</a>, <a href="#robo240">_FatCoefficient</a>, <a href="#robo240">_Flux</a>, <a href="#robo240">__1byPi__</a></li>
+<li>1.1. <a href="#robo92">VectorField.inc/ComputeStreamline</a></li>
+<li>1.2. <a href="./Migrations_inc.html#robo93">VectorField.inc/DrawPathLines</a></li>
+<li>1.3. <a href="#robo94">VectorField.inc/DrawStreamLines</a></li>
+<li>1.4. <a href="./Migrations_inc.html#robo95">VectorField.inc/MakeSpline</a></li>
+<li>1.5. <a href="./Migrations_inc.html#robo96">VectorField.inc/MakeSplineV</a></li>
+<li>1.6. <a href="#robo97">VectorField.inc/VectorCF</a></li>
+<li>1.7. <a href="#robo190">VectorField.inc/DeclareVectors</a></li>
+<li>1.8. <a href="#robo248">VectorField.inc/_Npmax</a>, <a href="#robo248">_StrmLinRadius</a>, <a href="#robo248">_EndingPointRad</a>, <a href="#robo248">_FatCoefficient</a>, <a href="#robo248">_Flux</a>, <a href="#robo248">__1byPi__</a></li>
 </ul>
-<li>2. <a href="#robo66">Potential.inc/DeclareStructure</a></li>
+<li>2. <a href="#robo70">Potential.inc/DeclareStructure</a></li>
 </ul>
 <hr />
 <a name="ScPovPlot3D2fVectorField2einc"></a>
-<a name="robo22"></a><h2>ScPovPlot3D/VectorField.inc [ Modules ]</h2>
+<a name="robo24"></a><h2>ScPovPlot3D/VectorField.inc [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">PURPOSE</p>
@@ -89,9 +89,9 @@
 
 <hr />
 <a name="Potential2einc2fDeclareStructure"></a>
-<a name="robo66"></a><h2>Potential.inc/DeclareStructure [ Main macros ]</h2>
+<a name="robo70"></a><h2>Potential.inc/DeclareStructure [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./Potential_inc.html#robo16">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./Potential_inc.html#robo18">Potential.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Sets internal variable _Pts, utilized by VectoCF macro for vector field computations
 </p>
@@ -99,76 +99,76 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DeclareStructure</strong> <span class="sign">(</span>_Atoms<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a> - structure table, see <a href="./Potential_inc.html#robo16">Potential.inc</a>
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a> - structure table, see <a href="./Potential_inc.html#robo_top_of_doc">Potential.inc</a>
 </pre>
 <p class="item_name">OUTPUTS</p>
 <pre>  None, sets global variable
 </pre>
 <p class="item_name">SIDE EFFECTS</p>
-<p>  affect global variable _Pts, which is input to Potential.CreateV### <a href="./TypesUsed_txt.html#robo212">Function</a> factory macros
+<p>  affect global variable _Pts, which is input to Potential.CreateV### <a href="./TypesUsed_txt.html#robo220">Function</a> factory macros
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo89">VectorCF</a> (), <a href="#robo84">ComputeStreamline</a> ()
+<p>  <a href="#robo97">VectorCF</a> (), <a href="#robo92">ComputeStreamline</a> ()
 </p>
 
 <hr />
 <a name="VectorField2einc2fComputeStreamline"></a>
-<a name="robo84"></a><h2>VectorField.inc/ComputeStreamline [ Main macros ]</h2>
+<a name="robo92"></a><h2>VectorField.inc/ComputeStreamline [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo22">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo24">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  this macro computes nodes of single streamline only, for given line index _Lnum, 
-  using Runge-Kutta 4th order algorithm based on data provided by <a href="#robo66">DeclareStructure</a> () macro
-  Radius of the streamlines is governed by internal global variable <a href="#robo240">_StrmLinRadius</a>.    
-  <a href="#robo240">_FatCoefficient</a> is being used by ComputeFatStreamline macro variant of <strong>ComputeStreamline</strong>. Moderates scaling of the field strength
-  Until <a href="#robo240">_StrmLinRadius</a>&gt;0 then constant value (<a href="#robo240">_StrmLinRadius</a>) is used. If opposite is true, dynamic scaling is activated. 
+  using Runge-Kutta 4th order algorithm based on data provided by <a href="#robo70">DeclareStructure</a> () macro
+  Radius of the streamlines is governed by internal global variable <a href="#robo248">_StrmLinRadius</a>.    
+  <a href="#robo248">_FatCoefficient</a> is being used by ComputeFatStreamline macro variant of <strong>ComputeStreamline</strong>. Moderates scaling of the field strength
+  Until <a href="#robo248">_StrmLinRadius</a>&gt;0 then constant value (<a href="#robo248">_StrmLinRadius</a>) is used. If opposite is true, dynamic scaling is activated. 
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>ComputeStreamline</strong><span class="sign">(</span>_P0<span class="sign">,</span> _Npts<span class="sign">,</span> _Lnum<span class="sign">)</span> 
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo202">3Dvector</a> _P0   - 3D Start space point, units - [A] 
-  <a href="./TypesUsed_txt.html#robo214">integer</a>  _Npts - expected (maximum) number of nodes, 
-  <a href="./TypesUsed_txt.html#robo214">integer</a>  _Lnum - streamline index.
+<pre>  <a href="./TypesUsed_txt.html#robo210">3Dvector</a> _P0   - 3D Start space point, units - [A] 
+  <a href="./TypesUsed_txt.html#robo222">integer</a>  _Npts - expected (maximum) number of nodes, 
+  <a href="./TypesUsed_txt.html#robo222">integer</a>  _Lnum - streamline index.
 </pre>
 <p class="item_name">SIDE EFFECTS</p>
-<p>  Radius of the streamlines is governed by internal global variable <a href="#robo240">_StrmLinRadius</a>.
-  Radius of the streamlines may depend on field strength so scaling factor <a href="#robo240">_FatCoefficient</a> as internal global var. is required. 
+<p>  Radius of the streamlines is governed by internal global variable <a href="#robo248">_StrmLinRadius</a>.
+  Radius of the streamlines may depend on field strength so scaling factor <a href="#robo248">_FatCoefficient</a> as internal global var. is required. 
   Computed line is stored in global variable StrmLineTable[][][] which must be defined BEFORE macro is called.
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo89">VectorCF</a>, <a href="#robo86">DrawStreamLines</a>
+<p>  <a href="#robo97">VectorCF</a>, <a href="#robo94">DrawStreamLines</a>
 </p>
 
 <hr />
 <a name="VectorField2einc2fDrawStreamLines"></a>
-<a name="robo86"></a><h2>VectorField.inc/DrawStreamLines [ Main macros ]</h2>
+<a name="robo94"></a><h2>VectorField.inc/DrawStreamLines [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo22">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo24">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  Draws streamlines based on Streamline table _SL, spline type _splt and texture _txt. 
-  Uses <a href="#robo240">_EndingPointRad</a> internal global variable
+  Uses <a href="#robo248">_EndingPointRad</a> internal global variable
 </p>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source"><span class="keyword">#macro</span> <strong>DrawStreamLines</strong> <span class="sign">(</span> _SL<span class="sign">,</span> _splt<span class="sign">,</span> _txt <span class="sign">)</span><span class="comment">// - table, spline, texture</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo213">garray</a>     _SL   - streamlines table over N lines over N_i nodes
-  <a href="./TypesUsed_txt.html#robo214">integer</a>    _splt - interpolation type: 2 - bezier spline, 3 - cubic spline, other - linear_spline
-  <a href="./TypesUsed_txt.html#robo221">texturedef</a> _txt  - texture attached to ALL lines, may be simple or complex, ex. functional
+<pre>  <a href="./TypesUsed_txt.html#robo221">garray</a>     _SL   - streamlines table over N lines over N_i nodes
+  <a href="./TypesUsed_txt.html#robo222">integer</a>    _splt - interpolation type: 2 - bezier spline, 3 - cubic spline, other - linear_spline
+  <a href="./TypesUsed_txt.html#robo229">texturedef</a> _txt  - texture attached to ALL lines, may be simple or complex, ex. functional
 </pre>
 <p class="item_name">SIDE EFFECTS</p>
-<p>  Uses <a href="#robo240">_EndingPointRad</a> internal global variable, governing radius of extreme points.
+<p>  Uses <a href="#robo248">_EndingPointRad</a> internal global variable, governing radius of extreme points.
 </p>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo84">ComputeStreamline</a>, <a href="#robo89">VectorCF</a>
+<p>  <a href="#robo92">ComputeStreamline</a>, <a href="#robo97">VectorCF</a>
 </p>
 
 <hr />
 <a name="VectorField2einc2fVectorCF"></a>
-<a name="robo89"></a><h2>VectorField.inc/VectorCF [ Main macros ]</h2>
+<a name="robo97"></a><h2>VectorField.inc/VectorCF [ Main macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo22">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo24">VectorField.inc</a> ] [ <a href="./robo_macros.html#robo_top_of_doc">Main macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  computes Coulomb vector field from 
   assembly of charged molecules, passed as global array _Pts[][]
@@ -177,24 +177,24 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>VectorCF</strong> <span class="sign">(</span> _rr<span class="sign">,</span> _sc <span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  <a href="./TypesUsed_txt.html#robo202">3Dvector</a> _rr  - 3D space point, units - [A] 
-  <a href="./TypesUsed_txt.html#robo211">float</a>    _sc  - additional scaling factor, may be left _sc==1
-  <a href="./TypesUsed_txt.html#robo213">garray</a>   _PTs - array[N+1][8] of charges, passed as global variable, use macro <a href="#robo66">DeclareStructure</a> (Any_Set_of_Atoms), refer <a href="./Structures_inc.html#robo19">Structures.inc</a> and <a href="./Potential_inc.html#robo16">Potential.inc</a> for details
+<pre>  <a href="./TypesUsed_txt.html#robo210">3Dvector</a> _rr  - 3D space point, units - [A] 
+  <a href="./TypesUsed_txt.html#robo219">float</a>    _sc  - additional scaling factor, may be left _sc==1
+  <a href="./TypesUsed_txt.html#robo221">garray</a>   _PTs - array[N+1][8] of charges, passed as global variable, use macro <a href="#robo70">DeclareStructure</a> (Any_Set_of_Atoms), refer <a href="./Structures_inc.html#robo21">Structures.inc</a> and <a href="./Potential_inc.html#robo_top_of_doc">Potential.inc</a> for details
 </pre>
 <p class="item_name">OUTPUTS</p>
-<pre>  Coulomb electric field vector in [V/Angstrem], governed by "qeff" factor defined in <a href="./Potential_inc.html#robo16">Potential.inc</a> file
+<pre>  Coulomb electric field vector in [V/Angstrem], governed by "qeff" factor defined in <a href="./Potential_inc.html#robo_top_of_doc">Potential.inc</a> file
 </pre>
 <p class="item_name">SEE ALSO</p>
-<p>  <a href="#robo86">DrawStreamLines</a>, <a href="#robo84">ComputeStreamline</a>, <a href="./Potential_inc.html#robo16">Potential.inc</a>
+<p>  <a href="#robo94">DrawStreamLines</a>, <a href="#robo92">ComputeStreamline</a>, <a href="./Potential_inc.html#robo_top_of_doc">Potential.inc</a>
 </p>
 
 <hr />
 <a name="VectorField2einc2fDeclareVectors"></a>
-<a name="robo182"></a><h2>VectorField.inc/DeclareVectors [ Helper macros ]</h2>
+<a name="robo190"></a><h2>VectorField.inc/DeclareVectors [ Helper macros ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo22">VectorField.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo24">VectorField.inc</a> ] [ <a href="./robo_helper.html#robo_top_of_doc">Helper macros</a> ]</p>
 <p class="item_name">PURPOSE</p>
-<p>   calculates field using <a href="./TypesUsed_txt.html#robo212">Function</a> _VS given as parameter, in _NP^3 grid points in a cube
+<p>   calculates field using <a href="./TypesUsed_txt.html#robo220">Function</a> _VS given as parameter, in _NP^3 grid points in a cube
 </p>
 <pre>     <img src="./imgs/VectorFieldExS.jpg">
 </pre>
@@ -206,19 +206,19 @@
 <pre class="source"><span class="keyword">#macro</span> <strong>DeclareVectors</strong> <span class="sign">(</span>_VS<span class="sign">,</span> _NP<span class="sign">)</span>
 </pre>
 <p class="item_name">INPUTS</p>
-<pre>  _VS - <a href="./TypesUsed_txt.html#robo211">float</a> <a href="./TypesUsed_txt.html#robo212">Function</a>(<a href="./TypesUsed_txt.html#robo211">float</a>, <a href="./TypesUsed_txt.html#robo211">float</a>) - inline <a href="./TypesUsed_txt.html#robo212">Function</a> two <a href="./TypesUsed_txt.html#robo211">float</a> parameters, returns <a href="./TypesUsed_txt.html#robo211">float</a>
-  _NP - <a href="./TypesUsed_txt.html#robo214">integer</a> - size of the grid, number of nodes along one cube edge                                            
+<pre>  _VS - <a href="./TypesUsed_txt.html#robo219">float</a> <a href="./TypesUsed_txt.html#robo220">Function</a>(<a href="./TypesUsed_txt.html#robo219">float</a>, <a href="./TypesUsed_txt.html#robo219">float</a>) - inline <a href="./TypesUsed_txt.html#robo220">Function</a> two <a href="./TypesUsed_txt.html#robo219">float</a> parameters, returns <a href="./TypesUsed_txt.html#robo219">float</a>
+  _NP - <a href="./TypesUsed_txt.html#robo222">integer</a> - size of the grid, number of nodes along one cube edge                                            
 </pre>
 
 <hr />
 <a name="VectorField2einc2f5fNpmax"></a>
-<a name="robo240"></a><h2>VectorField.inc/_Npmax, _StrmLinRadius, _EndingPointRad, _FatCoefficient, _Flux, __1byPi__ [ Variables ]</h2>
+<a name="robo248"></a><h2>VectorField.inc/_Npmax, _StrmLinRadius, _EndingPointRad, _FatCoefficient, _Flux, __1byPi__ [ Variables ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo22">VectorField.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo24">VectorField.inc</a> ] [ <a href="./robo_variables.html#robo_top_of_doc">Variables</a> ]</p>
 <p class="item_name">PURPOSE</p>
 <p>  <strong>_StrmLinRadius</strong>  - streamline body radius
   <strong>_EndingPointRad</strong> - streamline endings (spheres) diameter, internal global variable
-  <strong>_FatCoefficient</strong> - used by ComputeFatStreamline macro variant of <a href="#robo84">ComputeStreamline</a>. Moderates scaling of the field strength
+  <strong>_FatCoefficient</strong> - used by ComputeFatStreamline macro variant of <a href="#robo92">ComputeStreamline</a>. Moderates scaling of the field strength
   <strong>_Flux</strong>           - assumed vector field flux along tubeline
 </p>
 <p class="item_name">SYNOPSIS</p>
@@ -226,7 +226,7 @@
 <span class="keyword">#declare</span> <strong>_StrmLinRadius</strong>  <span class="sign">=</span> 0<span class="sign">.</span>03<span class="sign">;</span> <span class="comment">// streamline body radius, if == '0', <strong>_FatCoefficient</strong> is used for variable diameter streamlines. </span>
 <span class="keyword">#declare</span> <strong>_EndingPointRad</strong> <span class="sign">=</span> 0<span class="sign">.</span>05<span class="sign">;</span> <span class="comment">// streamline endings (spheres) diameter, internal global variable</span>
 <span class="keyword">#declare</span> <strong>_Flux</strong>           <span class="sign">=</span> 1<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// vextor field flux, expressed in adopted in the job units, eg. [T*m^2], [V*angstroem], and so on.</span>
-<span class="keyword">#declare</span> <strong>_FatCoefficient</strong> <span class="sign">=</span> 1<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// used by <a href="#robo84">ComputeStreamline</a>. Additional scaling of the fluxline diameter, for use with </span>
+<span class="keyword">#declare</span> <strong>_FatCoefficient</strong> <span class="sign">=</span> 1<span class="sign">.</span>00<span class="sign">;</span> <span class="comment">// used by <a href="#robo92">ComputeStreamline</a>. Additional scaling of the fluxline diameter, for use with </span>
                                  <span class="comment">// derivative units like V-&gt;kV, A/m=&gt;kA/m; </span>
 <span class="keyword">#declare</span> <strong>__1byPi__</strong>       <span class="sign">=</span> 1<span class="sign">.</span>0<span class="sign">/</span>sqrt<span class="sign">(</span><span class="keyword">pi</span><span class="sign">)</span><span class="sign">;</span> <span class="comment">// remove? - constant coefficient for fluxlines;                                  </span>
 </pre>
@@ -239,7 +239,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from ./Plot3Dv4/VectorField.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Wed Jun 27 2018 00:25:43
+<p>Generated from ./Plot3Dv4/Plot3Dv4/VectorField.inc with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.41 on Tue May 25 2021 01:08:04
 </p>
 </div> <!-- footer -->
 </body>
